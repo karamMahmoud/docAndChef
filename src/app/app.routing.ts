@@ -10,6 +10,7 @@ import { ForgetPasswordComponent } from './auth/forget-password/forget-password.
 import { AuthGuard } from 'app/helper/guard';
 import { NotAuthGuard } from 'app/helper/auth-guard';
 import { PermissionsGuard } from './helper/permisssion-guard'
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes =[
     { path: '',redirectTo: 'dashboard', pathMatch: 'full' },
@@ -17,6 +18,8 @@ const routes: Routes =[
       path: 'dashboard', 
       loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
     },
+    { path: 'signup',  component: SignupComponent},
+
     {
       path: 'user-profile', 
       loadChildren: () => import('./user-profile/user-profile.module').then(m => m.UserProfileModule),

@@ -275,66 +275,6 @@ img{
 // end about us
 
 
-.footer{
-    padding: 40px 0px;
-    color: #b9b0b0;
-    text-align: left;
-    background-color: black;
-      .img-logo{
-        max-width: 135px;
-        img{
-          width: 100%;
-        }
-      }
-
-    .font{
-        margin-top: 50px;
-        h1{
-         font-size: 23px;
-         margin-bottom: 20px;
-         color: #EFC862;
-        }
-        p{
-            margin: 0px;
-            margin-bottom: 10px;
-            span{
-                font-weight: bold;
-            }
-        }
-        .subscribe-input{
-            max-width: 400px;
-            margin: auto;
-            .input-text{
-                border-radius: 0px;
-                padding: 25px;
-                border: none;
-            }
-            
-        }
-       .subscribe-button{
-           button{
-            background-color: #EFC862 ;
-            border: none;
-            border-radius: 0px;
-    
-           }
-       } 
-    }
-     hr {
-        border-color: #1e1c1c;
-    }
-    .accept{
-        h1{
-            font-size: 20px;
-        }
-    }
-    .copy-right{
-        color: #a09999;
-
-    }
-
-
-}
 
 
 
