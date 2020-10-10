@@ -1,0 +1,46 @@
+<nav class="navbar navbar-transparent navbar-absolute">
+    <div class="container-fluid">
+                  
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" (click)="sidebarToggle()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" routerLink="./{{getTitle()}}">{{getTitle()}}</a> -->
+            <div class="btn-group" dropdown >
+                <button id="button-animated" dropdownToggle type="button" class="language-navigator btn btn-simple dropdown-toggle" aria-controls="dropdown-animated">
+                     <img *ngIf="selectedLang == 'en'"  src="/assets/img/en.png" width="20"/><img *ngIf="selectedLang == 'ar'"  src="/assets/img/ar.png" width="20"/>  
+                  {{selectedLang}} <span class="caret"></span>
+                </button>
+                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-animated">
+                  <li role="menuitem" (click)="change('en')" ><a class="dropdown-item"> <img src="/assets/img/en.png" width="25"/>  English</a></li>
+                  <li role="menuitem" (click)="change('ar')" ><a class="dropdown-item"><img src="/assets/img/ar.png" width="25"/>  Arabic</a>
+                  </li>
+                </ul>
+              </div>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()">
+                    <a href id="basic-link" dropdownToggle (click)="false"
+                    aria-controls="basic-link-dropdown">
+                        <img src="/assets/img/default.jpg" width="50" class="profile-img" />
+                        <p class="hidden-lg hidden-md">Profile</p>
+                    </a>
+                    <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="basic-link">
+                        <li><a routerLink="/user-profile" >Profile</a></li>
+                        <li><a routerLink="/change-password" >Change Password</a></li>
+                        <li><a (click)="logout()">Logout</a></li>
+
+                    </ul>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

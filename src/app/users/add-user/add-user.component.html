@@ -1,0 +1,92 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="breadcramp">
+                <li>
+                    <i class="material-icons">home</i><a routerLink="/dashboard">Dashboard</a>
+                </li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <li>
+                    <a routerLink="../">Users</a>
+                </li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <li *ngIf="!edit">
+                    <a>Add user</a>
+                </li>
+                <li *ngIf="edit">
+                    <a>Edit user</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header border-bottom" data-background-color="white">
+                        <h4 class="title" *ngIf="!edit">Add User</h4>
+                        <h4 class="title" *ngIf="edit">Edit User</h4>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <form class="form-group" novalidate #f="ngForm" (ngSubmit)="edit?editUser(f):adduser(f)">
+                            <div class="col-xs-12">
+                                <label for="name">Name</label>
+                                <input type="text" #userName="ngModel" [(ngModel)]="user.name" name="name" required
+                                    class="form-control" />
+                                <div *ngIf="(userName.errors?.required && userName.touched) || (requiredMsg && !user.name)"
+                                    class="text-danger">Name is required</div>
+                            </div>
+                            <div class="col-xs-12">
+                                <label for="email">Email</label>
+                                <input type="email" #userEmail="ngModel" [(ngModel)]="user.email" name="email" required
+                                    class="form-control" />
+                                <div *ngIf="(userEmail.errors?.required && userEmail.touched) || (requiredMsg && !user.email)"
+                                    class="text-danger">Email is required</div>
+                                <!--<div *ngIf="emailExist" class="text-danger">{{mailMessage}}</div>-->
+                            </div>
+                            <div class="col-xs-12">
+                                <mat-form-field>
+                                    <mat-label>
+                                        Roles
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="userRoles" multiple [ngModelOptions]="{standalone: true}">
+                                        <mat-option *ngFor="let role of roles" [value]="role.id">
+                                            {{role.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-xs-12" *ngIf="!edit">
+                                <label for="password">Password</label>
+                                <input type="password" #userpassword="ngModel" [(ngModel)]="user.password" required
+                                    name="password" class="form-control" />
+                                <div *ngIf="(userpassword.errors?.required && userpassword.touched) || (requiredMsg && !user.password)"
+                                    class="text-danger">Password is required</div>
+                            </div>
+                            <div class="col-xs-12" *ngIf="!edit">
+                                <label for="confirm password">Confirm Password</label>
+                                <input type="password" #userConfirm="ngModel" [(ngModel)]="user.password_confirmation"
+                                    required name="confirmPassword" class="form-control" />
+                                <div *ngIf="(userConfirm.errors?.required && userConfirm.touched) || (requiredMsg && !user.password_confirmation)"
+                                    class="text-danger">Confirm Password is required</div>
+                            </div>
+                            <!--<div *ngIf="passwordIdentity" class="text-danger">{{passwordMessage}}</div>-->
+                            <div *ngIf="errorMsgs" class="text-danger mr-t10">{{errorMsgs}}</div>
+                            <div class="form-submit">
+                                <input type="submit" value="submit" class="btn btn-success" />
+                            </div>
+                            <div *ngIf="errorMsgs">
+                                <label for="example_input_full_name" class="text-danger">
+                                    Error Messages:
+                                </label>
+                                <span class="m-form__help text-danger d-block"
+                                    *ngFor="let err of errorMsgs | objectArray">
+                                    <br>{{err}}:&nbsp;{{errorMsgs[err][0]}}
+                                </span>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,346 @@
+.navbar{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: -45px;
+  .img-chef{
+    max-width: 180px;
+    img{
+width: 100%;
+    }
+  }
+  .sign-chef{
+    button{
+      outline: none;
+      z-index: 1;
+      background: transparent;
+      color: #fff;
+      border: none;
+      padding: 10px 30px;
+    border-radius: 30px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); 
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+    transition: 0.2s ease;
+     
+    }
+    .mrg-left{
+      margin-left: -30px;
+      background-color: #7b7879;
+      
+    }
+    .index{
+      z-index: 2;
+    }
+
+  }
+}
+
+// end nav bar
+
+.health{
+  display: flex;
+  justify-content: flex-start;
+  background-image: url("assets/img/cover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  .social-media{
+    margin: 50px 60px;
+    ul{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      background-color: #78797a;
+      color: #fff;
+      border-radius: 30px;
+     
+     
+      li{
+        margin-left: -25px;
+        padding: 15px 0px;
+      }
+    }
+  }
+  .eat-health{
+    color: #fff;
+    h1{
+font-size: 60px;
+font-weight: bold;
+    }
+    .underline{
+      text-decoration: underline;
+    }
+    p{
+      font-size: 15px;
+      margin: 0px;
+    }
+
+  }
+}
+
+// end health
+
+
+.meals{
+  background-color: #302B2B;
+  padding: 20px 0px;
+  color: #fff;
+  .img-chef{
+    max-width: 180px;
+    img{
+width: 100%;
+    }
+  }
+  .Lunch{
+    max-width: 400px;
+position: relative;
+margin: auto;
+img{
+  width: 100%;
+  border-radius: 30px;
+
+}
+.choose{
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  h1{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0px;
+  }
+  p{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px;
+  }
+}
+  }
+
+  .Breakfast{
+    max-width: 300px;
+position: relative;
+margin: auto;
+margin-top: 30px;
+img{
+  width: 100%;
+  border-radius: 30px;
+}
+.choose{
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  h1{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0px;
+
+  }
+  p{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px;
+
+  }
+}
+  }
+  .category{
+    margin-top: 20px;
+    h1{
+       margin: 0px;
+       font-size: 30px;
+       font-weight: bold;
+       color: darkorange;
+    }
+    h2{
+      margin: 0px;
+       font-size: 30px;
+       font-weight: bold;
+    }
+    p{
+      margin: 0px;
+      font-size: 14px;
+    }
+  }
+}
+
+// end meals
+
+.offer-section{
+  background-image: url("assets/img/dash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 50px 0px;
+  color: black;
+  h1{
+    font-weight: bold;
+    font-size: 40px;
+    span{
+      color: darkorange;
+    }
+  }
+  p{
+    font-size: 13px;
+  }
+
+  .offer-type{
+    margin-top: 50px;
+
+    .flex-part{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      -webkit-backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 30px;
+      padding: 30px 10px;
+      text-align: left;
+      margin: 20px;
+
+
+      .offer-no{
+        margin-top: -40px;
+        h1{
+          font-weight: bold;
+          font-size: 50px;
+          margin: 20px;
+          margin-top: -50px;
+          
+        }
+      }
+
+      .offer-name{
+        h1{
+          font-size:20px ;
+        }
+        p{
+          font-size: 14px;
+        }
+         
+      }
+    }
+    .blur{
+     
+      background-color: rgba(192, 185, 185, 0.5);
+      color: black;
+      padding: 10px 25px;
+      border-radius:30px ;
+      border: none;
+    
+
+    }
+  }
+
+}
+
+
+// end offer section
+
+
+.about-us{
+  background-color: #f5efef;
+  padding: 40px 0px;
+  color: black;
+  .photo{
+    max-width: 250px;
+    margin: auto;
+    img{
+      width: 100%;
+    }
+  }
+  .healthy-life{
+    text-align: left;
+    h1{
+      font-size: 15px;
+      margin: 0px;
+    }
+    h2{
+      font-size: 25px;
+      font-weight:bold ;
+      
+    }
+    p{
+      font-size: 13px;
+
+    }
+
+  }
+}
+
+// end about us
+
+
+.footer{
+    padding: 40px 0px;
+    color: #b9b0b0;
+    text-align: left;
+    background-color: black;
+      .img-logo{
+        max-width: 135px;
+        img{
+          width: 100%;
+        }
+      }
+
+    .font{
+        margin-top: 50px;
+        h1{
+         font-size: 23px;
+         margin-bottom: 20px;
+         color: #EFC862;
+        }
+        p{
+            margin: 0px;
+            margin-bottom: 10px;
+            span{
+                font-weight: bold;
+            }
+        }
+        .subscribe-input{
+            max-width: 400px;
+            margin: auto;
+            .input-text{
+                border-radius: 0px;
+                padding: 25px;
+                border: none;
+            }
+            
+        }
+       .subscribe-button{
+           button{
+            background-color: #EFC862 ;
+            border: none;
+            border-radius: 0px;
+    
+           }
+       } 
+    }
+     hr {
+        border-color: #1e1c1c;
+    }
+    .accept{
+        h1{
+            font-size: 20px;
+        }
+    }
+    .copy-right{
+        color: #a09999;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+

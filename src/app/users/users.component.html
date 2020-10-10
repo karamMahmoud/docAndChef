@@ -1,0 +1,131 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="breadcramp">
+                <li>
+                    <i class="material-icons">home</i><a routerLink="/dashboard">Dashboard</a>
+                </li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <li>
+                    <a routerLink="/users">Users</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-4 kt-margin-bottom-10-mobile">
+                <mat-form-field>
+                    <input matInput placeholder="Search product" #searchInput placeholder="Search"
+                        class="mat-form-field mat-form-field-fluid">
+                    <mat-hint align="start">
+                        <strong>Search in all fields</strong>
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header col-xs-12 border-bottom" data-background-color="white">
+                        <div class="col-md-6">
+                            <h4 class="title mr-t15">Users Table</h4>
+                        </div>
+                        <div class="col-md-6 text-right" *ngIf="userPermissions['create-user']">
+                            <button class="btn btn-info" routerLink="/users/add-user">Add User</button>
+                        </div>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <div class="mat-table__wrapper example-container">
+                            <div class="example-loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
+                                <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+                                <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
+                                    Something went wrong
+                                </div>
+                            </div>
+
+                            <div class="example-table-container">
+
+                                <table mat-table [dataSource]="data" class="example-table lmat-elevation-z8" matSort
+                                    matSortActive="title" matSortDisableClear matSortDirection="desc">
+                                    <!-- Number Column -->
+                                    <!-- <ng-container matColumnDef="number">
+                                        <th mat-header-cell *matHeaderCellDef>#</th>
+                                        <td mat-cell *matCellDef="let row">{{row.number}}</td>
+                                    </ng-container> -->
+
+                                    <!-- Title Column -->
+                                    <ng-container matColumnDef="id">
+                                        <th mat-header-cell *matHeaderCellDef>ID</th>
+                                        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+                                    </ng-container>
+
+                                    <ng-container matColumnDef="name">
+                                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                                        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+                                    </ng-container>
+
+                                    <!-- State Column -->
+                                    <ng-container matColumnDef="email">
+                                        <th mat-header-cell *matHeaderCellDef [id]="1">Email</th>
+                                        <td mat-cell *matCellDef="let row">{{row.email}}</td>
+                                    </ng-container>
+
+                                    <ng-container matColumnDef="actions" *ngIf="userPermissions['update-user'] || userPermissions['delete-user']">
+                                        <th mat-header-cell *matHeaderCellDef>Actions</th>
+                                        <td mat-cell *matCellDef="let row">
+                                            <button type="button" *ngIf="userPermissions['update-user']"
+                                                (click)="edit(row.id)" mat-icon-button matTooltip="Edit user">
+                                                <i class="fa fa-pencil"></i>
+                                            </button>&nbsp;
+                                            <button type="button" *ngIf="userPermissions['delete-user']"
+                                                (click)="delete(template,row.id)" mat-icon-button
+                                                matTooltip="Delete user">
+                                                <i class="fa fa-trash"></i>
+                                            </button>&nbsp;
+                                        </td>
+                                    </ng-container>
+
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                </table>
+                            </div>
+
+                            <!-- <mat-paginator [length]="resultsLength" [pageSize]="30"></mat-paginator> -->
+                            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons [length]="resultsLength"
+                                [pageSize]="3"></mat-paginator>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #template>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Are you sure you want to delete this user ?
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="left: 95%;
+                bottom: 80%;
+                font-size: xx-large;position: absolute;" (click)="modalRef.hide()">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <!-- {{'account.view.delete_modal.msg' | translate}} -->
+                    If you deleted the user you will not be able to retrieve him again
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">
+                    NO
+                </button>
+                <button type="button" class="btn btn-danger" (click)="deleteUser()" id="delete-account-modal-btn">
+                    Yes
+                </button>
+            </div>
+        </div>
+    </div>
+</ng-template>

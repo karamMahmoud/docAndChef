@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+/* @import  url(https://cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css); */
+html,body { direction:rtl;}
+html,body,h1,h2,h3,h4,h5,h6,button,p,span,input,label,select,textarea,a,th,strong,td {
+font-family:"Droid Arabic Kufi", "Droid Sans", sans-serif !important;
+}
+
+.sidebar, .off-canvas-sidebar{
+right:0;
+left:auto !important;	
+	
+}
+.sidebar .sidebar-background, .off-canvas-sidebar .sidebar-background{
+right: 0;	
+left:auto !important;
+}
+.main-panel {
+    float: left !important;
+}
+
+.sidebar .nav i, .off-canvas-sidebar .nav i {
+    float: right !important;
+    margin-left: 15px;
+	margin-right: auto !important;
+}
+.sidebar .logo .simple-text, .off-canvas-sidebar .logo .simple-text {
+    text-align: right !important;
+}
+.text-left {
+    text-align: right !important;
+}
+.text-right {
+    text-align: left !important;
+}
+
+ul.nav.navbar-nav.navbar-right{
+	float:left !important;
+}
+.card-stats .card-header {
+    float: right !important;
+}
+.card-stats .card-content {
+    text-align: left !important;
+}
+
+.card .card-footer {
+    margin: 0 10px 10px !important;
+}
+th.mat-header-cell {
+    text-align: right !important;
+}
+.mat-form-field {
+    text-align: right !important;
+}
+.mat-form-field-label {
+    right: 0;
+	left:auto !important
+}
+button.close{
+	right: 95%;
+	left:auto !important;
+}
+th.mat-header-cell:first-of-type {
+    padding-right: 24px;
+	padding-left: auto !important;
+}
+.mat-error {
+    font-family: "Droid Arabic Kufi", "Droid Sans", sans-serif !important;
+}
+.mat-form-field-label {
+    right: 0;
+	left: auto !important;
+	transform-origin: right !important;
+}
+td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
+    padding-right: 24px;
+	padding-left: auto !important;
+}
+.mat-option-text {
+    text-align: right;
+}
+.pull-right {
+    float: left !important;
+}
+
+.mat-paginator-page-size{
+    direction: ltr;
+}
+
+.mat-paginator-range-label{
+    direction: rtl;
+}
+
+.mat-paginator-page-size .mat-select-trigger{
+    direction: rtl !important;
+}
+.mat-paginator-page-size .mat-select-trigger .mat-select-value{
+    text-align: left !important;
+}
+.mat-step-header{
+	font-family:"Droid Arabic Kufi", "Droid Sans", sans-serif !important;
+}
+.mat-horizontal-stepper-header .mat-step-icon {
+    margin-left: 8px;
+	margin-right: auto !important;
+}
+@media (min-width: 992px){
+.card form [class*="col-"]:last-child {
+    padding-left: 15px;
+	padding-right: 0 !important;
+}
+}
+
+.download-file{
+	float: left;
+}
+.mat-paginator-page-size-label {
+    font-family:"Droid Arabic Kufi", "Droid Sans", sans-serif !important;
+}
+.mat-paginator-range-label {
+     font-family:"Droid Arabic Kufi", "Droid Sans", sans-serif !important;
+}
+.mat-option-text {
+    direction: rtl;
+}

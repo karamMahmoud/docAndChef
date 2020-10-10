@@ -1,0 +1,13 @@
+.mr-t10{
+    margin-top: 10px;
+}
+
+.language-navigator{
+    background: transparent !important;
+    box-shadow: none!important;
+    color: #aaa;
+}
+
+.profile-img {
+    border-radius: 50%;
+}

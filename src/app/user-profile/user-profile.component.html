@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="green">
+                        <h4 class="title">Edit Profile</h4>
+                        <p class="category">Complete your profile</p>
+                    </div>
+                    <div class="card-content">
+                        <form (ngSubmit)="submit()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="control-label default-font">Full Name</label>
+                                    <div class="form-group form-black label-floating is-empty mr-0">
+                                        <input type="text" [(ngModel)]="payload.name" name="name" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="control-label default-font">Email address</label>
+                                    <div class="form-group form-black label-floating is-empty mr-0">
+                                        <input type="email" [(ngModel)]="payload.email" name="email" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="" *ngIf="errorMsgs">
+                                <label for="example_input_full_name" class="text-danger">
+                                    Error Messages:
+                                </label>
+                                <span class="m-form__help text-danger d-block" *ngFor="let err of errorMsgs | objectArray">
+                                    <br>{{err}}:&nbsp;{{errorMsgs[err][0]}} 
+                                </span>
+                            </div>
+                            <button type="submit" class="btn btn-success pull-right">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="col-md-4">
+            <div class="card card-profile">
+                <div class="card-avatar">
+                    <a href="#pablo">
+                        <img class="img" src="../assets/img/faces/marc.jpg" />
+                    </a>
+                </div>
+
+                <div class="content">
+                    <h6 class="category text-gray">CEO / Co-Founder</h6>
+                    <h4 class="card-title">Alec Thompson</h4>
+                    <p class="card-content">
+                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                    </p>
+                    <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
+                </div>
+            </div>
+        </div>-->
+        </div>
+    </div>
+</div>
