@@ -195,7 +195,7 @@
 
       <div class="plan">
         <div class="row">
-          <div class="col-lg-3 col-12 Weight-loss">
+          <div class="col-lg-3 col-12 normal">
             <h1>01</h1>
             <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
             <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
@@ -203,7 +203,7 @@
             </p>
           </div>
 
-          <div class="col-lg-3 col-12 Bodybuilding">
+          <div class="col-lg-3 col-12 normal">
             <h1>02</h1>
             <button class="btn btn-lg" (click)="plan = 2">Bodybuilding</button>
             <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
@@ -211,7 +211,7 @@
             </p>
           </div>
 
-          <div class="col-lg-6 col-12 plan-program" [class.xyz]="plan === 3">
+          <div class="col-lg-6 col-12 color-up" [class.xyz]="plan === 3">
             <span>03</span>
             <button class="btn btn-lg" (click)="plan = 3">Plan your Program</button>
           </div>
@@ -221,7 +221,7 @@
       <div class="meals" *ngIf="plan === 3">
         <div class="main-meals">
           <ul>
-            <li class="main"><span>the</span> <span class="color"> main </span> <span>meals</span>
+            <li class="main mb-2"><span>the</span> <span class="color"> main </span> <span>meals</span>
               <div class="timer">
                 <span>-</span>
                 <span>1</span>
@@ -229,8 +229,8 @@
 
               </div>
             </li>
-            <li class="lunch">Lunch + Dinner</li>
-            <li>Protein
+            <li class="lunch mb-2">Lunch + Dinner</li>
+            <li class="mb-2">Protein
               <div class="timer">
                 <span>-</span>
                 <span>100</span>
@@ -239,7 +239,7 @@
               </div>
             </li>
 
-            <li>Carb
+            <li class="mb-2">Carb
               <div class="timer carb">
                 <span>-</span>
                 <span>50</span>
@@ -252,8 +252,8 @@
         </div>
         <div class="add-snack main-meals">
           <ul>
-            <li class="snack">Add <span>Snacks</span> </li>
-            <li>1- Salads
+            <li class="snack mb-2">Add <span>Snacks</span> </li>
+            <li class="mb-2">1- Salads
               <div class="timer">
                 <span>-</span>
                 <span>1</span>
@@ -262,7 +262,7 @@
               </div>
             </li>
 
-            <li>2- Salads
+            <li class="mb-2">2- Salads
               <div class="timer">
                 <span>-</span>
                 <span>1</span>
@@ -271,7 +271,7 @@
               </div>
             </li>
 
-            <li>3- Salads
+            <li class="mb-2">3- Salads
               <div class="timer">
                 <span>-</span>
                 <span>1</span>
@@ -280,7 +280,7 @@
               </div>
             </li>
 
-            <li>4- Salads
+            <li class="mb-2">4- Salads
               <div class="timer">
                 <span>-</span>
                 <span>1</span>
@@ -295,33 +295,146 @@
       </div>
       <div class="add-breakfast" *ngIf="plan === 3">
         <h1>ADD <span>BREAKFAST</span></h1>
-        <div class="form-group row check-box">
-          <div class="form-check col-lg-4 col-12 margin-auto">
-            <input class="form-check-input check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label check-label" for="gridCheck">Varied Breakfast</label>
-          </div>
+        <div class="container-fluid">
+          <div class="form-group row check-box">
+            <div class="form-check col-lg-4 col-12 margin-auto">
+              <input class="form-check-input check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label check-label" for="gridCheck">Varied Breakfast</label>
+            </div>
 
-          <div class=" col-lg-8 col-12 ">
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Write here..">
+            <div class=" col-lg-8 col-12 ">
+              <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Write here..">
+            </div>
+          </div>
+          <div class="form-group row check-box mb-15">
+            <div class="form-check col-lg-4 col-12 margin-auto ">
+              <input class="form-check-input check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label check-label" for="gridCheck">Specialties Breakfast</label>
+            </div>
+
+            <div class=" col-lg-8 col-12 ">
+              <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Write here..">
+            </div>
           </div>
         </div>
-        <div class="form-group row check-box mb-15">
-          <div class="form-check col-lg-4 col-12 margin-auto ">
-            <input class="form-check-input check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label check-label" for="gridCheck">Specialties Breakfast</label>
-          </div>
+      </div>
 
-          <div class=" col-lg-8 col-12 ">
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Write here..">
+
+      <!-- wight loss button -->
+      <div class="weightloss-section" *ngIf="plan === 1">
+        <div class="loss-plan">
+          <div class="row">
+            <div class="col-lg-6 col-12  color-up">
+              <span>01</span>
+              <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
+
+            </div>
+
+
+
+            <div class="col-lg-3 col-12 Bodybuilding normal">
+              <h1>02</h1>
+              <button class="btn btn-lg" (click)="plan = 2">Bodybuilding</button>
+              <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+
+              </p>
+            </div>
+
+            <div class="col-lg-3 col-12  normal plan-program" [class.xyz]="plan === 3">
+              <h1>03</h1>
+              <button class="btn btn-lg" (click)="plan = 3">Plan your Program</button>
+              <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> </p>
+            </div>
+          </div>
+        </div>
+        <div class="order">
+          <h1>3 Meals + 2 Snackes</h1>
+        </div>
+      </div>
+
+      <!-- bodybulding button -->
+      <div class="bodybilding-section" *ngIf="plan === 2">
+        <div class="bodybilding-plan">
+          <div class="row">
+            <div class="col-lg-3 col-12 normal ">
+              <h1>01</h1>
+              <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
+              <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+
+              </p>
+            </div>
+
+
+
+            <div class="col-lg-6 col-12 Bodybuilding color-up">
+              <span>02</span>
+              <button class="btn btn-lg" (click)="plan = 2">Bodybuilding</button>
+
+            </div>
+
+            <div class="col-lg-3 col-12  normal plan-program" [class.xyz]="plan === 3">
+              <h1>03</h1>
+              <button class="btn btn-lg" (click)="plan = 3">Plan your Program</button>
+              <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> </p>
+            </div>
+          </div>
+        </div>
+        <div class="level">
+          <div class="level-one option-level">
+            <i class="fa fa-circle-thin" aria-hidden="true"></i>
+            <h1>
+              LEVEL <span> ONE</span>
+            </h1>
+            <h2>4 Meals + 2 Snackes</h2>
+            <p>100 Gram Protein</p>
+            <div class="flex">
+              <span> Carbohydrate</span>
+              <div class="timer">
+                <span>-</span>
+                <span>50</span>
+                <span>+</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="level-tow option-level">
+            <i class="fa fa-circle-o" aria-hidden="true"></i>
+            <h1> LEVEL <span> two</span>
+            </h1>
+            <h2>4 Meals + 2 Snackes</h2>
+            <p>150 Gram Protein</p>
+            <div class="flex">
+              <span> Carbohydrate</span>
+              <div class="timer">
+                <span>-</span>
+                <span>50</span>
+                <span>+</span>
+              </div>
+            </div>
+          </div>
+          <div class="level-three option-level">
+            <i class="fa fa-circle-o" aria-hidden="true"></i>
+            <h1> LEVEL <span> three</span>
+            </h1>
+            <h2>4 Meals + 2 Snackes</h2>
+            <p>200 Gram Protein</p>
+            <div class="flex">
+              <span> Carbohydrate</span>
+              <div class="timer">
+                <span>-</span>
+                <span>50</span>
+                <span>+</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div *ngIf="plan === 1">
-        I am the first gorm
-      </div>
-      <div *ngIf="plan === 2">
-        ia m the second form
-      </div>
+
+      <button class="btn btn-lg Continue">Continue</button>
+
+
+
+
     </div>
   </div>
 </div>
@@ -406,9 +519,9 @@
       <h1>Congratulations!</h1>
       <h2>You have successfully <br>
         completed your registration!</h2>
-        <p>By believing in yourself and committing to <br>
-           the registration, you will reach your goal.</p>
-    
+      <p>By believing in yourself and committing to <br>
+        the registration, you will reach your goal.</p>
+
       <button class="btn btn-lg Continue">DONE!</button>
 
 
