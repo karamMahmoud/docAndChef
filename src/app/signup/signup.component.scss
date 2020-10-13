@@ -1,3 +1,779 @@
-.main{
-  height: 30vw;
+// start sceion-one
+.info-section{
+  padding: 50px 0px;
+
+  background-image: url("assets/img/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .logo{
+    max-width: 150px;
+    margin: auto;
+    img{
+      width: 100%;
+    }
+  }
+  .personal-info{
+    width: 50%;
+    padding: 30px ;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    .parent-one {
+      width: 50%;
+      background-color: #e6e8d9;
+      bottom: 24px;
+      height: 6px;
+      margin: auto;
+      position: relative;
+      margin-top: 20px;
+      hr{
+        border: 3px solid #EFC862;
+        border-radius: 4px;
+        width: 10%;
+        position: absolute;
+        left: 0px;
+        margin: auto;
+      }
+  }
+    .title{
+      margin: 20px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+h1{
+font-size: 20px;
+margin: auto;
 }
+    }
+    .formula{
+      padding: 20px 30px;
+      button{
+        color: #fff;
+        background-color: #EFC862;
+        padding: 10px 70px;
+        margin-top: 30px;
+        box-shadow: none;
+
+      }
+      @media only screen and (max-width: 767px) {
+        button {
+             padding: 10px;
+        }
+      }
+    }
+    .font-15{
+      font-size: 15px;
+    }
+    .border-ridus{
+      border-radius: 10px;
+    }
+  }
+
+}
+
+// end sceion-one
+
+
+
+
+
+
+
+
+// start sceion-tow
+
+.info-section{
+  padding: 50px 0px;
+
+  background-image: url("assets/img/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .logo{
+    max-width: 150px;
+    margin: auto;
+    img{
+      width: 100%;
+    }
+  }
+  .personal-info{
+    width: 50%;
+    padding: 30px ;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    .parent-tow {
+      width: 50%;
+      background-color: #e6e8d9;
+      bottom: 24px;
+      height: 6px;
+      margin: auto;
+      position: relative;
+      margin-top: 20px;
+      hr{
+        border: 3px solid #EFC862;
+        border-radius: 4px;
+        width: 20%;
+        position: absolute;
+        left: 0px;
+        margin: auto;
+      }
+  }
+    .title{
+      margin: 20px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+h1{
+font-size: 20px;
+margin: auto;
+}
+    }
+    .formula{
+      padding: 20px 30px;
+      .margin-auto{
+        margin: auto;
+      }
+      @media only screen and (max-width: 767px) {
+        label {
+            text-align: left;
+        }
+      }
+      button{
+        color: #fff;
+        background-color: #EFC862;
+        padding: 10px 70px;
+        margin-top: 30px;
+        box-shadow: none;
+      }
+      @media only screen and (max-width: 767px) {
+        button {
+             padding: 10px;
+        }
+      }
+    }
+    .font-15{
+      font-size: 15px;
+    }
+    .border-ridus{
+      border-radius: 10px;
+    }
+  }
+
+}
+
+// end sceion-tow
+
+
+
+
+
+// start sceion-three
+.info-section{
+  padding: 50px 0px;
+
+  background-image: url("assets/img/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .logo{
+    max-width: 150px;
+    margin: auto;
+    img{
+      width: 100%;
+    }
+  }
+  .personal-info{
+    width: 50%;
+    padding: 30px ;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    .parent-three {
+      width: 50%;
+      background-color: #e6e8d9;
+      bottom: 24px;
+      height: 6px;
+      margin: auto;
+      position: relative;
+      margin-top: 20px;
+      hr{
+        border: 3px solid #EFC862;
+        border-radius: 4px;
+        width: 40%;
+        position: absolute;
+        left: 0px;
+        margin: auto;
+      }
+  }
+    .title{
+      margin: 20px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+h1{
+font-size: 20px;
+margin: auto;
+}
+    }
+    .type-person{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      button{
+        color: #fff;
+        background-color: #EFC862;
+        padding: 8px 60px;
+        box-shadow: none;
+        font-size: 7px;
+        font-weight: bold;
+      }
+      .Female{
+        background-color: #fff;
+        border-color: #ecf5fe;
+        color: black;
+      }
+    }
+    .formula{
+      padding: 20px 30px;
+      .margin-auto{
+        margin: auto;
+      }
+      @media only screen and (max-width: 991px) {
+        label {
+            text-align: left;
+        }
+      }
+      ul{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        .normal{
+          font-size: 20px;
+          color: black;
+          display: flex;
+          align-items: center;
+          span{
+            font-size: 10px;
+          }
+        }
+        .lighter{
+          font-size: 15px;
+          color: #cdc8c8;
+        }
+        .lightest{
+          font-size: 10px;
+          color: #f0ecec;
+        }
+      }
+      button{
+        color: #fff;
+        background-color: #EFC862;
+        padding: 10px 70px;
+        margin-top: 30px;
+        box-shadow: none;
+      }
+      @media only screen and (max-width: 767px) {
+        button {
+             padding: 10px;
+        }
+      }
+    }
+    .font-15{
+      font-size: 15px;
+    }
+    .border-ridus{
+      border-radius: 10px;
+    }
+  }
+
+}
+
+// end sceion-three
+
+
+
+
+// start sceion-four
+
+.choose-section{
+  padding: 50px 0px;
+
+  background-image: url("assets/img/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .logo{
+    max-width: 150px;
+    margin: auto;
+    img{
+      width: 100%;
+    }
+  }
+  .personal-info{
+    width: 50%;
+    padding: 30px ;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    .parent-tow {
+      width: 50%;
+      background-color: #e6e8d9;
+      bottom: 24px;
+      height: 6px;
+      margin: auto;
+      position: relative;
+      margin-top: 20px;
+      hr{
+        border: 3px solid #EFC862;
+        border-radius: 4px;
+        width: 60%;
+        position: absolute;
+        left: 0px;
+        margin: auto;
+      }
+  }
+    .title{
+      margin: 20px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+h1{
+font-size: 20px;
+margin: auto;
+}
+    }
+
+    .plan{
+      .Weight-loss{
+        h1{
+          font-weight: bold;
+          font-size: 35px;
+        }
+        button{
+          border: 1px solid black;
+          border-radius: 30px;
+          font-size: 13px;
+          box-shadow: none;
+        }
+      
+        p{
+          font-size: 12px;
+          margin-top: 5px;
+        }
+      }
+
+      .Bodybuilding{
+        h1{
+          font-weight: bold;
+          font-size: 35px;
+        }
+        button{
+          border: 1px solid black;
+          border-radius: 30px;
+          font-size: 13px;
+          box-shadow: none;
+        }
+        
+        p{
+          font-size: 12px;
+          margin-top: 5px;
+        }
+      }
+      .plan-program{
+        span{
+          font-weight: bold;
+          font-size: 40px;
+          display: inline-block;
+          margin-top: -8px;
+        }
+        button{
+          font-size: 18px;
+          border-radius: 30px;
+          background-color: #EFC862;
+          color: #fff;
+          margin-top: -17px;
+          box-shadow: none;
+        }
+        @media only screen and (max-width: 767px) {
+          button {
+    margin: 0px;      }
+        }
+      }
+    }
+   
+  .meals{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+    }
+    @media only screen and (max-width: 991px) {
+      .meals {
+          flex-direction: column; 
+          border: none;
+             }
+            }
+    .main-meals{
+    border-right: 1px solid black;
+    padding: 10px;
+    ul{
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      li{
+        display: flex;
+        margin-bottom: 30px;
+        .timer{
+          margin: auto;
+          border: 1px solid black;
+          border-radius: 30px;
+          font-size: 15px;
+          span{
+            padding: 8px;
+          }
+        }
+     
+      }
+      @media only screen and (max-width: 767px) {
+        li {
+            flex-direction: column; 
+               }
+              }
+      .main{
+        font-size: 20px;
+        text-transform: uppercase;
+        span{
+          padding-right: 5px;
+        }
+        .color{
+          color: #EFC862;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        .main {
+font-size: 16px; 
+            }}
+      .lunch{
+        font-size:20px ;
+      }
+    }
+    }
+    @media only screen and (max-width: 991px) {
+      .main-meals {
+border: none;      }
+    }
+    
+
+    .add-snack{
+      border: none;
+      width: 100%;
+    }
+    .snack{
+      font-size: 20px;
+      span{
+        color: #EFC862;
+        padding-left: 5px;
+
+      }
+    }
+
+  .add-breakfast{
+    text-align: left;
+    margin-top: 10px;
+    h1{
+      font-size: 15px;
+      span{
+        color: #EFC862;
+        padding-left: 5px;
+      }
+    }
+    .check-box{
+      .margin-auto{
+        margin: auto ;
+       .check-input{
+        margin-top: 7px;
+       } 
+       label{
+         font-size: 14px;
+       }
+      }
+    }
+  }
+  
+  }
+
+
+}
+
+// end sceion-four
+
+
+
+// start sceion-five
+.payment-section{
+  padding: 50px 0px;
+
+  background-image: url("assets/img/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .logo{
+    max-width: 150px;
+    margin: auto;
+    img{
+      width: 100%;
+    }
+  }
+  .personal-info{
+    width: 50%;
+    padding: 30px ;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    .parent-three {
+      width: 50%;
+      background-color: #e6e8d9;
+      bottom: 24px;
+      height: 6px;
+      margin: auto;
+      position: relative;
+      margin-top: 20px;
+      hr{
+        border: 3px solid #EFC862;
+        border-radius: 4px;
+        width: 80%;
+        position: absolute;
+        left: 0px;
+        margin: auto;
+      }
+  }
+    .title{
+      margin: 20px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+h1{
+font-size: 15px;
+margin: auto;
+}
+    }
+    .type{
+
+      button{
+        background-color: #EFC862;
+    padding: 10px 30px;
+    box-shadow: none;
+    font-size: 15px;
+    border-radius: 20px;
+    background-color: #EFC862;
+    border-color: #EFC862;
+    color: black;
+      }
+     
+    }
+    .formula-section{
+      padding: 20px 30px;
+      .margin-auto{
+        margin: auto;
+      }
+      label {
+        font-size: 10px;
+    }
+    .label-check{
+      font-size: 13px;
+
+    }
+      @media only screen and (max-width: 991px) {
+        .label-check {
+            font-size: 10px;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        .label-check {
+            font-size: 7px;
+        }
+      }
+    
+      button{
+        color: #fff;
+        background-color: #EFC862;
+        padding: 10px 70px;
+        margin-top: 30px;
+        box-shadow: none;
+      }
+      @media only screen and (max-width: 767px) {
+        button {
+             padding: 10px;
+        }
+      }
+      .check{
+        .check-input{
+          margin-top: 7px;
+        }
+       .check-label{
+         font-size: 13px;
+       } 
+       .margin-auto{
+        p{
+          margin: 0px;
+          font-size: 13px;
+        }
+       }
+    
+      }
+      .Continue{
+
+        color: #fff;
+        background-color: #EFC862;
+        padding: 5px 70px;
+        margin-top: 30px;
+        box-shadow: none;
+        font-size: 15px;
+      }
+      @media only screen and (max-width: 767px) {
+        .Continue {
+          padding: 5px 30px;
+        }
+      }
+    }
+    .font-15{
+      font-size: 15px;
+    }
+    .border-ridus{
+      border-radius: 10px;
+      background-color: #f5f9fc;
+    border: none;
+    font-size: 13px;
+    }
+    .font{
+      font-size: 13px;
+    }
+  }
+
+}
+
+// end sceion-five
+
+
+// start sceion-six
+.Congratulations{
+  padding: 50px 0px;
+
+  background-image: url("assets/img/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  .personal-info{
+    width: 50%;
+    padding: 30px ;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    .parent-three {
+      width: 50%;
+      background-color: #e6e8d9;
+      bottom: 24px;
+      height: 6px;
+      margin: auto;
+      position: relative;
+      margin-top: 20px;
+      hr{
+        border: 3px solid #EFC862;
+        border-radius: 4px;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        margin: auto;
+      }
+  }
+  h1{
+    color: #EFC862;
+    font-size: 30px;
+    margin: 40px 0px;
+
+  }
+  @media only screen and (max-width: 767px) {
+    h1 {
+      font-size: 20px;
+    }
+  }
+  h2{
+    color: black;
+    font-size: 20px;
+    margin: 40px 0px 130px;
+
+  }
+  @media only screen and (max-width: 767px) {
+    h2 {
+      font-size: 10px;
+    }
+  }
+  p{
+    color: #9EA1A7;
+    font-size: 15px;
+    margin: 0px;
+
+  }
+  @media only screen and (max-width: 767px) {
+    p {
+      font-size: 10px;
+    }
+  }
+  @media only screen and (max-width: 540px) {
+    p {
+      font-size: 6px;
+    }
+  }
+  
+  button{
+    background-color: #EFC862;
+    padding: 6px 70px;
+    box-shadow: none;
+    font-size: 15px;
+    border-radius: 20px;
+    background-color: #EFC862;
+    border-color: #EFC862;
+    color: #FFF;
+   margin-top: 10px;
+  }
+  @media only screen and (max-width: 767px) {
+    button {
+      padding: 6px 40px;
+      
+    }
+  }
+  }
+
+}
+
+
+.xyz{
+  button{
+    color: red !important;
+  }
+}
+
+// end sceion-six
+
+
+
+
