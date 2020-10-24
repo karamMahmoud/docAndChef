@@ -21,7 +21,7 @@
     position: relative;
     text-align: center;
     margin: auto;
-    min-width: 350px;
+    min-width: 300px;
     .parent-one {
       width: 50%;
       background-color: #e6e8d9;
@@ -51,19 +51,28 @@ margin: auto;
 }
     }
     .formula{
-      padding: 20px 30px;
-      button{
-        color: #fff;
-        background-color: #EFC862;
-        padding: 10px 70px;
-        margin-top: 30px;
-        box-shadow: none;
-
+      padding: 20px 0px ;
+      width: 95%;
+      margin: auto;
+    
+    }
+    @media only screen and (max-width: 767px) {
+      .formula {
+        width: 100%;
       }
-      @media only screen and (max-width: 767px) {
-        button {
-             padding: 10px;
-        }
+    }
+    button{
+      color: #fff;
+      background-color: #EFC862;
+      padding: 10px 70px;
+      margin-top: 30px;
+      box-shadow: none;
+
+    }
+    @media only screen and (max-width: 767px) {
+      button {
+        padding: 10px 15px;
+        font-size: 18px;
       }
     }
     .font-15{
@@ -71,6 +80,8 @@ margin: auto;
     }
     .border-ridus{
       border-radius: 10px;
+      box-shadow: none;
+      border: 1px solid #ced4da;
     }
   }
 
@@ -109,7 +120,7 @@ margin: auto;
     position: relative;
     text-align: center;
     margin: auto;
-    min-width: 350px;
+    min-width: 300px;
     .parent-tow {
       width: 50%;
       background-color: #e6e8d9;
@@ -138,8 +149,10 @@ font-size: 20px;
 margin: auto;
 }
     }
-    .formula{
-      padding: 20px 30px;
+    .formuls{
+      padding: 20px ;
+      width: 80%;
+      margin: auto;
       .margin-auto{
         margin: auto;
       }
@@ -148,17 +161,25 @@ margin: auto;
             text-align: left;
         }
       }
-      button{
-        color: #fff;
-        background-color: #EFC862;
-        padding: 10px 70px;
-        margin-top: 30px;
-        box-shadow: none;
+   
+    }
+    @media only screen and (max-width: 767px) {
+      .formuls {
+        width: 100%;
       }
-      @media only screen and (max-width: 767px) {
-        button {
-             padding: 10px;
-        }
+    }
+    button{
+      color: #fff;
+      background-color: #EFC862;
+      padding: 10px 70px;
+      margin-top: 30px;
+      box-shadow: none;
+
+    }
+    @media only screen and (max-width: 767px) {
+      button {
+        padding: 10px 15px;
+        font-size: 18px;
       }
     }
     .font-15{
@@ -166,7 +187,8 @@ margin: auto;
     }
     .border-ridus{
       border-radius: 10px;
-    }
+      box-shadow: none;
+      border: 1px solid #ced4da;    }
   }
 
 }
@@ -200,7 +222,7 @@ margin: auto;
     position: relative;
     text-align: center;
     margin: auto;
-    min-width: 350;  
+    min-width: 300;  
   .parent-three {
       width: 50%;
       background-color: #e6e8d9;
@@ -229,26 +251,53 @@ font-size: 20px;
 margin: auto;
 }
     }
-    .type-person{
+    .center-align{
+      width: 200px;
+      height: 50px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      button{
-        color: #fff;
-        background-color: #EFC862;
-        padding: 8px 60px;
-        box-shadow: none;
-        font-size: 7px;
-        font-weight: bold;
-      }
-      .Female{
-        background-color: #fff;
-        border-color: #ecf5fe;
-        color: black;
-      }
+      margin: auto;
     }
-    .formula{
-      padding: 20px 30px;
+    
+    input[type="radio"]{
+      visibility: hidden;
+      height: 0;
+      width: 0;
+    }
+    
+    .type {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+      background-color: #fff;
+      color: black;
+      padding: 5px 10px;
+      border-radius: 3px;
+      
+    }
+    input[type="radio"]:checked + label{
+      background-color: #EFC862;
+      color: #fff;
+    }
+    
+    
+    
+    .formulas{
+      padding: 20px 0px;
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: auto;
+      .justify{
+        width: 70%;
+      }
+      @media only screen and (max-width: 767px) {
+        .justify{
+          width: 80%;
+        }
+      }
+     
       .margin-auto{
         margin: auto;
       }
@@ -261,6 +310,7 @@ margin: auto;
         list-style: none;
         margin: 0px;
         padding: 0px;
+        width: 20%;
         .normal{
           font-size: 20px;
           color: black;
@@ -279,17 +329,23 @@ margin: auto;
           color: #f0ecec;
         }
       }
-      button{
-        color: #fff;
-        background-color: #EFC862;
-        padding: 10px 70px;
-        margin-top: 30px;
-        box-shadow: none;
+  
+    }
+    @media only screen and (max-width: 767px) {
+      .formulas {
+        width: 100%;
       }
-      @media only screen and (max-width: 767px) {
-        button {
-             padding: 10px;
-        }
+    }
+    button{
+      color: #fff;
+      background-color: #EFC862;
+      padding: 10px 70px;
+      margin-top: 30px;
+      box-shadow: none;
+    }
+    @media only screen and (max-width: 767px) {
+      button {
+           padding: 10px;
       }
     }
     .font-15{
@@ -297,7 +353,8 @@ margin: auto;
     }
     .border-ridus{
       border-radius: 10px;
-    }
+      box-shadow: none;
+      border: 1px solid #ced4da;    }
   }
 
 }
@@ -331,7 +388,7 @@ margin: auto;
     position: relative;
     text-align: center;
     margin: auto;
-    min-width: 350px;
+    min-width: 300px;
     .Continue{
       color: #fff;
       background-color: #EFC862;
@@ -719,7 +776,7 @@ flex-direction: column;
     position: relative;
     text-align: center;
     margin: auto;
-    min-width: 350px;
+    min-width: 300px;
     .parent-three {
       width: 50%;
       background-color: #e6e8d9;
@@ -758,7 +815,7 @@ margin: auto;
     border-radius: 20px;
     background-color: #EFC862;
     border-color: #EFC862;
-    color: black;
+    color: #fff;
       }
      
     }
@@ -835,6 +892,9 @@ margin: auto;
       background-color: #f5f9fc;
     border: none;
     font-size: 13px;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+    
     }
     .font{
       font-size: 13px;
@@ -863,7 +923,7 @@ margin: auto;
     position: relative;
     text-align: center;
     margin: auto;
-    min-width: 350px;
+    min-width: 300px;
     .parent-three {
       width: 50%;
       background-color: #e6e8d9;
@@ -942,13 +1002,113 @@ margin: auto;
 }
 
 
-.xyz{
-  button{
-    color: red !important;
+// end sceion-six
+
+
+
+
+// start category-section
+.category-section{
+  background-image: url("assets/img/back-ground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50px;
+  .logos{
+    max-width: 200px;
+    img{
+      width: 100%;
+    }
   }
+  .center-section{
+    width: 80%;
+    margin: auto;
+    margin-top: -40px;
+    .heading{
+      background-color: rgb(51, 50, 50);
+      border-radius: 30px;
+      padding: 25px 35px ;
+      ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        li{
+          color: #fff;
+        }
+      }
+     
+    }
+    @media only screen and (max-width: 767px) {
+      .heading {
+        max-width:130px ;
+        margin: auto;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      ul {
+        flex-direction: column;
+        @media only screen and (max-width: 767px) {
+          li {
+            padding: 20px 0px;
+          }
+        }
+      }
+    }
+    .category{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      .meals-category{
+        padding: 80px 30px;
+        color: #fff;
+        backdrop-filter: blur(10px);
+        border-radius: 70px;
+        width: 40%;
+         h1{
+          font-size: 40px;
+          font-weight: bold;
+        }
+        @media only screen and (max-width: 767px) {
+          h1 {
+            font-size: 25px;
+          }
+        }
+        
+      
+        p{
+          font-size: 11px;
+        }
+      }
+      
+      @media only screen and (max-width: 991px) {
+        .meals-category {
+          width: 60%;
+          margin: auto;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        .meals-category {
+          width: 80%;
+        }
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      .category {
+        flex-direction: column;
+      }
+    }
+
+  }
+
+
 }
 
-// end sceion-six
+
+
+// end category-sectio
 
 
 

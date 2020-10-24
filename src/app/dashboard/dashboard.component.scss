@@ -1,4 +1,4 @@
-.navbar{
+.header{
   position: absolute;
   width: 100%;
   display: flex;
@@ -12,6 +12,8 @@ width: 100%;
     }
   }
   .sign-chef{
+    margin-top: 12px;
+    margin-right: 5px;
     button{
       outline: none;
       z-index: 1;
@@ -35,6 +37,16 @@ width: 100%;
     .index{
       z-index: 2;
     }
+    @media only screen and (max-width: 767px) {
+      button {
+        padding: 10px 13px;
+        border-radius: 15px;
+      }
+      .mrg-left{
+       margin-left: -14px;
+      } 
+    }
+    
 
   }
 }
@@ -70,6 +82,11 @@ width: 100%;
     h1{
 font-size: 60px;
 font-weight: bold;
+    }
+    @media only screen and (max-width: 767px) {
+      h1{
+        font-size: 29px;
+      }
     }
     .underline{
       text-decoration: underline;
@@ -184,8 +201,20 @@ img{
       color: darkorange;
     }
   }
+  @media only  screen and (max-width: 767px) {
+    h1{
+      font-size: 30px;
+
+    }
+  }
   p{
     font-size: 13px;
+  }
+  @media only  screen and (max-width: 767px) {
+    p{
+      font-size: 11px;
+
+    }
   }
 
   .offer-type{
@@ -249,12 +278,20 @@ img{
   .photo{
     max-width: 250px;
     margin: auto;
+ 
     img{
       width: 100%;
     }
   }
+  @media only screen and (max-width: 992px) {
+    .photo{
+      margin: 0px;
+      max-width: 293px;
+    }
+  }
   .healthy-life{
     text-align: left;
+    padding: 20px 0px;
     h1{
       font-size: 15px;
       margin: 0px;
