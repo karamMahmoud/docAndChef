@@ -11,6 +11,8 @@ import { AuthGuard } from 'app/helper/guard';
 import { NotAuthGuard } from 'app/helper/auth-guard';
 import { PermissionsGuard } from './helper/permisssion-guard'
 import { SignupComponent } from './signup/signup.component';
+// import { CategoryComponent } from './category/category.component';
+import { HealthyComponent } from './healthy/healthy.component';
 
 const routes: Routes =[
     { path: '',redirectTo: 'dashboard', pathMatch: 'full' },
@@ -19,6 +21,8 @@ const routes: Routes =[
       loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
     },
     { path: 'signup',  component: SignupComponent},
+    // { path: 'category',  component: CategoryComponent},
+    { path: 'healthyfood',  component: HealthyComponent},
 
     {
       path: 'user-profile', 

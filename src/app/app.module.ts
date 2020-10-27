@@ -16,6 +16,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { HealthyComponent } from './healthy/healthy.component';
 
 
 
@@ -65,6 +66,7 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
 	ChangePasswordComponent,
   ResetPasswordComponent,
+  HealthyComponent,
   ForgetPasswordComponent,
   SignupComponent,
   LoginComponent
