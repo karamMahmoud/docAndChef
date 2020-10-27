@@ -914,6 +914,13 @@ margin: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  .logos{
+    max-width: 250px;
+    margin: auto;
+    img{
+      width: 100%;
+    }
+  }
  
   .personal-info{
     width: 65%;
@@ -933,7 +940,7 @@ margin: auto;
       position: relative;
       margin-top: 20px;
       hr{
-        border: 3px solid #EFC862;
+        border: 3px solid #83489A;
         border-radius: 4px;
         width: 100%;
         position: absolute;
@@ -942,7 +949,7 @@ margin: auto;
       }
   }
   h1{
-    color: #EFC862;
+    color: #83489A;
     font-size: 30px;
     margin: 40px 0px;
 
@@ -953,7 +960,7 @@ margin: auto;
     }
   }
   h2{
-    color: black;
+    color: #233249;
     font-size: 20px;
     margin: 40px 0px 130px;
 
@@ -981,13 +988,12 @@ margin: auto;
   }
   
   button{
-    background-color: #EFC862;
+    background-color: #83489A;
     padding: 6px 70px;
     box-shadow: none;
     font-size: 15px;
     border-radius: 20px;
-    background-color: #EFC862;
-    border-color: #EFC862;
+    border-color: #83489A;
     color: #FFF;
    margin-top: 10px;
   }
@@ -1109,6 +1115,209 @@ margin: auto;
 
 
 // end category-sectio
+
+
+
+// start healthfood-section
+.healthyfood-section{
+  background-image: url("assets/img/img-opacity.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 30px;
+  .header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: -45px;
+    .img-logo{
+      max-width: 200px;
+      margin: auto;
+      img{
+  width: 100%;
+      }
+    }
+    @media only screen and (max-width:767px)  {
+      .img-logo{
+        max-width: 100px;
+      }
+      
+    }
+    .sign-button{
+      margin-top: 12px;
+      margin-right: 5px;
+      button{
+        outline: none;
+        z-index: 1;
+        background: transparent;
+        color: #748A9D;
+        border: none;
+        padding: 10px 30px;
+      border-radius: 30px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px); 
+      background-color: #fff;
+      box-shadow: none;
+      transition: 0.2s ease;
+       
+      }
+      .mrg-left{
+        margin-left: -30px;
+        background-color: #e6e3e4;
+        
+      }
+      .index{
+        z-index: 2;
+      }
+      @media only screen and (max-width: 767px) {
+        button {
+          padding: 10px 13px;
+          border-radius: 15px;
+        }
+        .mrg-left{
+         margin-left: -14px;
+        } 
+      }
+      
+  
+    }
+  }
+  .circle{
+    .dot {
+      height: 80px;
+      width: 80px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid #748A9D
+    
+  }
+}
+
+  .details-section{
+    .info{
+      h1{
+        color: #83489A;
+        font-size: 20px;
+      }
+      .data{
+        background-color: #F5F5F5;
+        padding: 12px 16px;
+        label{
+          color: #000000;
+          font-size: 13px;
+          margin: 0px;
+        }
+        .border-ridus{
+          border: none;
+          color: #ACACAC;
+          background-color: #F5F5F5;
+          box-shadow: none;
+          font-size: 13px;
+          height: 25px;
+          padding: 0px;
+        }
+        i{
+          text-align: right;
+          display: block;
+          margin-top: -18px;
+          font-size: 17px;
+          color: #83489A;
+          font-weight: lighter;
+        }
+      }
+      .name{
+        .full-name{
+          border: none;
+          color: #A6BCD0;
+          background-color: #F5F5F5;
+          box-shadow: none;
+          font-size: 13px;
+          padding: 20px 10px;
+          border-radius: 10px;
+        }
+      }
+      .addres-names{
+        background-color: #F2E3F8;
+        h1{
+          font-size: 14px;
+          color: #000;
+          padding: 15px 20px;
+        }
+        hr{
+          border-top: 1px solid #fff;
+          margin: 0px;
+        }
+        .text{
+          max-height: 250px;
+          overflow-y: scroll;
+          color: #ACACAC;
+          padding:15px 20px ;
+          p{
+            margin-bottom: 5px;
+            font-size: 11px;
+          }
+        }
+      }
+
+    }
+    .plan{
+      h1{
+        color: #83489A;
+        font-size: 20px;
+      }
+      .photo{
+        max-width: 350px;
+        img{
+          width: 100%;
+        }
+      }
+      button{
+        box-shadow: none;
+        background-color: #F2E3F8;
+        color: #686868;
+        width: 100%;
+        padding: 15px 25px;
+        font-size: 13px;
+        i{
+          color: #7BED8D;
+          padding: 3px;
+          border: 1px solid #7BED8D;
+          border-radius: 50%;
+          font-size: 10px;
+          margin-right: 20px;
+        }
+      }
+    }
+    .nutration-info{
+      h1{
+        color: #83489A;
+        font-size: 15px;
+      }
+      ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        li{
+          color: #748A9D;
+          font-size: 13px;
+          display: flex;
+          justify-content: space-between;
+          span{
+            color: #A6BCD0;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+
+
+
+// end healthfood-section
 
 
 
