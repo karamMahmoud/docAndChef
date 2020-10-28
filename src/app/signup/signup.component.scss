@@ -439,7 +439,7 @@ margin: auto;
         }
         
         p{
-          font-size: 12px;
+          font-size: 16px;
           margin-top: 5px;
         }
       }
@@ -1115,6 +1115,197 @@ margin: auto;
 
 
 // end category-sectio
+
+
+.mixed-berry{
+  .margin-zero{
+    margin: 0px;
+  }
+  .data-part{
+    padding: 30px 70px;
+    .img-logo{
+      max-width: 200px;
+      img{
+    width: 100%;
+      }
+    }
+    .mixed-title{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      h1{
+        color: #748A9D;
+        font-size: 19px;
+        margin: 0px;
+      }
+      .easy{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #F0F4F8;
+        padding: 5px 10px;
+         p{
+          color: #748A9D;
+          font-size: 12px;
+          padding: 0px 10px;
+          margin: 0px;
+          i{
+            padding-right: 5px;
+          }
+           }
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .mixed-title{
+        flex-direction: column;
+      }
+    }
+    .Ingredients{
+      h1{
+        font-size: 18px;
+        color: #83489A;
+      }
+      .label {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 13px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        
+      }
+      
+      /* Hide the browser's default checkbox */
+      .label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        
+      border-radius: 15px;
+      }
+      
+      /* On mouse-over, add a grey background color */
+      .label:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+      
+      /* When the checkbox is checked, add a blue background */
+      .label input:checked ~ .checkmark {
+        background-color: #4CAF50;
+      }
+      
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      
+      /* Show the checkmark when checked */
+      .label input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+      /* Style the checkmark/indicator */
+      .label .checkmark:after {
+        left: 6px;
+        top: 4px;
+        width: 8px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+    .Instructions{
+      h1{
+        font-size: 18px;
+        color: #83489A;
+      }
+      p{
+        color: #748A9D;
+        font-size: 12px;
+      }
+    }
+    button{
+      display: inline;
+      margin-right: 15px;
+      border-radius: 15px;
+      font-size: 15px;
+      box-shadow: none;
+      i{
+        padding-right: 7px;
+      }
+    }
+    .shar{
+      background-color: #F0F4F8;
+      color:#748A9D ;
+      padding: 10px 25px;
+    }
+    .add{
+      background-color: #83489A;
+      color: #fff;
+      padding: 10px 50px;
+    }
+    .nutration-info{
+      h1{
+        font-size: 17px;
+        color: #83489A;
+      }
+      ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        li{
+          color: #748A9D;
+          font-size: 13px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          span{
+            color: #A6BCD0;
+          }
+        }
+      }
+    }
+   
+  
+  }
+  @media only screen and (max-width: 767px) {
+    .data-part{
+      padding: 15px;
+    }
+  }
+  .img-part{
+    img{
+      width: 100%;
+    }
+  }
+
+
+ 
+}
+
+
 
 
 
