@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HealthyComponent implements OnInit {
   plan = 1;
+  toggle = 'account';
   constructor() { }
 
   ngOnInit() {

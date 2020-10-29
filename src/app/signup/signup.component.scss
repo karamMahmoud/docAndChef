@@ -1,3 +1,5 @@
+$primary:#83489A;
+;
 // start sceion-one
 .info-section{
   padding: 50px 0px;
@@ -31,7 +33,7 @@
       position: relative;
       margin-top: 20px;
       hr{
-        border: 3px solid #EFC862;
+        border: 3px solid $primary;
         border-radius: 4px;
         width: 10%;
         position: absolute;
@@ -63,7 +65,7 @@ margin: auto;
     }
     button{
       color: #fff;
-      background-color: #EFC862;
+      background-color: $primary;
       padding: 10px 70px;
       margin-top: 30px;
       box-shadow: none;
@@ -130,7 +132,7 @@ margin: auto;
       position: relative;
       margin-top: 20px;
       hr{
-        border: 3px solid #EFC862;
+        border: 3px solid $primary;
         border-radius: 4px;
         width: 20%;
         position: absolute;
@@ -170,7 +172,7 @@ margin: auto;
     }
     button{
       color: #fff;
-      background-color: #EFC862;
+      background-color: $primary;
       padding: 10px 70px;
       margin-top: 30px;
       box-shadow: none;
@@ -232,7 +234,7 @@ margin: auto;
       position: relative;
       margin-top: 20px;
       hr{
-        border: 3px solid #EFC862;
+        border: 3px solid $primary;
         border-radius: 4px;
         width: 40%;
         position: absolute;
@@ -277,7 +279,7 @@ margin: auto;
       
     }
     input[type="radio"]:checked + label{
-      background-color: #EFC862;
+      background-color: $primary;
       color: #fff;
     }
     
@@ -338,7 +340,7 @@ margin: auto;
     }
     button{
       color: #fff;
-      background-color: #EFC862;
+      background-color: $primary;
       padding: 10px 70px;
       margin-top: 30px;
       box-shadow: none;
@@ -391,7 +393,7 @@ margin: auto;
     min-width: 300px;
     .Continue{
       color: #fff;
-      background-color: #EFC862;
+      background-color: $primary;
       padding: 10px 70px;
       margin-top: 30px;
       box-shadow: none;
@@ -405,7 +407,7 @@ margin: auto;
       position: relative;
       margin-top: 20px;
       hr{
-        border: 3px solid #EFC862;
+        border: 3px solid $primary;
         border-radius: 4px;
         width: 60%;
         position: absolute;
@@ -453,7 +455,7 @@ margin: auto;
         button{
           font-size: 18px;
           border-radius: 30px;
-          background-color: #EFC862;
+          background-color: $primary;
           color: #fff;
           margin-top: -17px;
           box-shadow: none;
@@ -512,7 +514,7 @@ margin: auto;
           padding-right: 5px;
         }
         .color{
-          color: #EFC862;
+          color: $primary;
         }
       }
       @media only screen and (max-width: 767px) {
@@ -545,7 +547,7 @@ width: 100%;
     .snack{
       font-size: 20px;
       span{
-        color: #EFC862;
+        color: $primary;
         padding-left: 5px;
 
       }
@@ -557,7 +559,7 @@ width: 100%;
     h1{
       font-size: 15px;
       span{
-        color: #EFC862;
+        color: $primary;
         padding-left: 5px;
       }
     }
@@ -607,7 +609,7 @@ width: 100%;
         button{
           font-size: 18px;
           border-radius: 30px;
-          background-color: #EFC862;
+          background-color: $primary;
           color: #fff;
           margin-top: -17px;
           box-shadow: none;
@@ -668,7 +670,7 @@ width: 100%;
         button{
           font-size: 18px;
           border-radius: 30px;
-          background-color: #EFC862;
+          background-color: $primary;
           color: #fff;
           margin-top: -17px;
           box-shadow: none;
@@ -697,7 +699,7 @@ width: 100%;
        h1{
          font-size: 20px;
          span{
-           color:#EFC862 ;
+           color:$primary ;
            font-size: 20px;
 
          }
@@ -786,7 +788,7 @@ flex-direction: column;
       position: relative;
       margin-top: 20px;
       hr{
-        border: 3px solid #EFC862;
+        border: 3px solid $primary;
         border-radius: 4px;
         width: 80%;
         position: absolute;
@@ -808,13 +810,13 @@ margin: auto;
     .type{
 
       button{
-        background-color: #EFC862;
+        background-color: $primary;
     padding: 10px 30px;
     box-shadow: none;
     font-size: 15px;
     border-radius: 20px;
-    background-color: #EFC862;
-    border-color: #EFC862;
+    background-color: $primary;
+    border-color: $primary;
     color: #fff;
       }
      
@@ -844,7 +846,7 @@ margin: auto;
     
       button{
         color: #fff;
-        background-color: #EFC862;
+        background-color: $primary;
         padding: 10px 70px;
         margin-top: 30px;
         box-shadow: none;
@@ -872,7 +874,7 @@ margin: auto;
       .Continue{
 
         color: #fff;
-        background-color: #EFC862;
+        background-color: $primary;
         padding: 5px 70px;
         margin-top: 30px;
         box-shadow: none;
@@ -940,7 +942,7 @@ margin: auto;
       position: relative;
       margin-top: 20px;
       hr{
-        border: 3px solid #83489A;
+        border: 3px solid $primary;
         border-radius: 4px;
         width: 100%;
         position: absolute;
@@ -949,7 +951,7 @@ margin: auto;
       }
   }
   h1{
-    color: #83489A;
+    color: $primary;
     font-size: 30px;
     margin: 40px 0px;
 
@@ -988,12 +990,12 @@ margin: auto;
   }
   
   button{
-    background-color: #83489A;
+    background-color: $primary;
     padding: 6px 70px;
     box-shadow: none;
     font-size: 15px;
     border-radius: 20px;
-    border-color: #83489A;
+    border-color: $primary;
     color: #FFF;
    margin-top: 10px;
   }
@@ -1164,7 +1166,7 @@ margin: auto;
     .Ingredients{
       h1{
         font-size: 18px;
-        color: #83489A;
+        color: $primary;
       }
       .label {
         display: block;
@@ -1239,7 +1241,7 @@ margin: auto;
     .Instructions{
       h1{
         font-size: 18px;
-        color: #83489A;
+        color: $primary;
       }
       p{
         color: #748A9D;
@@ -1262,14 +1264,14 @@ margin: auto;
       padding: 10px 25px;
     }
     .add{
-      background-color: #83489A;
+      background-color: $primary;
       color: #fff;
       padding: 10px 50px;
     }
     .nutration-info{
       h1{
         font-size: 17px;
-        color: #83489A;
+        color: $primary;
       }
       ul{
         margin: 0px;

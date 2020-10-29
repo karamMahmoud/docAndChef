@@ -6,127 +6,262 @@
         <img src="assets/img/img.png" alt="">
       </div>
       <div class="btn-group sign-button">
-        <button class="btn btn-primary index" type="submit">Your Account</button>
-        <button class="btn btn-primary mrg-left " type="submit">Menu</button>
+        <button class="btn btn-primary index" (click)="toggle = 'account'" [class.focused]="toggle === 'account'">Your Account</button>
+        <button class="btn btn-primary mrg-left" (click)="toggle = 'menu'" [class.focused]="toggle === 'menu'">Menu</button>
       </div>
     </div>
     <!-- end navbar -->
-    <div class="circle mt-3">
-      <span class="dot"></span>
-    </div>
-    <div class="details-section mt-2">
-      <div class="row">
-        <div class="col-lg-4 col-12">
-          <div class="info">
-            <h1>Your Information</h1>
-            <div class="data mb-5">
-              <form class="form-group  ">
-                <label>Full Name</label>
-                <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Orlando Smith">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <div class="account">
+      <div class="circle mt-3">
+        <span class="dot"></span>
+      </div>
+      <div class="details-section mt-2">
+        <div class="row">
+          <div class="col-lg-4 col-12">
+            <div class="info">
+              <h1>Your Information</h1>
+              <div class="data mb-5">
+                <form class="form-group  ">
+                  <label>Full Name</label>
+                  <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Orlando Smith">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </form>
+
+                <form class="form-group  ">
+                  <label>Address</label>
+                  <input type="text" class="form-control border-ridus" id="inputtext"
+                    placeholder="42 Wallabe Way, London, United Kingdom">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </form>
+
+                <form class="form-group  ">
+                  <label>Email</label>
+                  <input type="email" class="form-control border-ridus" id="inputemail"
+                    placeholder="orlando.smith@email.com">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </form>
+
+                <form class="form-group  ">
+                  <label>Clinet Number</label>
+                  <input type="text" class="form-control border-ridus" id="inputtext" placeholder="**********">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </form>
+              </div>
+              <h1>Delivery Address</h1>
+              <form class="name mb-4">
+                <input type="text" class="form-control full-name" id="inputtext" placeholder="Full Name">
+              </form>
+              <div class="addres-names mb-4">
+                <h1>LDN 40W</h1>
+                <hr>
+                <div class="text">
+                  <p>1 Wallabe Way, London, United Kingdom</p>
+                  <p>2 Wallabe Way, London, United Kingdom</p>
+                  <p>3 Wallabe Way, London, United Kingdom</p>
+                  <p>4 Wallabe Way, London, United Kingdom</p>
+                  <p>5 Wallabe Way, London, United Kingdom</p>
+                  <p>6 Wallabe Way, London, United Kingdom</p>
+                  <p>7 Wallabe Way, London, United Kingdom</p>
+                  <p>8 Wallabe Way, London, United Kingdom</p>
+                  <p>9 Wallabe Way, London, United Kingdom</p>
+                  <p>10 Wallabe Way, London, United Kingdom</p>
+                  <p>11 Wallabe Way, London, United Kingdom</p>
+                  <p>12 Wallabe Way, London, United Kingdom</p>
+                  <p>13 Wallabe Way, London, United Kingdom</p>
+                  <p>14 Wallabe Way, London, United Kingdom</p>
+                  <p>15 Wallabe Way, London, United Kingdom</p>
+                  <p>16 Wallabe Way, London, United Kingdom</p>
+                  <p>17 Wallabe Way, London, United Kingdom</p>
+                  <p>18 Wallabe Way, London, United Kingdom</p>
+                  <p>19 Wallabe Way, London, United Kingdom</p>
+                  <p>20 Wallabe Way, London, United Kingdom</p>
+                </div>
+
+              </div>
+
+              <form class="mb-4 name">
+                <input type="text" class="form-control full-name" id="inputtext" placeholder="Street Address">
               </form>
 
-              <form class="form-group  ">
-                <label>Address</label>
-                <input type="text" class="form-control border-ridus" id="inputtext"
-                  placeholder="42 Wallabe Way, London, United Kingdom">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <form class="mb-4 name">
+                <input type="text" class="form-control full-name" id="inputtext" placeholder="Town/City">
               </form>
 
-              <form class="form-group  ">
-                <label>Email</label>
-                <input type="email" class="form-control border-ridus" id="inputemail"
-                  placeholder="orlando.smith@email.com">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-              </form>
-
-              <form class="form-group  ">
-                <label>Clinet Number</label>
-                <input type="text" class="form-control border-ridus" id="inputtext" placeholder="**********">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <form class="mb-4 name">
+                <input type="text" class="form-control full-name" id="inputtext" placeholder="Country">
               </form>
             </div>
-            <h1>Delivery Address</h1>
-            <form class="name mb-4">
-              <input type="text" class="form-control full-name" id="inputtext" placeholder="Full Name">
-            </form>
-            <div class="addres-names mb-4">
-              <h1>LDN 40W</h1>
-              <hr>
-              <div class="text">
-                <p>1 Wallabe Way, London, United Kingdom</p>
-                <p>2 Wallabe Way, London, United Kingdom</p>
-                <p>3 Wallabe Way, London, United Kingdom</p>
-                <p>4 Wallabe Way, London, United Kingdom</p>
-                <p>5 Wallabe Way, London, United Kingdom</p>
-                <p>6 Wallabe Way, London, United Kingdom</p>
-                <p>7 Wallabe Way, London, United Kingdom</p>
-                <p>8 Wallabe Way, London, United Kingdom</p>
-                <p>9 Wallabe Way, London, United Kingdom</p>
-                <p>10 Wallabe Way, London, United Kingdom</p>
-                <p>11 Wallabe Way, London, United Kingdom</p>
-                <p>12 Wallabe Way, London, United Kingdom</p>
-                <p>13 Wallabe Way, London, United Kingdom</p>
-                <p>14 Wallabe Way, London, United Kingdom</p>
-                <p>15 Wallabe Way, London, United Kingdom</p>
-                <p>16 Wallabe Way, London, United Kingdom</p>
-                <p>17 Wallabe Way, London, United Kingdom</p>
-                <p>18 Wallabe Way, London, United Kingdom</p>
-                <p>19 Wallabe Way, London, United Kingdom</p>
-                <p>20 Wallabe Way, London, United Kingdom</p>
+          </div>
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4 col-12">
+            <div class="plan">
+              <h1>Your Plan</h1>
+              <div class="photo mt-2">
+                <img src="assets/img/photos.png" alt="">
               </div>
 
             </div>
-
-            <form class="mb-4 name">
-              <input type="text" class="form-control full-name" id="inputtext" placeholder="Street Address">
-            </form>
-
-            <form class="mb-4 name">
-              <input type="text" class="form-control full-name" id="inputtext" placeholder="Town/City">
-            </form>
-
-            <form class="mb-4 name">
-              <input type="text" class="form-control full-name" id="inputtext" placeholder="Country">
-            </form>
           </div>
-        </div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-4 col-12">
-          <div class="plan">
-            <h1>Your Plan</h1>
-            <div class="photo mt-2">
-              <img src="assets/img/photos.png" alt="">
+          <div class="col-lg-2 col-12">
+            <div class="nutration-info mt-4 mb-2">
+              <h1>Nutritional Information</h1>
+              <ul>
+                <li>Serving Size <span>250g</span> </li>
+                <li>Calories<span>455 Kcal</span> </li>
+                <li>Protein <span>10g</span> </li>
+                <li>Carbohydrates <span>20g</span> </li>
+                <li>Sugar <span>5g</span> </li>
+                <li>Fibre <span>2g</span> </li>
+                <li>Fat <span>5g</span> </li>
+                <li>Saturated Fat <span>3g</span> </li>
+                <li>Cholesterol <span>20mg</span> </li>
+                <li>Sodium <span>20mg</span> </li>
+                <li>Potassium <span>20mg</span> </li>
+                <li>Vitamin A <span>20mg</span> </li>
+                <li>Vitamin C <span>20mg</span> </li>
+              </ul>
+
             </div>
-            <button class="btn btn-lg mt-3 te"> <i class="fa fa-times"></i>
-              sign out</button>
           </div>
         </div>
-        <div class="col-lg-2 col-12">
-          <div class="nutration-info mt-4 mb-2">
-            <h1>Nutritional Information</h1>
-            <ul>
-              <li>Serving Size <span>250g</span> </li>
-              <li>Calories<span>455 Kcal</span> </li>
-              <li>Protein <span>10g</span> </li>
-              <li>Carbohydrates <span>20g</span> </li>
-              <li>Sugar <span>5g</span> </li>
-              <li>Fibre <span>2g</span> </li>
-              <li>Fat <span>5g</span> </li>
-              <li>Saturated Fat <span>3g</span> </li>
-              <li>Cholesterol <span>20mg</span> </li>
-              <li>Sodium <span>20mg</span> </li>
-              <li>Potassium <span>20mg</span> </li>
-              <li>Vitamin A <span>20mg</span> </li>
-              <li>Vitamin C <span>20mg</span> </li>
-            </ul>
+        <div class="sign-out ">
+          <button class="btn btn-lg mt-3 "> <i class="fa fa-times"></i>
+            sign out
+          </button>
+        </div>
 
+      </div>
+    </div>
+
+
+    <!-- start menue button -->
+    <div class="menue mt-5">
+      <div class="ourfood-section ">
+        <h1 class="mb-4 text-center">OUR FOOD</h1>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-12 mb-3">
+            <div class="img-food">
+              <img src="assets/img/Layer6.png" alt="">
+              <div class="simple-section content bg-danger">
+                <h1>ITS <br>
+                  SIMPLE
+                </h1>
+                <p>NO FUSS JUST GREAT FLAVOURS</p>
+              </div>
+            </div>
+           
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mb-3">
+            <div class="img-food">
+              <img src="assets/img/Layer7.png" alt="">
+              <div class="fresh-section content bg-success">
+                <h1>ITS <br>
+                  FRESH
+                </h1>
+                <p>NO CHEMICALS LOCALLY SOURCED</p>
+              </div>
+            </div>
+          
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mb-3">
+            <div class="img-food">
+              <img src="assets/img/Layer8.png" alt="">
+              <div class="indulgent-section content">
+                <h1>ITS <br>
+                  INDULGENT
+                </h1>
+                <p>TREATS HAND-MADE FOR YOU </p>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <div class="logo-section mt-5">
+          <img src="assets/img/logo-small.png" alt="">
+
+        </div>
+      </div>
+      <div class="heading mt-3 mb-5 ">
+        <ul>
+          <li class="text-underline"> <u> Breakfast</u></li>
+          <li>Lunch</li>
+          <li>Dinner</li>
+          <li>Snacks</li>
+          <li>Salad</li>
+
+        </ul>
+      </div>
+      <div class="mixedberry-section">
+        <div class="row">
+          <div class="col-lg-4 col-12">
+            <div class="melody">
+              <div class="back-photo">
+                <img src="assets/img/photo.png" alt="">
+              </div>
+              <div class="mixedberry-title">
+                <h1>Mixed Berry Melody</h1>
+                <p>Berries mixed together to make a tasty dish.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="melody">
+              <div class="back-photo">
+                <img src="assets/img/photo.png" alt="">
+              </div>
+              <div class="mixedberry-title">
+                <h1>Mixed Berry Melody</h1>
+                <p>Berries mixed together to make a tasty dish.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="melody">
+              <div class="back-photo">
+                <img src="assets/img/photo.png" alt="">
+              </div>
+              <div class="mixedberry-title">
+                <h1>Mixed Berry Melody</h1>
+                <p>Berries mixed together to make a tasty dish.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="melody">
+              <div class="back-photo">
+                <img src="assets/img/photo.png" alt="">
+              </div>
+              <div class="mixedberry-title">
+                <h1>Mixed Berry Melody</h1>
+                <p>Berries mixed together to make a tasty dish.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="melody">
+              <div class="back-photo">
+                <img src="assets/img/photo.png" alt="">
+              </div>
+              <div class="mixedberry-title">
+                <h1>Mixed Berry Melody</h1>
+                <p>Berries mixed together to make a tasty dish.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="melody">
+              <div class="back-photo">
+                <img src="assets/img/photo.png" alt="">
+              </div>
+              <div class="mixedberry-title">
+                <h1>Mixed Berry Melody</h1>
+                <p>Berries mixed together to make a tasty dish.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 </div>
-
-
