@@ -1,0 +1,113 @@
+$primary:#83489A;
+
+// start category-section
+.category-section{
+  background-image: url("assets/img/back-ground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50px;
+  .logos{
+    max-width: 200px;
+    img{
+      width: 100%;
+    }
+  }
+  .center-section{
+    width: 80%;
+    margin: auto;
+    margin-top: -40px;
+    .heading{
+      background-color: rgb(51, 50, 50);
+      border-radius: 30px;
+      padding: 25px 35px ;
+      ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        li{
+          color: #fff;
+        }
+      }
+     
+    }
+    @media only screen and (max-width: 767px) {
+      .heading {
+        max-width:130px ;
+        margin: auto;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      ul {
+        flex-direction: column;
+        @media only screen and (max-width: 767px) {
+          li {
+            padding: 20px 0px;
+          }
+        }
+      }
+    }
+    .category{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      .meals-category{
+        padding: 80px 30px;
+        color: #fff;
+        backdrop-filter: blur(10px);
+        border-radius: 70px;
+        width: 40%;
+         h1{
+          font-size: 40px;
+          font-weight: bold;
+        }
+        @media only screen and (max-width: 767px) {
+          h1 {
+            font-size: 25px;
+          }
+        }
+        
+      
+        p{
+          font-size: 11px;
+        }
+      }
+      
+      @media only screen and (max-width: 991px) {
+        .meals-category {
+          width: 60%;
+          margin: auto;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        .meals-category {
+          width: 80%;
+        }
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      .category {
+        flex-direction: column;
+      }
+    }
+
+  }
+
+
+}
+
+
+
+// end category-sectio
+
+
+
+
+
+
+
+
+

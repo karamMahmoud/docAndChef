@@ -37,11 +37,11 @@ export class LoginComponent implements OnInit {
       data => {
         let response = data;
         localStorage.setItem('etSparkToken', response.data.access_token);
-        this.authenticationService.getPermissions().subscribe(
-          res => {
-            localStorage.setItem("permissions", JSON.stringify(res.data.data.permissionsResult));
-          }
-        )
+        // this.authenticationService.getPermissions().subscribe(
+        //   res => {
+        //     localStorage.setItem("permissions", JSON.stringify(res.data.data.permissionsResult));
+        //   }
+        // )
         this.globalEventsManager.showNavBar(true);
         this.router.navigate([this.returnUrl]);
       }, (err) => {

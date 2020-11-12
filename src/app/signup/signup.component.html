@@ -1,398 +1,358 @@
 <!-- start sceion-one -->
-<div class="info-section">
+<div
+  [ngClass]="{
+    'info-section': currentStep === 1 || currentStep === 2 || currentStep === 3,
+    'choose-section': currentStep === 4,
+    'payment-section': currentStep === 5
+  }"
+>
   <div class="container">
     <div class="logo">
-      <img src="assets/img/black.png" alt="">
+      <img src="assets/img/black.png" alt="" />
     </div>
-    <div class="personal-info">
+    <div class="personal-info" *ngIf="currentStep === 1">
       <div class="parent-one">
-        <hr class>
+        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         <h1>Personal Info</h1>
       </div>
 
-      <div class="formula text-left">
-        <form class="form-group row">
-          <label class="col-lg-3 col-12 col-form-label">Username</label>
-          <div class="col-lg-9 col-12">
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="My name is…">
+      <form
+        class="needs-validation"
+        novalidate
+        #f="ngForm"
+        (ngSubmit)="firstForm(f)"
+        #registerForm="ngForm"
+      >
+        <div class="formula text-left">
+          <div class="form-group row">
+            <label class="col-lg-3 col-12 col-form-label">
+              <span
+                class="has-asterisk"
+                *ngIf="
+                  firstName.errors?.required &&
+                  (firstName.touched || requiredMsg1)
+                "
+                >*</span
+              >Name</label
+            >
+            <div class="col-lg-9 col-12">
+              <input
+                type="text"
+                name="userName"
+                #firstName="ngModel"
+                [(ngModel)]="payload.name"
+                class="form-control border-ridus"
+                required
+                
+                placeholder="My name is…"
+              />
+            </div>
           </div>
-        </form>
 
-
-        <form class="form-group row">
-          <label class="col-lg-3 col-12 col-form-label font-15">Mobile Number</label>
-          <div class="col-lg-9 col-12">
-            <input type="text" class="form-control border-ridus" id="inputnumber" placeholder="+9">
+          <div class="form-group row">
+            <label class="col-lg-3 col-12 col-form-label font-15"
+              ><span
+                class="has-asterisk"
+                *ngIf="
+                  phone.errors?.required && (phone.touched || requiredMsg1)
+                "
+                >*</span
+              >Mobile Number</label
+            >
+            <div class="col-lg-9 col-12">
+              <input
+                type="text"
+                name="phone"
+                #phone="ngModel"
+                [(ngModel)]="payload.phone"
+                class="form-control border-ridus"
+                required
+                id="inputnumber"
+                placeholder="+9"
+              />
+            </div>
           </div>
-        </form>
 
-        <form class="form-group row">
-          <label for="inputPassword4" class="col-lg-3 col-12 col-form-label">Password</label>
-          <div class="col-lg-9 col-12">
-            <input type="password" class="form-control border-ridus" id="inputPassword4" placeholder="*********">
+          <div class="form-group row">
+            <label for="inputPassword4" class="col-lg-3 col-12 col-form-label"
+              ><span
+                class="has-asterisk"
+                *ngIf="email.errors && (email.touched || requiredMsg1)"
+                >*</span
+              >Email</label
+            >
+            <div class="col-lg-9 col-12">
+              <input
+                type="email"
+                #email="ngModel"
+                name="email"
+                [(ngModel)]="payload.email"
+                class="form-control border-ridus"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                placeholder="*********"
+              />
+            </div>
           </div>
-        </form>
-
-
-
-        <form class="form-group row">
-          <label for="inputPassword" class="col-lg-3 col-12 col-form-label">Confirm Pas.</label>
-          <div class="col-lg-9 col-12">
-            <input type="password" class="form-control border-ridus" id="inputconfirm" placeholder="*******">
-          </div>
-        </form>
-
-      </div>
-      <button class="btn btn-lg Continue">Continue</button>
-
+        </div>
+        <button class="btn btn-lg Continue" type="submit">Continue</button>
+      </form>
     </div>
-  </div>
-</div>
-
-<!-- end sceion-one -->
-
-
-<!-- start sceion-two -->
-
-<div class="info-section">
-  <div class="container">
-    <div class="logo">
-      <img src="assets/img/black.png" alt="">
-    </div>
-    <div class="personal-info">
+    <div class="personal-info" *ngIf="currentStep === 2">
       <div class="parent-tow">
-        <hr>
+        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         <h1>Personal Info</h1>
       </div>
-
-      <div class="formuls text-left">
-        <form>
-          <div class="form-group ">
+      <form
+        class="needs-validation"
+        novalidate
+        #f2="ngForm"
+        (ngSubmit)="secondForm(f2)"
+        #registerForm2="ngForm"
+      >
+        <div class="formuls text-left">
+          <div class="form-group">
             <label>Address</label>
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="My name is…">
+            <input
+              name="address"
+              [(ngModel)]="payload.address"
+              type="text"
+              class="form-control border-ridus"
+              required
+              placeholder="My name is…"
+            />
           </div>
 
-
-          <div class="form-group ">
+          <div class="form-group">
             <label>Area</label>
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="My name is…">
+            <input
+              name="area"
+              [(ngModel)]="payload.area"
+              type="text"
+              class="form-control border-ridus"
+              required
+              placeholder="My name is…"
+            />
           </div>
 
-          <div class="form-group ">
+          <div class="form-group">
             <label>Street</label>
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="My name is…">
+            <input
+              type="text"
+              name="street"
+              [(ngModel)]="payload.street"
+              class="form-control border-ridus"
+              
+              required
+              placeholder="My name is…"
+            />
           </div>
 
-
-
-          <div class="form-group ">
+          <div class="form-group">
             <label>Building - Floor</label>
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="My name is…">
+            <input
+              type="text"
+              name="building_no"
+              [(ngModel)]="payload.building_no"
+              class="form-control border-ridus"
+              
+              required
+              placeholder="My name is…"
+            />
           </div>
-
-        </form>
-      </div>
-      <button class="btn btn-lg Continue">Continue</button>
-
+        </div>
+        <button class="btn btn-lg Continue" type="submit">Continue</button>
+      </form>
     </div>
-  </div>
-</div>
-
-<!-- end sceion-tow -->
-
-
-
-<!-- start section-three -->
-
-<div class="info-section">
-  <div class="container">
-    <div class="logo">
-      <img src="assets/img/black.png" alt="">
-    </div>
-    <div class="personal-info">
+    <div class="personal-info" *ngIf="currentStep === 3">
       <div class="parent-three">
-        <hr class>
+        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         <h1>Personal Info</h1>
       </div>
 
-      <div class="center-align mb-4">
-        <input type="radio" name="size" id="size_1" value="small" checked />
-        <label for="size_1" class="type">Male</label>
+      <form
+        class="needs-validation"
+        novalidate
+        #f3="ngForm"
+        (ngSubmit)="thirdForm(f3)"
+        #registerForm3="ngForm"
+      >
+        <div class="formulas text-left flex-column">
+          <div class="center-align mb-2">
+            <input type="radio" name="size" id="size_1" value="small" checked />
+            <label for="size_1" class="type text-center">Male</label>
 
-        <input type="radio" name="size" id="size_2" value="small" />
-        <label for="size_2" class="type">Female</label>
-      </div>
-
-      <div class="formulas text-left">
-        <form class="justify">
-          <div class="form-group ">
+            <input type="radio" name="size" id="size_2" value="small" />
+            <label for="size_2" class="type text-center">Female</label>
+          </div>
+          <div class="form-group">
             <label>How tall are you?</label>
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="..">
+            <input
+              type="text"
+              name="height"
+              [(ngModel)]="payload.height"
+              class="form-control border-ridus"
+              required
+              
+              placeholder=".."
+            />
           </div>
 
-
-          <div class="form-group ">
+          <div class="form-group">
             <label>How much do you weight?</label>
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="..">
+            <input
+              type="text"
+              name="weight"
+              [(ngModel)]="payload.weight"
+              class="form-control border-ridus"
+              required
+              
+              placeholder=".."
+            />
           </div>
 
-          <div class="form-group ">
+          <div class="form-group">
             <label>Do you have Allergy?</label>
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Write here..">
+            <input
+              type="text"
+              name="allergies"
+              [(ngModel)]="payload.allergies"
+              class="form-control border-ridus"
+              
+              required
+              placeholder="Write here.."
+            />
           </div>
-
-        </form>
-        <ul>
-          <li class="lightest"> 185</li>
-          <li class="lighter">186</li>
-          <li class="normal">187 <span> cm </span></li>
-          <li class="lighter"> 188</li>
-          <li class="lightest">189</li>
-
-        </ul>
-
-
-      </div>
-      <button class="btn btn-lg Continue">Continue</button>
-
+          <!-- <ul>
+            <li class="lightest">185</li>
+            <li class="lighter">186</li>
+            <li class="normal">187 <span> cm </span></li>
+            <li class="lighter">188</li>
+            <li class="lightest">189</li>
+          </ul> -->
+        </div>
+        <button class="btn btn-lg Continue" type="submit">Continue</button>
+      </form>
     </div>
-  </div>
-</div>
-<!-- end section-three -->
-
-<!-- start sceion-four -->
-
-<div class="choose-section">
-  <div class="container">
-    <div class="logo">
-      <img src="assets/img/black.png" alt="">
-    </div>
-    <div class="personal-info">
+    <div class="personal-info" *ngIf="currentStep === 4">
       <div class="parent-tow">
-        <hr>
+        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         <h1>Choose your program</h1>
       </div>
 
-      <div class="plan">
-        <div class="row">
-          <div class="col-lg-3 col-12 normal">
-            <h1>01</h1>
-            <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
-            <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-12 normal">
-            <h1>02</h1>
-            <button class="btn btn-lg" (click)="plan = 2">Bodybuilding</button>
-            <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-
-            </p>
-          </div>
-
-          <div class="col-lg-6 col-12 color-up" [class.xyz]="plan === 3">
-            <span>03</span>
-            <button class="btn btn-lg" (click)="plan = 3">Plan your Program</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="meals" *ngIf="plan === 3">
-        <div class="main-meals">
-          <ul>
-            <li class="main mb-2"><span>the</span> <span class="color"> main </span> <span>meals</span>
-              <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-
-              </div>
-            </li>
-            <li class="lunch mb-2">Lunch + Dinner</li>
-            <li class="mb-2">Protein
-              <div class="timer">
-                <span>-</span>
-                <span>100</span>
-                <span>+</span>
-
-              </div>
-            </li>
-
-            <li class="mb-2">Carb
-              <div class="timer carb">
-                <span>-</span>
-                <span>50</span>
-                <span>+</span>
-
-              </div>
-            </li>
-          </ul>
-
-        </div>
-        <div class="add-snack main-meals">
-          <ul>
-            <li class="snack mb-2">Add <span>Snacks</span> </li>
-            <li class="mb-2">1- Salads
-              <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-
-              </div>
-            </li>
-
-            <li class="mb-2">2- Salads
-              <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-
-              </div>
-            </li>
-
-            <li class="mb-2">3- Salads
-              <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-
-              </div>
-            </li>
-
-            <li class="mb-2">4- Salads
-              <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-
-              </div>
-            </li>
-          </ul>
-        </div>
-
-
-      </div>
-      <div class="add-breakfast" *ngIf="plan === 3">
-        <h1>ADD <span>BREAKFAST</span></h1>
-        <div class="container-fluid">
-          <div class="form-group row check-box">
-            <div class="form-check col-lg-4 col-12 margin-auto">
-              <input class="form-check-input check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label check-label" for="gridCheck">Varied Breakfast</label>
-            </div>
-
-            <div class=" col-lg-8 col-12 ">
-              <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Write here..">
-            </div>
-          </div>
-          <div class="form-group row check-box mb-15">
-            <div class="form-check col-lg-4 col-12 margin-auto ">
-              <input class="form-check-input check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label check-label" for="gridCheck">Specialties Breakfast</label>
-            </div>
-
-            <div class=" col-lg-8 col-12 ">
-              <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Write here..">
-            </div>
-          </div>
-        </div>
-      </div>
-
-
       <!-- wight loss button -->
-      <div class="weightloss-section" *ngIf="plan === 1">
+      <div class="weightloss-section" *ngIf="plan === 1" [@enterAnimation]>
         <div class="loss-plan">
           <div class="row">
-            <div class="col-lg-6 col-12  color-up">
+            <div class="col-lg-6 col-12 color-up">
               <span>01</span>
               <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
-
             </div>
-
-
 
             <div class="col-lg-3 col-12 Bodybuilding normal">
               <h1>02</h1>
-              <button class="btn btn-lg" (click)="plan = 2">Bodybuilding</button>
-              <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-
+              <button class="btn btn-lg" (click)="plan = 2">
+                Bodybuilding
+              </button>
+              <p>
+                Show Details
+                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
               </p>
             </div>
 
-            <div class="col-lg-3 col-12  normal plan-program" [class.xyz]="plan === 3">
+            <div
+              class="col-lg-3 col-12 normal plan-program"
+              [class.xyz]="plan === 3"
+            >
               <h1>03</h1>
-              <button class="btn btn-lg" (click)="plan = 3">Plan your Program</button>
-              <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> </p>
+              <button class="btn btn-lg" (click)="plan = 3">
+                Plan your Program
+              </button>
+              <p>
+                Show Details
+                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+              </p>
             </div>
           </div>
         </div>
         <div class="order">
-          <h1>3 Meals + 2 Snackes</h1>
+          <h1>
+            <span
+              >{{ pacakges?.normal.meals.breakfast.quantity }} Breakfast +
+              {{ pacakges?.normal.meals.snacks.quantity }} Snackes +
+              {{ pacakges?.normal.meals.main_course.quantity }} Meals
+            </span>
+          </h1>
         </div>
       </div>
 
       <!-- bodybulding button -->
-      <div class="bodybilding-section" *ngIf="plan === 2">
+      <div class="bodybilding-section" *ngIf="plan === 2" [@enterAnimation]>
         <div class="bodybilding-plan">
           <div class="row">
-            <div class="col-lg-3 col-12 normal ">
+            <div class="col-lg-3 col-12 normal">
               <h1>01</h1>
               <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
-              <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-
+              <p>
+                Show Details
+                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
               </p>
             </div>
 
-
-
             <div class="col-lg-6 col-12 Bodybuilding color-up">
               <span>02</span>
-              <button class="btn btn-lg" (click)="plan = 2">Bodybuilding</button>
-
+              <button class="btn btn-lg" (click)="plan = 2">
+                Bodybuilding
+              </button>
             </div>
 
-            <div class="col-lg-3 col-12  normal plan-program" [class.xyz]="plan === 3">
+            <div
+              class="col-lg-3 col-12 normal plan-program"
+              [class.xyz]="plan === 3"
+            >
               <h1>03</h1>
-              <button class="btn btn-lg" (click)="plan = 3">Plan your Program</button>
-              <p>Show Details <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> </p>
+              <button class="btn btn-lg" (click)="plan = 3">
+                Plan your Program
+              </button>
+              <p>
+                Show Details
+                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+              </p>
             </div>
           </div>
         </div>
         <div class="level">
-          <div class="level-one option-level">
+          <div class="level-one option-level" [class.level-three]="i === 2" *ngFor="let level of pacakges['body buiding']?.meals.main_course.prices;index as i">
             <i class="fa fa-circle-thin" aria-hidden="true"></i>
-            <h1>
-              LEVEL <span> ONE</span>
-            </h1>
-            <h2>4 Meals + 2 Snackes</h2>
-            <p>100 Gram Protein</p>
+            <h1><input type="radio" name="level" (click)="selectPrice(level)">LEVEL <span> {{i+1 | numberToWord}}</span></h1>
+            <h2>  <span
+              >{{ pacakges?.normal.meals.breakfast.quantity }} Breakfast +
+              {{ pacakges?.normal.meals.snacks.quantity }} Snackes +
+              {{ pacakges?.normal.meals.main_course.quantity }} Meals
+            </span></h2>
+            <p> {{level.protein}} Gram Protein</p>
             <div class="flex">
-              <span> Carbohydrate</span>
-              <div class="timer">
-                <span>-</span>
-                <span>50</span>
-                <span>+</span>
-              </div>
+              <span>Carbohydrate</span>
+              <!-- <div class="timer"> -->
+                 &nbsp;{{level.carb}}
+              <!-- </div> -->
             </div>
-
           </div>
-          <div class="level-tow option-level">
+          <!-- <div class="level-tow option-level">
             <i class="fa fa-circle-o" aria-hidden="true"></i>
-            <h1> LEVEL <span> two</span>
-            </h1>
+            <h1>LEVEL <span> two</span></h1>
             <h2>4 Meals + 2 Snackes</h2>
             <p>150 Gram Protein</p>
             <div class="flex">
@@ -406,8 +366,7 @@
           </div>
           <div class="level-three option-level">
             <i class="fa fa-circle-o" aria-hidden="true"></i>
-            <h1> LEVEL <span> three</span>
-            </h1>
+            <h1>LEVEL <span> three</span></h1>
             <h2>4 Meals + 2 Snackes</h2>
             <p>200 Gram Protein</p>
             <div class="flex">
@@ -418,268 +377,267 @@
                 <span>+</span>
               </div>
             </div>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="plan" *ngIf="plan === 3" [@enterAnimation]>
+        <div class="row">
+          <div class="col-lg-3 col-12 normal">
+            <h1>1</h1>
+            <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
+            <p>
+              Show Details
+              <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-12 normal">
+            <h1>2</h1>
+            <button class="btn btn-lg" (click)="plan = 2">Bodybuilding</button>
+            <p>
+              Show Details
+              <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+            </p>
+          </div>
+
+          <div class="col-lg-6 col-12 color-up" [class.xyz]="plan === 3">
+            <span>03</span>
+            <button class="btn btn-lg" (click)="plan = 3">
+              Plan your Program
+            </button>
           </div>
         </div>
       </div>
 
-      <button class="btn btn-lg Continue">Continue</button>
+      <div class="meals" *ngIf="plan === 3">
+        <div class="main-meals">
+          <ul>
+            <li class="main mb-2">
+              <span>the</span> <span class="color"> main </span>
+              <span>meals</span>
+              <div class="timer">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
+              </div>
+            </li>
+            <li class="lunch mb-2">Lunch + Dinner</li>
+            <li class="mb-2">
+              Protein
+              <div class="timer">
+                <span>-</span>
+                <span>100</span>
+                <span>+</span>
+              </div>
+            </li>
+
+            <li class="mb-2">
+              Carb
+              <div class="timer carb">
+                <span>-</span>
+                <span>50</span>
+                <span>+</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="add-snack main-meals">
+          <ul>
+            <li class="snack mb-2">Add <span>Snacks</span></li>
+            <li class="mb-2">
+              1- Salads
+              <div class="timer">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
+              </div>
+            </li>
+
+            <li class="mb-2">
+              2- Salads
+              <div class="timer">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
+              </div>
+            </li>
+
+            <li class="mb-2">
+              3- Salads
+              <div class="timer">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
+              </div>
+            </li>
+
+            <li class="mb-2">
+              4- Salads
+              <div class="timer">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="add-breakfast" *ngIf="plan === 3">
+        <h1>ADD <span>BREAKFAST</span></h1>
+        <div class="container-fluid">
+          <div class="form-group row check-box">
+            <div class="form-check col-lg-4 col-12 margin-auto">
+              <input
+                class="form-check-input check-input"
+                type="checkbox"
+                id="gridCheck"
+              />
+              <label class="form-check-label check-label" for="gridCheck"
+                >Varied Breakfast</label
+              >
+            </div>
+
+            <div class="col-lg-8 col-12">
+              <input
+                type="text"
+                class="form-control border-ridus"
+                
+                placeholder="Write here.."
+              />
+            </div>
+          </div>
+          <div class="form-group row check-box mb-15">
+            <div class="form-check col-lg-4 col-12 margin-auto">
+              <input
+                class="form-check-input check-input"
+                type="checkbox"
+                id="gridCheck"
+              />
+              <label class="form-check-label check-label" for="gridCheck"
+                >Specialties Breakfast</label
+              >
+            </div>
+
+            <div class="col-lg-8 col-12">
+              <input
+                type="text"
+                class="form-control border-ridus"
+                
+                placeholder="Write here.."
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-lg Continue" (click)="setPackages()">Continue</button>
     </div>
-  </div>
-</div>
-
-<!-- end sceion-four -->
-
-<!-- start section-five -->
-
-<div class="payment-section">
-  <div class="container">
-    <div class="logo">
-      <img src="assets/img/black.png" alt="">
-    </div>
-    <div class="personal-info">
+    <div class="personal-info" *ngIf="currentStep === 5">
       <div class="parent-three">
-        <hr class>
+        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        <h1> Payment</h1>
+        <h1>Payment</h1>
       </div>
       <div class="type">
-        <button class="btn btn-lg "> 99 KWD</button>
+        <button class="btn btn-lg">99 KWD</button>
       </div>
 
       <div class="formula-section">
         <div class="form-group row">
-          <label class=" col-lg-7 col-12 col-form-label">Card Number</label>
-          <div class=" col-lg-8 col-12 margin-auto">
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="4567 7876 8776 7899">
+          <label class="col-lg-7 col-12 col-form-label">Card Number</label>
+          <div class="col-lg-8 col-12 margin-auto">
+            <input
+              type="text"
+              class="form-control border-ridus"
+              
+              placeholder="4567 7876 8776 7899"
+            />
           </div>
         </div>
 
-
         <div class="form-group row">
-          <label class=" col-lg-7 col-12 col-form-label">Card Holder</label>
-          <div class=" col-lg-8 col-12 margin-auto">
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="Lucas Pacheco">
+          <label class="col-lg-7 col-12 col-form-label">Card Holder</label>
+          <div class="col-lg-8 col-12 margin-auto">
+            <input
+              type="text"
+              class="form-control border-ridus"
+              
+              placeholder="Lucas Pacheco"
+            />
           </div>
         </div>
 
         <div class="form-group row">
           <div class="col-lg-8 col-12 text-left">
             <label class="col-form-label">Expiry Date</label>
-            <input type="text" class="form-control border-ridus" id="inputtext" placeholder="09.24">
+            <input
+              type="text"
+              class="form-control border-ridus"
+              
+              placeholder="09.24"
+            />
           </div>
           <div class="col-lg-4 col-12 text-left">
             <label class="col-form-label">CVV</label>
-            <input type="text" class="form-control font " id="inputtext" placeholder="1">
+            <input
+              type="text"
+              class="form-control font"
+              
+              placeholder="1"
+            />
           </div>
         </div>
 
         <div class="form-group row check">
           <div class="form-check col-lg-7 col-12 margin-auto">
-            <input class="form-check-input check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label check-label" for="gridCheck">I want to add Friday to my
-              Package.</label>
+            <input
+              class="form-check-input check-input"
+              type="checkbox"
+              id="gridCheck"
+            />
+            <label class="form-check-label check-label" for="gridCheck"
+              >I want to add Friday to my Package.</label
+            >
           </div>
 
-          <div class=" col-lg-3 col-12 margin-auto">
+          <div class="col-lg-3 col-12 margin-auto">
             <p>15%</p>
           </div>
         </div>
         <button class="btn btn-lg Continue">Continue</button>
       </div>
-
     </div>
   </div>
 </div>
 
-<!-- end section-five -->
+<!-- end sceion-one -->
 
-<!-- start section-six -->
-
-<div class="Congratulations">
+<!-- <div class="Congratulations">
   <div class="container">
     <div class="logos mb-3">
-      <img src="assets/img/img.png" alt="">
+      <img src="assets/img/img.png" alt="" />
     </div>
 
     <div class="personal-info">
       <div class="parent-three">
-        <hr class>
+        <hr class />
       </div>
       <h1>Congratulations!</h1>
-      <h2>You have successfully <br>
-        completed your registration!</h2>
-      <p>By believing in yourself and committing to <br>
-        the registration, you will reach your goal.</p>
+      <h2>
+        You have successfully <br />
+        completed your registration!
+      </h2>
+      <p>
+        By believing in yourself and committing to <br />
+        the registration, you will reach your goal.
+      </p>
 
       <button class="btn btn-lg Continue">DONE!</button>
-
-
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- end section-six -->
-
-
-<!-- start category-section -->
-<div class="category-section">
-  <div class="container">
-    <div class="logos">
-      <img src="assets/img/chef.png" alt="">
-    </div>
-    <div class="center-section mb-5">
-      <div class="heading">
-        <ul>
-          <li>Breakfast</li>
-          <li>Lunch</li>
-          <li>Dinner</li>
-          <li>Snacks</li>
-          <li>Salad</li>
-
-        </ul>
-      </div>
-      <div class="category mt-5">
-        <div class="meals-category mb-5">
-          <h1>MEALS
-            CATEGORIES</h1>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED
-          </p>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED
-          </p>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED
-          </p>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED
-          </p>
-        </div>
-        <div class="meals-category mb-5">
-          <h1>MEALS
-            CATEGORIES</h1>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED
-          </p>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED
-          </p>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED
-          </p>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- end category-section -->
-
-
-
-
-<!-- start mixedberry-section -->
-<div class="mixed-berry">
-  <div class="row margin-zero">
-    <div class="col-lg-7 ">
-      <div class="data-part">
-        <div class="img-logo mb-4">
-          <img src="assets/img/img.png" alt="">
-        </div>
-        <div class="mixed-title mb-5">
-          <h1 class=" mb-2">Mixed Berry Melody</h1>
-          <div class="easy">
-            <p> <i class="fa fa-signal"></i>Easy</p>
-            <p ><i class="fa fa-clock-o"></i>Prep 20m</p>
-            <p> <i class="fa fa-tint"></i>Cook 5m</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 col-12">
-            <div class="Ingredients mb-5">
-              <h1>Ingredients</h1>
-              <label class="label">4
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-              </label>
-              <label class="label">Raspberries
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-              <label class="label">1 Strawberry
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-              <label class="label">1/2 Lemon
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-              <label class="label">2 Cherries
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-              <label class="label">Mint
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div class="Instructions mb-5">
-              <h1>Instructions</h1>
-              <p>Start by taking the 4 raspberries, chop them into tiny segments and introduce the strawberry. Check to
-                make
-                sure that the raspberries and the strawberry sit well together, before slicing and dicing a lemon and
-                adding
-                it to this rather strange combination of fruits. <br> <br>
-
-                Peel the 2 cherries, if it’s even possible to peel a cherry, discard the stalks and place them neatly
-                next
-                to the other fruits. <br> <br>
-
-                Finish off this imaginary recipe by sourcing a mint leaf, and place it perfectly in the center of the
-                bowl,
-                taking care not to upset the other fruits that have already been placed.</p>
-            </div>
-            <button class="btn btn-md shar mb-3"><i class="fa fa-share-alt"></i> Share</button>
-            <button class="btn btn-lg add mb-3"> <i class="fa fa-shopping-cart"></i>Add to Cart</button>
-          </div>
-          <div class="col-lg-4 col-12">
-            <div class="nutration-info">
-              <h1>Nutritional Information</h1>
-              <ul>
-                <li>Serving Size <span>250g</span> </li>
-                <li>Calories<span>455 Kcal</span> </li>
-                <li>Protein <span>10g</span> </li>
-                <li>Carbohydrates <span>20g</span> </li>
-                <li>Sugar <span>5g</span> </li>
-                <li>Fibre <span>2g</span> </li>
-                <li>Fat <span>5g</span> </li>
-                <li>Saturated Fat <span>3g</span> </li>
-                <li>Cholesterol <span>20mg</span> </li>
-                <li>Sodium <span>20mg</span> </li>
-                <li>Potassium <span>20mg</span> </li>
-                <li>Vitamin A <span>20mg</span> </li>
-                <li>Vitamin C <span>20mg</span> </li>
-              </ul>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-5">
-      <div class="img-part">
-        <img src="assets/img/photo-curve.png" alt="">
-      </div>
-    </div>
-  </div>
-
-</div>
-
-
-<!-- end mixedberry-section -->

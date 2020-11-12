@@ -24,7 +24,7 @@ import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class AuthenticationService {
-  baseUrl="https://app-api.crowntech.dk";
+  baseUrl="https://sheltered-journey-67386.herokuapp.com/api";
 
   errorFunction(e){
     if( e.status === 401)
@@ -86,13 +86,22 @@ export class AuthenticationService {
       .pipe(map((response) => {return response}));
     }
 
-    getPermissions() :any{
-      let token = localStorage.getItem('etSparkToken');
-      let userToken= this.tokenAsHeader(token);
+    packages() :any{
       return this
         .http
-        .get(`${this.baseUrl}/api/permissions/check-my-permissions`, {headers:userToken})
-        .pipe(map((response) => {return response}));
+        .get(`${this.baseUrl}/packages`);
+      }
+
+    setPackages(payload) :any{
+      return this
+        .http
+        .post(`${this.baseUrl}/packages/set`,payload);
+      }
+
+    signup(payload) :any{
+      return this
+        .http
+        .post(`${this.baseUrl}/register`,payload);
       }
 
     getUserDataAuth() :any{
