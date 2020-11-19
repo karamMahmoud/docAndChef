@@ -74,12 +74,25 @@ export class SignupComponent implements OnInit {
     custom_breakfasts: "",
     total_price: "",
   };
+  packagePayloadCustom = {
+    client_id: "",
+    package_id: "",
+    breakfast: 0,
+    main_course: 0,
+    snacks: 0,
+    protein_snacks: 0,
+    fruit: 0,
+    carb: 0,
+    protein: 0,
+    custom_breakfasts: "",
+    total_price: 0,
+  };
   requiredMsg1 = false;
   requiredMsg2 = false;
   requiredMsg3 = false;
   requiredMsg4 = false;
   loading = false;
-  currentStep = 1;
+  currentStep = 4;
   constructor(private api: AuthenticationService) {}
 
   ngOnInit() {
@@ -108,7 +121,6 @@ export class SignupComponent implements OnInit {
     if (valid) {
       this.api.signup(this.payload).subscribe(
         (data) => {
-          console.log(data);
           this.loading = false;
           this.packagePayloadNormal.client_id = data.data.client_id;
           this.packagePayloadBodyBuilding.client_id = data.data.client_id;
@@ -154,5 +166,9 @@ export class SignupComponent implements OnInit {
       console.log(data);
       // this.currentStep = 5;
     });
+  }
+  customQuantity(meal,operator){
+    if(!(this.packagePayloadCustom[meal] === 0 && operator === '-'))
+    this.packagePayloadCustom[meal] =operator === '+' ? this.packagePayloadCustom[meal]+ 1 : this.packagePayloadCustom[meal] -1 ;
   }
 }

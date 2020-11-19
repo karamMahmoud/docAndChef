@@ -15,7 +15,7 @@
         <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
         <h1>Personal Info</h1>
       </div>
 
@@ -57,15 +57,17 @@
               ><span
                 class="has-asterisk"
                 *ngIf="
-                  phone.errors?.required && (phone.touched || requiredMsg1)
+                  phone.errors && (phone.touched || requiredMsg1)
                 "
                 >*</span
               >Mobile Number</label
             >
             <div class="col-lg-9 col-12">
               <input
-                type="text"
+                type="tel"
                 name="phone"
+                pattern="\+?\d+"
+                minlength="6"
                 #phone="ngModel"
                 [(ngModel)]="payload.phone"
                 class="form-control border-ridus"
@@ -106,7 +108,7 @@
         <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <i class="fa fa-arrow-left" (click)="currentStep = 1" aria-hidden="true"></i>
         <h1>Personal Info</h1>
       </div>
       <form
@@ -175,7 +177,7 @@
         <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <i class="fa fa-arrow-left" (click)="currentStep = 2" aria-hidden="true"></i>
         <h1>Personal Info</h1>
       </div>
 
@@ -187,22 +189,21 @@
         #registerForm3="ngForm"
       >
         <div class="formulas text-left flex-column">
-          <div class="center-align mb-2">
+          <!-- <div class="center-align mb-2">
             <input type="radio" name="size" id="size_1" value="small" checked />
             <label for="size_1" class="type text-center">Male</label>
 
             <input type="radio" name="size" id="size_2" value="small" />
             <label for="size_2" class="type text-center">Female</label>
-          </div>
+          </div> -->
           <div class="form-group">
             <label>How tall are you?</label>
             <input
-              type="text"
+              type="number"
               name="height"
               [(ngModel)]="payload.height"
               class="form-control border-ridus"
               required
-              
               placeholder=".."
             />
           </div>
@@ -210,12 +211,11 @@
           <div class="form-group">
             <label>How much do you weight?</label>
             <input
-              type="text"
+              type="number"
               name="weight"
               [(ngModel)]="payload.weight"
               class="form-control border-ridus"
               required
-              
               placeholder=".."
             />
           </div>
@@ -227,7 +227,6 @@
               name="allergies"
               [(ngModel)]="payload.allergies"
               class="form-control border-ridus"
-              
               required
               placeholder="Write here.."
             />
@@ -446,38 +445,38 @@
           <ul>
             <li class="snack mb-2">Add <span>Snacks</span></li>
             <li class="mb-2">
-              1- Salads
+              1- Breakfast
               <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
+                <span class="pointer" (click)="customQuantity('breakfast','-')">-</span>
+                <span>{{packagePayloadCustom.breakfast}}</span>
+                <span class="pointer" (click)="customQuantity('breakfast','+')">+</span>
               </div>
             </li>
 
             <li class="mb-2">
-              2- Salads
+              2- Fruit
               <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
+                <span class="pointer" (click)="customQuantity('fruit','-')">-</span>
+                <span>{{packagePayloadCustom.fruit}}</span>
+                <span class="pointer" (click)="customQuantity('fruit','+')">+</span>
               </div>
             </li>
 
             <li class="mb-2">
-              3- Salads
+              3- Snacks
               <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
+                <span class="pointer" (click)="customQuantity('snacks','-')">-</span>
+                <span>{{packagePayloadCustom.snacks}}</span>
+                <span class="pointer" (click)="customQuantity('snacks','+')">+</span>
               </div>
             </li>
 
             <li class="mb-2">
-              4- Salads
+              4- Protein snacks
               <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
+                <span class="pointer" (click)="customQuantity('protein_snacks','-')">-</span>
+                <span>{{packagePayloadCustom.protein_snacks}}</span>
+                <span class="pointer" (click)="customQuantity('protein_snacks','+')">+</span>
               </div>
             </li>
           </ul>

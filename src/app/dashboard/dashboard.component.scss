@@ -6,6 +6,7 @@ $primary:#83489A;
   justify-content: space-between;
   align-items: center;
   top: -45px;
+  padding: 0 30px;
   .img-chef{
     max-width: 180px;
     img{
@@ -31,7 +32,7 @@ width: 100%;
      
     }
     .mrg-left{
-      margin-left: -30px;
+      // margin-left: -30px;
       background-color: #7b7879;
       
     }
@@ -60,9 +61,10 @@ width: 100%;
   background-image: url("assets/img/cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 150px;
+  height: 650px;
+  align-items: center;
   .social-media{
-    margin: 50px 60px;
+    margin: 165px 55px;
     ul{
       list-style: none;
       display: flex;

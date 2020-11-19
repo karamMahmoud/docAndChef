@@ -1,24 +1,58 @@
-
-
-
 <!-- start category-section -->
 <div class="category-section">
   <div class="container">
     <div class="logos">
-      <img src="assets/img/chef.png" alt="">
+      <img src="assets/img/chef.png" alt="" />
     </div>
     <div class="center-section mb-5">
       <div class="heading">
         <ul>
-          <li>Breakfast</li>
-          <li>Lunch</li>
-          <li>Dinner</li>
-          <li>Snacks</li>
-          <li>Salad</li>
-
+          <li
+            *ngIf="package.breakfast"
+            (click)="setMeal({ count: package.breakfast, name: 'breakfast' })"
+          >
+            Breakfast
+          </li>
+          <li
+            *ngIf="package.main_course"
+            (click)="setMeal({ count: package.breakfast, name: 'main_course' })"
+          >
+            Lunch
+          </li>
+          <li
+            *ngIf="package.custom_breakfasts"
+            (click)="
+              setMeal({
+                count: package.breakfast,
+                name: 'custom_breakfasts'
+              })
+            "
+          >
+            custom breakfasts
+          </li>
+          <li
+            *ngIf="package.protein_snacks"
+            (click)="
+              setMeal({ count: package.breakfast, name: 'protein_snacks' })
+            "
+          >
+            protein snacks
+          </li>
+          <li
+            *ngIf="package.snacks"
+            (click)="setMeal({ count: package.breakfast, name: 'snacks' })"
+          >
+            Snacks
+          </li>
+          <li
+            *ngIf="package.salad"
+            (click)="setMeal({ count: package.breakfast, name: 'salad' })"
+          >
+            Salad
+          </li>
         </ul>
       </div>
-      <div class="category mt-5">
+      <!-- <div class="category mt-5">
         <div class="meals-category mb-5">
           <h1>MEALS
             CATEGORIES</h1>
@@ -51,10 +85,55 @@
             DIET IS CORRECT, MEDICINE IS OF NO NEED
           </p>
         </div>
-      </div>
+      </div> -->
     </div>
+    <table class="table bg-white text-black-50 border-r-5" *ngIf="mealsLength.name" [@enterAnimation]>
+      <thead class="">
+        <tr>
+          <th scope="col" class="border-0">Day</th>
+          <th
+            scope="col"
+            [attr.colspan]="mealsLength.count"
+            class="text-center border-0"
+          >
+            {{ mealsLength.name }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let day of week; let dayIndex = index">
+          <th scope="row" class="v-m">{{ day }}</th>
+          <td
+            scope="row"
+            *ngFor="
+              let item of [].constructor(mealsLength.count);
+              let i = index
+            "
+            class="text-center"
+          >
+            <select
+              class="custom-select mb-0"
+              *ngIf="mealsLength.name"
+              [(ngModel)]="
+                payload.meals[dayIndex][mealsLength.name + '_ids'][i]
+              "
+            >
+              <option selected>select meal</option>
+              <option
+                *ngFor="let meal of menus[mealsLength.name]"
+                [value]="meal.id"
+              >
+                {{ meal.name }}
+                <span *ngIf="meal.carb">- {{ meal.carb }} carb</span>
+                <span *ngIf="meal.protein">- {{ meal.protein }} protein</span>
+              </option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary" *ngIf="mealsLength.name" [@enterAnimation] (click)="save()">save</button>
   </div>
 </div>
 
 <!-- end category-section -->
-

@@ -1,8 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
-import { ActivatedRouteSnapshot,Router, CanActivate,RouterStateSnapshot} from '@angular/router';
-import { AuthenticationService } from '../helper/services.api';
-import { map, catchError } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { Observable, of } from "rxjs";
+import {
+  ActivatedRouteSnapshot,
+  Router,
+  CanActivate,
+  RouterStateSnapshot,
+} from "@angular/router";
+import { AuthenticationService } from "../helper/services.api";
+import { map, catchError, takeWhile } from "rxjs/operators";
 
 /**
  * @class AuthGuard
@@ -16,31 +21,33 @@ import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-
-    constructor(private router: Router,private authenticationService:AuthenticationService) { }
-    /* Function to check whether user is logged in or not*/
-    returnedValue:boolean;
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-        let token=localStorage.getItem("etSparkToken");
-        if (token) {
-            return this.authenticationService.getUserDataAuth().pipe(map(data =>{
-                return true;
-            }, (err) => {
-                localStorage.removeItem("etSparkToken");
-                this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
-                return false;
-                }
-                ),catchError(() => {
-                    localStorage.removeItem("etSparkToken");
-                    this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
-                    return Observable.apply(false);
-                })
-            )
+  activated = true;
+  constructor(public api: AuthenticationService, private router: Router) {}
+  token = localStorage.getItem("drchefToken");
+  /* Function to check whether user is logged in or not*/
+  returnedValue: boolean;
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean> | Promise<boolean> | boolean {
+    return new Promise((resolve, reject) => {
+      // if(!this.token) {
+      //   localStorage.removeItem("otoToken");
+      //   this.router.navigate(["/login"], {
+      //     queryParams: { returnUrl: state.url },
+      //   });
+      //   resolve(false);
+      //   return;
+      // }
+      if(localStorage.getItem('drchefToken'))
+          resolve(true);
+          else{
+          localStorage.removeItem("drchefToken");
+          this.router.navigate(["/login"], {
+            queryParams: { returnUrl: state.url },
+          });
+          resolve(false);
         }
-        else {
-            this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
-            return false;            
-        }
-    }
-
+    });
+  }
 }

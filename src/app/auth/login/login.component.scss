@@ -1,0 +1,95 @@
+$primary: #83489a;
+// start sceion-one
+
+.has-asterisk {
+  color: #cd2238;
+  margin-right: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  top: 2px;
+}
+.info-section {
+  padding: 50px 0px;
+
+  background-image: url("assets/img/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .logo {
+    max-width: 150px;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+  .personal-info {
+    max-width: 450px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    min-width: 300px;
+    .parent-one {
+      width: 50%;
+      background-color: #e6e8d9;
+      bottom: 24px;
+      height: 6px;
+      margin: auto;
+      position: relative;
+      margin-top: 20px;
+      hr {
+        border: 3px solid $primary;
+        border-radius: 4px;
+        position: absolute;
+        left: 0px;
+        margin: auto;
+      }
+    }
+    .title {
+      margin: 20px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 20px;
+        margin: auto;
+      }
+    }
+    .formula {
+      padding: 20px 0px;
+      width: 95%;
+      margin: auto;
+    }
+    @media only screen and (max-width: 767px) {
+      .formula {
+        width: 100%;
+      }
+    }
+    button {
+      color: #fff;
+      background-color: $primary;
+      padding: 10px 70px;
+      margin-top: 30px;
+      box-shadow: none;
+    }
+    @media only screen and (max-width: 767px) {
+      button {
+        padding: 10px 15px;
+        font-size: 18px;
+      }
+    }
+    .font-15 {
+      font-size: 15px;
+    }
+    .border-ridus {
+      border-radius: 10px;
+      box-shadow: none;
+      border: 1px solid #ced4da;
+    }
+  }
+}
+

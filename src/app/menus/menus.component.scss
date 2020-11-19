@@ -1,12 +1,18 @@
 $primary:#83489A;
-
+.v-m{
+  vertical-align: middle !important;
+}
+.border-r-5{
+  border-radius: 15px;
+}
 // start category-section
 .category-section{
-  background-image: url("assets/img/back-ground.png");
+  background-image: url("assets/img/back.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 50px;
+  // min-height: 1000px;
   .logos{
     max-width: 200px;
     img{
@@ -98,6 +104,12 @@ $primary:#83489A;
 
 
 }
+
+.table{
+  color: wheat;
+}
+
+
 
 
 

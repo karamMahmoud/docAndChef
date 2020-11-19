@@ -8,7 +8,7 @@ import { AuthenticationService } from "./helper/services.api";
 import { UsersService } from "./users/users.service";
 import { GlobalEventsManager } from "./helper/global-events";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { DashboardModule } from "./dashboard/dashboard.module";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 import { UserProfileModule } from "./user-profile/user-profile.module";
 import { BaseModule } from "./base/base.module";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
@@ -19,31 +19,10 @@ import { SignupComponent } from "./signup/signup.component";
 import { HealthyComponent } from "./healthy/healthy.component";
 import { MenusComponent } from "./menus/menus.component";
 import { numberToWord } from "./signup/numbetToDigit.pipe";
-
-import {
-  MatInputModule,
-  MatPaginatorModule,
-  MatProgressSpinnerModule,
-  MatSortModule,
-  MatTableModule,
-  MatSelectModule,
-  MatMenuModule,
-  MatProgressBarModule,
-  MatButtonModule,
-  MatCheckboxModule,
-  MatDialogModule,
-  MatTabsModule,
-  MatNativeDateModule,
-  MatCardModule,
-  MatRadioModule,
-  MatIconModule,
-  MatDatepickerModule,
-  MatAutocompleteModule,
-  MAT_DIALOG_DEFAULT_OPTIONS,
-  MatSnackBarModule,
-  MatTooltipModule,
-} from "@angular/material";
-
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { SwiperModule } from "ngx-swiper-wrapper";
+import { SWIPER_CONFIG } from "ngx-swiper-wrapper";
+import { SwiperConfigInterface } from "ngx-swiper-wrapper";
 import { AppRoutingModule } from "./app.routing";
 import { ComponentsModule } from "./components/components.module";
 
@@ -58,12 +37,16 @@ import { PermissionsGuard } from "./helper/permisssion-guard";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
-
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: "horizontal",
+  slidesPerView: "auto",
+};
 @NgModule({
   declarations: [
     AppComponent,
     ChangePasswordComponent,
     ResetPasswordComponent,
+    DashboardComponent,
     MenusComponent,
     HealthyComponent,
     ForgetPasswordComponent,
@@ -74,29 +57,11 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     BrowserModule,
     BaseModule,
+    ToastrModule.forRoot(),
     FormsModule,
-    MatButtonModule,
-    DashboardModule,
     UserProfileModule,
-    MatMenuModule,
-    MatSelectModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatTableModule,
-    MatAutocompleteModule,
-    MatRadioModule,
-    MatIconModule,
-    MatNativeDateModule,
-    MatProgressBarModule,
-    MatDatepickerModule,
-    MatCardModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatCheckboxModule,
-    MatProgressSpinnerModule,
-    MatSnackBarModule,
-    MatTabsModule,
-    MatTooltipModule,
+    SwiperModule,
     HttpClientModule,
     ComponentsModule,
     RouterModule,
@@ -117,6 +82,10 @@ export function createTranslateLoader(http: HttpClient) {
     AuthenticationService,
     UsersService,
     PermissionsGuard,
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG,
+    },
   ],
   bootstrap: [AppComponent],
 })

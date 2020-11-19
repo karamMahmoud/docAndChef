@@ -1,6 +1,7 @@
   import { Component, OnInit ,ViewContainerRef} from '@angular/core';
   import { AuthenticationService } from '../../helper/services.api';
   import { Router } from '@angular/router';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: 'app-change-password',
@@ -17,7 +18,7 @@ export class ChangePasswordComponent implements OnInit {
   }
   errorMsgs:any;
 
-  constructor(private router:Router,private vRef: ViewContainerRef,
+  constructor(public toastr: ToastrManager,private router:Router,private vRef: ViewContainerRef,
     private authenticationService:AuthenticationService) {
      }
 

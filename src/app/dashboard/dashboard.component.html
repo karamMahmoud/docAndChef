@@ -4,8 +4,8 @@
     <img src="assets/img/chef.png" alt="">
   </div>
   <div class="btn-group sign-chef">
-    <button class="btn btn-primary index" type="submit">Sign Up</button>
-    <button class="btn btn-primary mrg-left " type="submit">Log In</button>
+    <button class="btn btn-primary index mr-1" routerLink="/signup">Sign Up</button>
+    <button class="btn btn-primary mrg-left" routerLink="/login">Log In</button>
   </div>
 </div>
 <!-- end navbar -->
@@ -43,7 +43,7 @@
     <div class="img-chef">
       <img src="assets/img/chef.png" alt="">
     </div>
-    <div class="row">
+    <div class="row" [swiper]="swiperConfig">
       <div class="col-lg-4 col-12">
         <div class="Lunch">
           <img src="assets/img/lunche.jpg" alt="">
