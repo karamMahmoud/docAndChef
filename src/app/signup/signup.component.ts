@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "app/helper/services.api";
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: "app-signup",
@@ -34,6 +35,8 @@ import { AuthenticationService } from "app/helper/services.api";
 })
 export class SignupComponent implements OnInit {
   plan = 1;
+  mainCoursePrice;
+  mainCourseCarb;
   pacakges;
   bodyBuildingLevel;
   payload = {
@@ -92,8 +95,8 @@ export class SignupComponent implements OnInit {
   requiredMsg3 = false;
   requiredMsg4 = false;
   loading = false;
-  currentStep = 4;
-  constructor(private api: AuthenticationService) {}
+  currentStep = 1;
+  constructor(public toastr: ToastrManager,private api: AuthenticationService) {}
 
   ngOnInit() {
     this.api.packages().subscribe((data) => {
@@ -124,6 +127,7 @@ export class SignupComponent implements OnInit {
           this.loading = false;
           this.packagePayloadNormal.client_id = data.data.client_id;
           this.packagePayloadBodyBuilding.client_id = data.data.client_id;
+          this.packagePayloadCustom.client_id = data.data.client_id;
           this.currentStep = 4;
           // this.toast.successToastr("Created successfully!");
           // this.currentStep = 5;
@@ -142,7 +146,6 @@ export class SignupComponent implements OnInit {
   }
 
   setPackages() {
-    console.log(this.plan);
     let payload;
     if (this.plan === 1) {
       this.packagePayloadNormal.package_id = this.pacakges.normal.id;
@@ -160,15 +163,42 @@ export class SignupComponent implements OnInit {
       this.packagePayloadBodyBuilding.carb = this.bodyBuildingLevel.carb;
       this.packagePayloadBodyBuilding.protein = this.bodyBuildingLevel.protein;
       payload = this.packagePayloadBodyBuilding;
+    } else if (this.plan === 3) {
+      this.packagePayloadCustom.package_id = this.pacakges.custom.id;
+      console.log(this.packagePayloadCustom.total_price )
+      this.packagePayloadCustom.total_price =
+        this.packagePayloadCustom.total_price +
+        this.packagePayloadCustom.fruit *
+          this.pacakges.custom.meals.fruit.price +
+        this.packagePayloadCustom.protein_snacks *
+          this.pacakges.custom.meals.protein_snacks.price +
+        this.packagePayloadCustom.breakfast *
+          this.pacakges.custom.meals.breakfast.price +
+        this.packagePayloadCustom.snacks *
+          this.pacakges.custom.meals.snacks.price
+      payload = this.packagePayloadCustom;
     }
-    console.log(payload);
     this.api.setPackages(payload).subscribe((data) => {
-      console.log(data);
-      // this.currentStep = 5;
+      this.currentStep = 6;
     });
   }
-  customQuantity(meal,operator){
-    if(!(this.packagePayloadCustom[meal] === 0 && operator === '-'))
-    this.packagePayloadCustom[meal] =operator === '+' ? this.packagePayloadCustom[meal]+ 1 : this.packagePayloadCustom[meal] -1 ;
+  setCarp() {
+    this.packagePayloadCustom.carb = this.mainCourseCarb.variants.carb;
+    this.packagePayloadCustom.protein = this.mainCourseCarb.variants.protein;
+  }
+  setCustomPrice() {
+    this.packagePayloadCustom.total_price = this.mainCoursePrice.price;
+    this.packagePayloadCustom.main_course = this.mainCoursePrice.no_of_meals;
+  }
+  customQuantity(meal, operator) {
+    if (!(this.packagePayloadCustom[meal] === 0 && operator === "-")){
+      if(this.packagePayloadCustom[meal] === 5 && operator === "5"){
+        this.toastr.errorToastr("Max number is 5");
+      }
+      this.packagePayloadCustom[meal] =
+        operator === "+"
+          ? this.packagePayloadCustom[meal] + 1
+          : this.packagePayloadCustom[meal] - 1;
+    }
   }
 }

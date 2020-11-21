@@ -28,8 +28,8 @@ export class UsersComponent implements OnInit, OnDestroy {
   resultsLength = 0;
   data:[];
 
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
-	@ViewChild(MatSort, {static: false}) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+	@ViewChild(MatSort) sort: MatSort;
 	@ViewChild('searchInput', {static: true}) searchInput: ElementRef;
   constructor(public toastr: ToastrManager,private modalService: BsModalService, public router:Router,private changeDetectorRef: ChangeDetectorRef,
     private authenticationService:AuthenticationService,private _usersService:UsersService) { 

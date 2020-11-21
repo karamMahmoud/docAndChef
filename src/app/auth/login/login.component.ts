@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.setItem("drchefToken",'')
     // this.requiredMsg = false;
     // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     // this.router.navigate([this.returnUrl]);

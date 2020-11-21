@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "app/helper/services.api";
 import { animate, style, transition, trigger } from "@angular/animations";
 import { ToastrManager } from 'ng6-toastr-notifications';
+import {FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: "app-menus",
   animations: [
@@ -23,6 +25,7 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 export class MenusComponent implements OnInit {
   mealsLength: any = {};
   menus;
+  toppings = new FormControl();
   order;
   package: any = {};
   payload = {
@@ -32,6 +35,7 @@ export class MenusComponent implements OnInit {
         breakfast_ids: [],
         main_course_ids: [],
         snacks_ids: [],
+        protein_snacks_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -40,6 +44,7 @@ export class MenusComponent implements OnInit {
         breakfast_ids: [],
         main_course_ids: [],
         snacks_ids: [],
+        protein_snacks_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -48,6 +53,7 @@ export class MenusComponent implements OnInit {
         breakfast_ids: [],
         main_course_ids: [],
         snacks_ids: [],
+        protein_snacks_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -56,6 +62,7 @@ export class MenusComponent implements OnInit {
         breakfast_ids: [],
         main_course_ids: [],
         snacks_ids: [],
+        protein_snacks_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -64,6 +71,7 @@ export class MenusComponent implements OnInit {
         breakfast_ids: [],
         main_course_ids: [],
         snacks_ids: [],
+        protein_snacks_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -72,6 +80,7 @@ export class MenusComponent implements OnInit {
         breakfast_ids: [],
         main_course_ids: [],
         snacks_ids: [],
+        protein_snacks_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -80,6 +89,7 @@ export class MenusComponent implements OnInit {
         breakfast_ids: [],
         main_course_ids: [],
         snacks_ids: [],
+        protein_snacks_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -95,7 +105,7 @@ export class MenusComponent implements OnInit {
     "thursday",
     "friday",
   ];
-  constructor(public toastr: ToastrManager,private api: AuthenticationService) {}
+  constructor(public router: Router,public toastr: ToastrManager,private api: AuthenticationService) {}
 
   ngOnInit() {
     this.api.menus().subscribe((data) => {
@@ -120,6 +130,15 @@ export class MenusComponent implements OnInit {
       };
     });
   }
+  changed(limit,dayIndex,ids) {
+    setTimeout(() => {
+    if (this.payload.meals[dayIndex][ids].length > limit) {
+      // this.payload.meals[dayIndex][ids] = this.toppings.value;
+      // this.mySelections = this.toppings.value;
+        this.payload.meals[dayIndex][ids] = this.payload.meals[dayIndex][ids].splice(-1,1)
+      }
+    }, 500);
+}
   save() {
     let payload = {meals:[],status:0};
     payload.meals = this.payload.meals.map((day) => {
@@ -128,10 +147,32 @@ export class MenusComponent implements OnInit {
         breakfast_ids: day.breakfast_ids.filter((id) => id),
         main_course_ids: day.main_course_ids.filter((id) => id),
         snacks_ids: day.snacks_ids.filter((id) => id),
+        protein_snacks_ids: day.protein_snacks_ids.filter((id) => id),
       };
     });
     this.api.setOrder(payload).subscribe((data) => {
       this.toastr.successToastr("Saved successfully");
     });
+  }
+  savePerminent() {
+    let payload = {meals:[],status:0};
+    payload.meals = this.payload.meals.map((day) => {
+      return {
+        ...day,
+        breakfast_ids: day.breakfast_ids.filter((id) => id),
+        main_course_ids: day.main_course_ids.filter((id) => id),
+        snacks_ids: day.snacks_ids.filter((id) => id),
+        protein_snacks_ids: day.protein_snacks_ids.filter((id) => id),
+      };
+    });
+    payload.status = 1;
+    this.api.setOrder(payload).subscribe((data) => {
+      this.toastr.successToastr("Saved successfully");
+    });
+  }
+
+  logout(){
+    localStorage.setItem("drchefToken",'');
+    this.router.navigate(["/menus"]);
   }
 }

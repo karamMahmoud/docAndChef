@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swiper from "swiper";
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,11 +8,23 @@ import Swiper from "swiper";
 })
 export class DashboardComponent implements OnInit {
   swiperConfig;
+  login;
   constructor() {
     setTimeout(() => {
       this.swiperConfig = {
         spaceBetween: 0,
-        slidesPerView: "auto",
+        slidesPerView: "1",
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -21,10 +34,11 @@ export class DashboardComponent implements OnInit {
           prevEl: ".swiper-button-prev",
         },
       };
-    });
+    },200);
   }
 
   ngOnInit() {
+    this.login = localStorage.getItem('drchefToken') ? true : false;
       
   }
 

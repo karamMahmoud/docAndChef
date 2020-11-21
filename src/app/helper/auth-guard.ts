@@ -15,7 +15,7 @@ import { Router, CanActivate} from '@angular/router';
 export class NotAuthGuard implements CanActivate {
 
     constructor(private router: Router) { }
-    token=localStorage.getItem("etSparkToken");    
+    token=localStorage.getItem("drchefToken");    
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
 

@@ -1,4 +1,40 @@
+@import 'swiper/swiper-bundle.css';
 $primary:#83489A;
+.swiper-container {
+  // width: 600px;
+  height: 300px;
+  .oto-slider-box {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 75px 0;
+      h2 {
+          font-size: 46px;
+      }
+      ul {
+          margin-top: 30px;
+          margin-bottom: 30px;
+          li {
+              margin-bottom: 12px;
+              display: flex;
+              align-items: center;
+              img {
+                  margin-right: 30px;
+              }
+          }
+      }
+      figure {
+          margin-bottom: 30px;
+      }
+      .btn {
+          height: 53.39px;
+          min-width: 177.25px;
+          line-height: 40px;
+          margin-left: 0;
+          margin-right: 30px;
+      }
+  }
+}
 .header{
   position: absolute;
   width: 100%;
@@ -109,6 +145,9 @@ font-weight: bold;
   background-color: #302B2B;
   padding: 20px 0px;
   color: #fff;
+  height: 550px;
+  display: flex;
+  align-items: center;
   .img-chef{
     max-width: 180px;
     img{

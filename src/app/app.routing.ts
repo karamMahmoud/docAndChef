@@ -9,7 +9,6 @@ import { ResetPasswordComponent } from "./auth/reset-password/reset-password.com
 import { ForgetPasswordComponent } from "./auth/forget-password/forget-password.component";
 import { AuthGuard } from "app/helper/guard";
 import { NotAuthGuard } from "app/helper/auth-guard";
-import { PermissionsGuard } from "./helper/permisssion-guard";
 import { MenusComponent } from "./menus/menus.component";
 import { SignupComponent } from "./signup/signup.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
@@ -23,18 +22,6 @@ const routes: Routes = [
   // { path: 'category',  component: CategoryComponent},
   { path: "healthyfood", component: HealthyComponent },
   { path: "menus", component: MenusComponent },
-  {
-    path: "user-profile",
-    loadChildren: () =>
-      import("./user-profile/user-profile.module").then(
-        (m) => m.UserProfileModule
-      ),
-  },
-  {
-    path: "users",
-    loadChildren: () =>
-      import("./users/users.module").then((m) => m.UsersModule),
-  },
   // canActivate: [NotAuthGuard]
   { path: "login", component: LoginComponent },
   {
@@ -52,7 +39,7 @@ const routes: Routes = [
     component: ForgetPasswordComponent,
     canActivate: [NotAuthGuard],
   },
-  { path: "**", redirectTo: "dashboard", pathMatch: "full" },
+  { path: "**", redirectTo: "home", pathMatch: "full"},
 ];
 
 //returnurl

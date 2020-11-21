@@ -9,7 +9,6 @@ import { UsersService } from "./users/users.service";
 import { GlobalEventsManager } from "./helper/global-events";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { UserProfileModule } from "./user-profile/user-profile.module";
 import { BaseModule } from "./base/base.module";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
@@ -25,13 +24,12 @@ import { SWIPER_CONFIG } from "ngx-swiper-wrapper";
 import { SwiperConfigInterface } from "ngx-swiper-wrapper";
 import { AppRoutingModule } from "./app.routing";
 import { ComponentsModule } from "./components/components.module";
-
+import {MatSelectModule} from '@angular/material/select';
 import { AppComponent } from "./app.component";
 
 import { ChangePasswordComponent } from "./auth/change-password/change-password.component";
 import { ResetPasswordComponent } from "./auth/reset-password/reset-password.component";
 import { ForgetPasswordComponent } from "./auth/forget-password/forget-password.component";
-import { PermissionsGuard } from "./helper/permisssion-guard";
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -58,8 +56,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BrowserModule,
     BaseModule,
     ToastrModule.forRoot(),
+    MatSelectModule,
     FormsModule,
-    UserProfileModule,
     ReactiveFormsModule,
     SwiperModule,
     HttpClientModule,
@@ -81,7 +79,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     GlobalEventsManager,
     AuthenticationService,
     UsersService,
-    PermissionsGuard,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,

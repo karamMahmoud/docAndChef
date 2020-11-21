@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
 
   // @ContentChild(NavbarComponent, {static: false}) navbar : NavbarComponent;
   // @ContentChild(NavbarComponent, {static: false}) navbar : NavbarComponent;
-  @ViewChild(NavbarComponent, { static: false }) navbar: NavbarComponent;
+  @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
   // @ViewChild('test', {read: ElementRef})
 

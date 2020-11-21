@@ -5,6 +5,7 @@
     'choose-section': currentStep === 4,
     'payment-section': currentStep === 5
   }"
+  *ngIf="currentStep !== 6"
 >
   <div class="container">
     <div class="logo">
@@ -95,7 +96,7 @@
                 class="form-control border-ridus"
                 required
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                placeholder="*********"
+                placeholder="Enter your email"
               />
             </div>
           </div>
@@ -120,52 +121,70 @@
       >
         <div class="formuls text-left">
           <div class="form-group">
-            <label>Address</label>
+            <label><span
+              class="has-asterisk"
+              *ngIf="address.errors && (address.touched || requiredMsg2)"
+              >*</span
+            >Address</label>
             <input
               name="address"
+              #address="ngModel"
               [(ngModel)]="payload.address"
               type="text"
               class="form-control border-ridus"
               required
-              placeholder="My name is…"
+              placeholder="Address"
             />
           </div>
 
           <div class="form-group">
-            <label>Area</label>
+            <label><span
+              class="has-asterisk"
+              *ngIf="area.errors && (area.touched || requiredMsg2)"
+              >*</span
+            >Area</label>
             <input
+              #area="ngModel"
               name="area"
               [(ngModel)]="payload.area"
               type="text"
               class="form-control border-ridus"
               required
-              placeholder="My name is…"
+              placeholder="Area"
             />
           </div>
 
           <div class="form-group">
-            <label>Street</label>
+            <label><span
+              class="has-asterisk"
+              *ngIf="street.errors && (street.touched || requiredMsg2)"
+              >*</span
+            >Street</label>
             <input
+              #street="ngModel"
               type="text"
               name="street"
               [(ngModel)]="payload.street"
               class="form-control border-ridus"
-              
               required
-              placeholder="My name is…"
+              placeholder="Street"
             />
           </div>
 
           <div class="form-group">
-            <label>Building - Floor</label>
+            <label><span
+              class="has-asterisk"
+              *ngIf="Building.errors && (Building.touched || requiredMsg2)"
+              >*</span
+            >Building - Floor</label>
             <input
+              #Building="ngModel"
               type="text"
               name="building_no"
               [(ngModel)]="payload.building_no"
               class="form-control border-ridus"
-              
               required
-              placeholder="My name is…"
+              placeholder="Building"
             />
           </div>
         </div>
@@ -197,38 +216,53 @@
             <label for="size_2" class="type text-center">Female</label>
           </div> -->
           <div class="form-group">
-            <label>How tall are you?</label>
+            <label><span
+              class="has-asterisk"
+              *ngIf="height.errors && (height.touched || requiredMsg3)"
+              >*</span
+            >How tall are you?</label>
             <input
+              #height="ngModel"
               type="number"
               name="height"
               [(ngModel)]="payload.height"
               class="form-control border-ridus"
               required
-              placeholder=".."
+              placeholder="Height"
             />
           </div>
 
           <div class="form-group">
-            <label>How much do you weight?</label>
+            <label><span
+              class="has-asterisk"
+              *ngIf="weight.errors && (weight.touched || requiredMsg3)"
+              >*</span
+            >How much do you weight?</label>
             <input
+              #weight="ngModel"
               type="number"
               name="weight"
               [(ngModel)]="payload.weight"
               class="form-control border-ridus"
               required
-              placeholder=".."
+              placeholder="Weight"
             />
           </div>
 
           <div class="form-group">
-            <label>Do you have Allergy?</label>
+            <label><span
+              class="has-asterisk"
+              *ngIf="Allergy.errors && (Allergy.touched || requiredMsg3)"
+              >*</span
+            >Do you have Allergy?</label>
             <input
+              #Allergy="ngModel"
               type="text"
               name="allergies"
               [(ngModel)]="payload.allergies"
               class="form-control border-ridus"
               required
-              placeholder="Write here.."
+              placeholder="Allergy"
             />
           </div>
           <!-- <ul>
@@ -413,32 +447,35 @@
         <div class="main-meals">
           <ul>
             <li class="main mb-2">
-              <span>the</span> <span class="color"> main </span>
-              <span>meals</span>
-              <div class="timer">
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
+              <mat-form-field>
+                <mat-label>Main meal</mat-label>
+                <mat-select [(ngModel)]="mainCourseCarb" (ngModelChange)="setCarp()">
+                  <mat-option *ngFor="let price of pacakges?.custom?.meals?.main_course?.prices" [value]="price">
+                   carb {{ price.variants.carb }} - protein {{ price.variants.protein }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
             </li>
-            <li class="lunch mb-2">Lunch + Dinner</li>
-            <li class="mb-2">
-              Protein
-              <div class="timer">
-                <span>-</span>
-                <span>100</span>
-                <span>+</span>
-              </div>
+            <!-- <li class="lunch mb-2">Lunch + Dinner</li> -->
+            <li class="mb-2" *ngIf="mainCourseCarb">
+              <mat-form-field>
+                <mat-label>Persons</mat-label>
+                <mat-select [(ngModel)]="mainCoursePrice" (ngModelChange)="setCustomPrice()">
+                  <mat-option *ngFor="let price of mainCourseCarb['price_per_meals']" [value]="price">
+                   price {{ price.price }} - meal {{ price.no_of_meals }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
             </li>
 
-            <li class="mb-2">
+            <!-- <li class="mb-2">
               Carb
               <div class="timer carb">
                 <span>-</span>
                 <span>50</span>
                 <span>+</span>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="add-snack main-meals">
@@ -614,7 +651,7 @@
 
 <!-- end sceion-one -->
 
-<!-- <div class="Congratulations">
+<div class="Congratulations" *ngIf="currentStep === 6">
   <div class="container">
     <div class="logos mb-3">
       <img src="assets/img/img.png" alt="" />
@@ -622,7 +659,10 @@
 
     <div class="personal-info">
       <div class="parent-three">
-        <hr class />
+        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
+      </div>
+      <div class="parent-three">
+        <hr class="w-100" />
       </div>
       <h1>Congratulations!</h1>
       <h2>
@@ -634,9 +674,9 @@
         the registration, you will reach your goal.
       </p>
 
-      <button class="btn btn-lg Continue">DONE!</button>
+      <button class="btn btn-lg Continue" routerLink="/login">DONE!</button>
     </div>
   </div>
-</div> -->
+</div>
 
 <!-- end section-six -->

@@ -1,38 +1,39 @@
 <!-- start navbar -->
 <div class="header">
   <div class="img-chef">
-    <img src="assets/img/chef.png" alt="">
+    <img src="assets/img/chef.png" alt="" />
   </div>
-  <div class="btn-group sign-chef">
-    <button class="btn btn-primary index mr-1" routerLink="/signup">Sign Up</button>
+  <div class="btn-group sign-chef" *ngIf="!login">
+    <button class="btn btn-primary index mr-1" routerLink="/signup">
+      Sign Up
+    </button>
     <button class="btn btn-primary mrg-left" routerLink="/login">Log In</button>
+  </div>
+  <div class="btn-group sign-chef" *ngIf="login">
+    <button class="btn btn-primary index mr-1" routerLink="/menus">
+      Menus
+    </button>
+    <!-- <button class="btn btn-primary mrg-left" routerLink="/login">Log In</button> -->
   </div>
 </div>
 <!-- end navbar -->
-
 
 <!-- start health -->
 <div class="health">
   <div class="social-media">
     <ul>
-      <li><i class="fab fa-twitter"></i>
-      </li>
-      <li><i class="fab fa-facebook-f"></i>
-      </li>
-      <li><i class="fab fa-google"></i>
-      </li>
-      <li> <i class="fab fa-snapchat-ghost"></i>
-      </li>
-      <li> <i class="fab fa-instagram"></i>
-      </li>
-
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-facebook-f"></i></li>
+      <li><i class="fab fa-google"></i></li>
+      <li><i class="fab fa-snapchat-ghost"></i></li>
+      <li><i class="fab fa-instagram"></i></li>
     </ul>
   </div>
   <div class="eat-health">
     <h1>Eat Healthy,</h1>
     <h1>Feel Healty.</h1>
-    <p>Don’t Start A Diet That Has An Expiration Date. </p>
-    <p class="underline"> Develop A Healthy Lifestyle That Will Last Forever.</p>
+    <p>Don’t Start A Diet That Has An Expiration Date.</p>
+    <p class="underline">Develop A Healthy Lifestyle That Will Last Forever.</p>
   </div>
 </div>
 <!-- end health -->
@@ -41,35 +42,46 @@
 <div class="meals">
   <div class="container">
     <div class="img-chef">
-      <img src="assets/img/chef.png" alt="">
+      <img src="assets/img/chef.png" alt="" />
     </div>
-    <div class="row" [swiper]="swiperConfig">
-      <div class="col-lg-4 col-12">
-        <div class="Lunch">
-          <img src="assets/img/lunche.jpg" alt="">
-          <div class="choose">
-            <h1>lunch</h1>
-            <p>Choose Your Meal</p>
+    <div class="row">
+      <div class="col-12 col-sm-8">
+      <div class="swiper-container" [swiper]="swiperConfig">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="col-lg-12">
+            <div class="Lunch">
+              <img src="assets/img/lunche.jpg" alt="" />
+              <div class="choose">
+                <h1>lunch</h1>
+                <p>Choose Your Meal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="col-12">
+            <div class="Breakfast">
+              <img src="assets/img/breakfast.jpg" alt="" />
+              <div class="choose">
+                <h1>Breakfast</h1>
+                <p>Choose Your Meal</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="col-lg-4 col-12">
-        <div class="Breakfast">
-          <img src="assets/img/breakfast.jpg" alt="">
-          <div class="choose">
-            <h1>Breakfast</h1>
-            <p>Choose Your Meal</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-12">
+      <div class="col-12 col-sm-4">
         <div class="category">
           <h1>MEALS</h1>
-          <h2> CATEGORIES</h2>
-          <p>WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN
-            DIET IS CORRECT, MEDICINE IS OF NO NEED.</p>
+          <h2>CATEGORIES</h2>
+          <p>
+            WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN DIET IS CORRECT,
+            MEDICINE IS OF NO NEED.
+          </p>
         </div>
       </div>
     </div>
@@ -85,54 +97,55 @@
     <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.</p>
     <div class="offer-type">
       <div class="row">
-        <div class="col-lg-6 col-12 ">
+        <div class="col-lg-6 col-12">
           <div class="flex-part">
             <div class="offer-no">
               <h1>01</h1>
             </div>
             <div class="offer-name">
-              <h1>Weight Loss Program
-              </h1>
-              <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
-                Curabitur Eleifend Non Purus Et Scelerisque. In Lectus
-                Augue, Elementum Nec Velit Vel, Congue Efficitur Sem.
-                Praesent Nec Risus Vitae Sem Dapibus Hendrerit. Quisque
-                Pellentesque Egestas Leo, Eu Congue Sem Imperdiet Auctor.</p>
+              <h1>Weight Loss Program</h1>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+                Curabitur Eleifend Non Purus Et Scelerisque. In Lectus Augue,
+                Elementum Nec Velit Vel, Congue Efficitur Sem. Praesent Nec
+                Risus Vitae Sem Dapibus Hendrerit. Quisque Pellentesque Egestas
+                Leo, Eu Congue Sem Imperdiet Auctor.
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-6 col-12 ">
+        <div class="col-lg-6 col-12">
           <div class="flex-part">
             <div class="offer-no">
-              <h1>02
-              </h1>
+              <h1>02</h1>
             </div>
             <div class="offer-name">
-              <h1>Bodybuilding Program
-              </h1>
-              <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
-                Curabitur Eleifend Non Purus Et Scelerisque. In Lectus
-                Augue, Elementum Nec Velit Vel, Congue Efficitur Sem.
-                Praesent Nec Risus Vitae Sem Dapibus Hendrerit.</p>
+              <h1>Bodybuilding Program</h1>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+                Curabitur Eleifend Non Purus Et Scelerisque. In Lectus Augue,
+                Elementum Nec Velit Vel, Congue Efficitur Sem. Praesent Nec
+                Risus Vitae Sem Dapibus Hendrerit.
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-6 col-12 ">
+        <div class="col-lg-6 col-12">
           <div class="flex-part">
             <div class="offer-no">
-              <h1>03
-              </h1>
+              <h1>03</h1>
             </div>
             <div class="offer-name">
-              <h1>Plan Your Meals
-              </h1>
-              <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
-                Curabitur Eleifend Non Purus Et Scelerisque. In Lectus
-                Augue, Elementum Nec Velit Vel, Congue Efficitur Sem.
-                Praesent Nec Risus Vitae Sem Dapibus Hendrerit. Quisque
-                Pellentesque Egestas Leo, Eu Congue Sem Imperdiet Auctor.</p>
+              <h1>Plan Your Meals</h1>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+                Curabitur Eleifend Non Purus Et Scelerisque. In Lectus Augue,
+                Elementum Nec Velit Vel, Congue Efficitur Sem. Praesent Nec
+                Risus Vitae Sem Dapibus Hendrerit. Quisque Pellentesque Egestas
+                Leo, Eu Congue Sem Imperdiet Auctor.
+              </p>
             </div>
           </div>
         </div>
@@ -150,28 +163,24 @@
     <div class="row">
       <div class="col-lg-6 col-12">
         <div class="photo">
-          <img src="assets/img/milk.jpg" alt="">
-
+          <img src="assets/img/milk.jpg" alt="" />
         </div>
       </div>
       <div class="col-lg-6 col-12">
         <div class="healthy-life">
-          <h1>
-            About Us
-          </h1>
-          <h2>
-            Healthy life
-          </h2>
+          <h1>About Us</h1>
+          <h2>Healthy life</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
             eleifend non purus et scelerisque. In lectus augue, elementum nec
-            velit vel, congue efficitur sem. Praesent nec risus vitae sem dapibus
-            hendrerit. Quisque pellentesque egestas leo, eu congue sem imperdiet
-            auctor. Donec consectetur, eros vel gravida hendrerit, justo leo iaculis
-            velit, et ullamcorper eros nisi ut mauris. Mauris ultricies porta velit,
-            ornare pellentesque dolor commodo id. Nulla venenatis pulvinar orci,
-            eget suscipit sapien lobortis et. Phasellus feugiat felis sed pretium
-            faucibus. Proin at turpis nisl. Phasellus maximus finibus posuere.
+            velit vel, congue efficitur sem. Praesent nec risus vitae sem
+            dapibus hendrerit. Quisque pellentesque egestas leo, eu congue sem
+            imperdiet auctor. Donec consectetur, eros vel gravida hendrerit,
+            justo leo iaculis velit, et ullamcorper eros nisi ut mauris. Mauris
+            ultricies porta velit, ornare pellentesque dolor commodo id. Nulla
+            venenatis pulvinar orci, eget suscipit sapien lobortis et. Phasellus
+            feugiat felis sed pretium faucibus. Proin at turpis nisl. Phasellus
+            maximus finibus posuere.
           </p>
         </div>
       </div>
@@ -179,7 +188,6 @@
   </div>
 </div>
 <!-- end about-us -->
-
 
 <!-- start footer -->
 
