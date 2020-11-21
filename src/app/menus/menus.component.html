@@ -125,7 +125,7 @@
             class="text-center"
           >
           <mat-form-field  *ngIf="mealsLength.name">
-            <mat-label>Persons</mat-label>
+            <mat-label>Meals</mat-label>
             <!-- (selectionChange)="changed(mealsLength.count,dayIndex,mealsLength.name + '_ids')" -->
             <mat-select [(ngModel)]="payload.meals[dayIndex][mealsLength.name + '_ids'][i]">
               <mat-option  *ngFor="let meal of menus[mealsLength.name]"
