@@ -1,7 +1,7 @@
 import { animate, style, transition, trigger } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "app/helper/services.api";
-import { ToastrManager } from 'ng6-toastr-notifications';
+import { ToastrManager } from "ng6-toastr-notifications";
 
 @Component({
   selector: "app-signup",
@@ -35,6 +35,8 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 })
 export class SignupComponent implements OnInit {
   plan = 1;
+  signupLoader = false;
+  setPackagesLoader = false;
   mainCoursePrice;
   mainCourseCarb;
   pacakges;
@@ -96,7 +98,10 @@ export class SignupComponent implements OnInit {
   requiredMsg4 = false;
   loading = false;
   currentStep = 1;
-  constructor(public toastr: ToastrManager,private api: AuthenticationService) {}
+  constructor(
+    public toastr: ToastrManager,
+    private api: AuthenticationService
+  ) {}
 
   ngOnInit() {
     this.api.packages().subscribe((data) => {
@@ -122,9 +127,10 @@ export class SignupComponent implements OnInit {
   thirdForm({ value, valid }) {
     this.requiredMsg3 = true;
     if (valid) {
+      this.signupLoader = true;
       this.api.signup(this.payload).subscribe(
         (data) => {
-          this.loading = false;
+          this.signupLoader = false;
           this.packagePayloadNormal.client_id = data.data.client_id;
           this.packagePayloadBodyBuilding.client_id = data.data.client_id;
           this.packagePayloadCustom.client_id = data.data.client_id;
@@ -133,8 +139,8 @@ export class SignupComponent implements OnInit {
           // this.currentStep = 5;
         },
         (err) => {
-          // this.loading = false;
-          // this.toast.errorToastr(err.error.data.errors[0]);
+          this.signupLoader = false;
+          this.toastr.errorToastr(err.error.message);
         }
       );
     }
@@ -165,7 +171,6 @@ export class SignupComponent implements OnInit {
       payload = this.packagePayloadBodyBuilding;
     } else if (this.plan === 3) {
       this.packagePayloadCustom.package_id = this.pacakges.custom.id;
-      console.log(this.packagePayloadCustom.total_price )
       this.packagePayloadCustom.total_price =
         this.packagePayloadCustom.total_price +
         this.packagePayloadCustom.fruit *
@@ -175,12 +180,19 @@ export class SignupComponent implements OnInit {
         this.packagePayloadCustom.breakfast *
           this.pacakges.custom.meals.breakfast.price +
         this.packagePayloadCustom.snacks *
-          this.pacakges.custom.meals.snacks.price
+          this.pacakges.custom.meals.snacks.price;
       payload = this.packagePayloadCustom;
     }
+    this.setPackagesLoader = true;
     this.api.setPackages(payload).subscribe((data) => {
+      this.setPackagesLoader = false;
       this.currentStep = 6;
-    });
+    },
+    (err) => {
+      this.setPackagesLoader = false;
+      this.toastr.errorToastr(err.error.message);
+    }
+  );
   }
   setCarp() {
     this.packagePayloadCustom.carb = this.mainCourseCarb.variants.carb;
@@ -191,8 +203,8 @@ export class SignupComponent implements OnInit {
     this.packagePayloadCustom.main_course = this.mainCoursePrice.no_of_meals;
   }
   customQuantity(meal, operator) {
-    if (!(this.packagePayloadCustom[meal] === 0 && operator === "-")){
-      if(this.packagePayloadCustom[meal] === 5 && operator === "5"){
+    if (!(this.packagePayloadCustom[meal] === 0 && operator === "-")) {
+      if (this.packagePayloadCustom[meal] === 5 && operator === "5") {
         this.toastr.errorToastr("Max number is 5");
       }
       this.packagePayloadCustom[meal] =

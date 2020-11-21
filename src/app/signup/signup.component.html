@@ -273,7 +273,7 @@
             <li class="lightest">189</li>
           </ul> -->
         </div>
-        <button class="btn btn-lg Continue" type="submit">Continue</button>
+        <button class="btn btn-lg Continue" type="submit" [disabled]="signupLoader">Continue</button>
       </form>
     </div>
     <div class="personal-info" *ngIf="currentStep === 4">
@@ -567,7 +567,7 @@
         </div>
       </div>
 
-      <button class="btn btn-lg Continue" (click)="setPackages()">Continue</button>
+      <button class="btn btn-lg Continue" (click)="setPackages()" [disabled]="setPackagesLoader">Continue</button>
     </div>
     <div class="personal-info" *ngIf="currentStep === 5">
       <div class="parent-three">
@@ -656,11 +656,7 @@
     <div class="logos mb-3">
       <img src="assets/img/img.png" alt="" />
     </div>
-
     <div class="personal-info">
-      <div class="parent-three">
-        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
-      </div>
       <div class="parent-three">
         <hr class="w-100" />
       </div>
