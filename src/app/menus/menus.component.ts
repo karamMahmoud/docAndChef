@@ -25,6 +25,7 @@ import { Router } from '@angular/router';
 export class MenusComponent implements OnInit {
   mealsLength: any = {};
   menus;
+  loading = false;
   toppings = new FormControl();
   order;
   package: any = {};
@@ -150,8 +151,13 @@ export class MenusComponent implements OnInit {
         protein_snacks_ids: day.protein_snacks_ids.filter((id) => id),
       };
     });
+    this.loading = true;
     this.api.setOrder(payload).subscribe((data) => {
+    this.loading = false;
       this.toastr.successToastr("Saved successfully");
+    },err =>{
+    this.loading = false;
+    this.toastr.errorToastr(err.error.messages);
     });
   }
   savePerminent() {
@@ -166,8 +172,13 @@ export class MenusComponent implements OnInit {
       };
     });
     payload.status = 1;
+    this.loading = true;
     this.api.setOrder(payload).subscribe((data) => {
-      this.toastr.successToastr("Saved successfully");
+    this.loading = false;
+    this.toastr.successToastr("Saved successfully");
+    },err =>{
+    this.loading = false;
+    this.toastr.errorToastr('Please fill all meals');
     });
   }
 

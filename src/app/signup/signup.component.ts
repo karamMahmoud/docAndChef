@@ -140,7 +140,8 @@ export class SignupComponent implements OnInit {
         },
         (err) => {
           this.signupLoader = false;
-          this.toastr.errorToastr(err.error.message);
+          console.log(err);
+          this.toastr.errorToastr(err.error.messages);
         }
       );
     }
@@ -190,7 +191,7 @@ export class SignupComponent implements OnInit {
     },
     (err) => {
       this.setPackagesLoader = false;
-      this.toastr.errorToastr(err.error.message);
+      this.toastr.errorToastr(err.error.messages);
     }
   );
   }
