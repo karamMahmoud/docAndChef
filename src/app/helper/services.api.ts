@@ -27,7 +27,7 @@ export class AuthenticationService {
     if (e.status === 422) {
       return observableThrowError({
         type: "missingData",
-        message: JSON.parse(e._body),
+        // message: JSON.parse(e._body),
       });
     }
     if (e.status === 500 || e.status === 503 || e.status === 400)

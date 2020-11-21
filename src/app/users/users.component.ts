@@ -19,7 +19,7 @@ declare var $: any;
 export class UsersComponent implements OnInit, OnDestroy {
   modalRef: BsModalRef;
   displayedColumns: string[] = ['id', 'name', 'email','actions'];
-  userPermissions:any = JSON.parse(localStorage.getItem("permissions"))['users'];
+  // userPermissions:any = JSON.parse(localStorage.getItem("permissions"))['users'];
   private dataTable :any;
   errorMessage: string;
   selectedRowId: any; 
