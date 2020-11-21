@@ -17,7 +17,7 @@ import { map, catchError } from "rxjs/operators";
 
 @Injectable()
 export class AuthenticationService {
-  baseUrl = "https://drandchef.modecollection.store/api";
+  baseUrl = "https://drandchefbackend.modecollection.store/api";
 
   errorFunction(e) {
     if (e.status === 401) {

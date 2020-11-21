@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   // { path: 'category',  component: CategoryComponent},
   { path: "healthyfood", component: HealthyComponent },
-  { path: "menus", component: MenusComponent },
+  { path: "menus", component: MenusComponent ,  canActivate: [AuthGuard]},
   // canActivate: [NotAuthGuard]
   { path: "login", component: LoginComponent },
   {

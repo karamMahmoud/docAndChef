@@ -97,13 +97,13 @@ export class MenusComponent implements OnInit {
     status: 0,
   };
   week = [
-    "saturday",
-    "sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
   ];
   constructor(public router: Router,public toastr: ToastrManager,private api: AuthenticationService) {}
 
@@ -173,6 +173,6 @@ export class MenusComponent implements OnInit {
 
   logout(){
     localStorage.setItem("drchefToken",'');
-    this.router.navigate(["/menus"]);
+    this.router.navigate(["/login"]);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swiper from "swiper";
 
 @Component({
@@ -9,7 +10,7 @@ import Swiper from "swiper";
 export class DashboardComponent implements OnInit {
   swiperConfig;
   login;
-  constructor() {
+  constructor(public router: Router) {
     setTimeout(() => {
       this.swiperConfig = {
         spaceBetween: 0,
@@ -39,7 +40,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.login = localStorage.getItem('drchefToken') ? true : false;
-      
+  }
+
+  logout(){
+    localStorage.setItem("drchefToken",'');
+    this.router.navigate(["/login"]);
   }
 
 }
