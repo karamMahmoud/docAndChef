@@ -1,7 +1,7 @@
 <!-- start navbar -->
 <div class="header">
   <div class="img-chef">
-    <img src="assets/img/chef.png" alt="" />
+    <img src="assets/img/img.png" alt="" />
   </div>
   <div class="btn-group sign-chef" *ngIf="!login">
     <button class="btn btn-primary index mr-1" routerLink="/signup">
@@ -152,7 +152,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-primary blur" type="submit">Join us</button>
+      <button class="btn btn-primary blur" routerLink="/signup" *ngIf="!login">Join us</button>
     </div>
   </div>
 </div>

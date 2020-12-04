@@ -1,9 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "app/helper/services.api";
 import { animate, style, transition, trigger } from "@angular/animations";
-import { ToastrManager } from 'ng6-toastr-notifications';
-import {FormControl} from '@angular/forms';
-import { Router } from '@angular/router';
+import { ToastrManager } from "ng6-toastr-notifications";
+import { FormControl } from "@angular/forms";
+import { Router } from "@angular/router";
+import * as moment from "moment";
+
+declare const $: any;
+
 @Component({
   selector: "app-menus",
   animations: [
@@ -25,6 +29,10 @@ import { Router } from '@angular/router';
 export class MenusComponent implements OnInit {
   mealsLength: any = {};
   menus;
+  end;
+  days = 0;
+  showNavBar = false;
+  notStarted = false;
   loading = false;
   toppings = new FormControl();
   order;
@@ -106,9 +114,19 @@ export class MenusComponent implements OnInit {
     "Thursday",
     "Friday",
   ];
-  constructor(public router: Router,public toastr: ToastrManager,private api: AuthenticationService) {}
+  constructor(
+    public router: Router,
+    public toastr: ToastrManager,
+    private api: AuthenticationService
+  ) {}
 
   ngOnInit() {
+    this.end = localStorage.getItem("package_start_date");
+    var duration = moment.duration(moment(this.end).diff(new Date()));
+    this.days = duration.asDays();
+    this.notStarted = this.days > 0;
+    this.showNavBar = parseInt(localStorage.getItem("package_remaining_days")) < 10;
+    // notStarted = true;
     this.api.menus().subscribe((data) => {
       this.menus = data.data;
     });
@@ -117,9 +135,7 @@ export class MenusComponent implements OnInit {
     });
     this.api.getOrder().subscribe((data) => {
       // this.package = data.data;
-      if(data.data.length > 0)
-      this.payload.meals = data.data;
-      console.log(this.payload.meals);
+      if (data.data.length > 0) this.payload.meals = data.data;
     });
   }
   setMeal(meal) {
@@ -131,17 +147,19 @@ export class MenusComponent implements OnInit {
       };
     });
   }
-  changed(limit,dayIndex,ids) {
+  changed(limit, dayIndex, ids) {
     setTimeout(() => {
-    if (this.payload.meals[dayIndex][ids].length > limit) {
-      // this.payload.meals[dayIndex][ids] = this.toppings.value;
-      // this.mySelections = this.toppings.value;
-        this.payload.meals[dayIndex][ids] = this.payload.meals[dayIndex][ids].splice(-1,1)
+      if (this.payload.meals[dayIndex][ids].length > limit) {
+        // this.payload.meals[dayIndex][ids] = this.toppings.value;
+        // this.mySelections = this.toppings.value;
+        this.payload.meals[dayIndex][ids] = this.payload.meals[dayIndex][
+          ids
+        ].splice(-1, 1);
       }
     }, 500);
-}
+  }
   save() {
-    let payload = {meals:[],status:0};
+    let payload = { meals: [], status: 0 };
     payload.meals = this.payload.meals.map((day) => {
       return {
         ...day,
@@ -152,16 +170,19 @@ export class MenusComponent implements OnInit {
       };
     });
     this.loading = true;
-    this.api.setOrder(payload).subscribe((data) => {
-    this.loading = false;
-      this.toastr.successToastr("Saved successfully");
-    },err =>{
-    this.loading = false;
-    this.toastr.errorToastr(err.error.messages);
-    });
+    this.api.setOrder(payload).subscribe(
+      (data) => {
+        this.loading = false;
+        this.toastr.successToastr("Saved successfully");
+      },
+      (err) => {
+        this.loading = false;
+        this.toastr.errorToastr(err.error.messages);
+      }
+    );
   }
   savePerminent() {
-    let payload = {meals:[],status:0};
+    let payload = { meals: [], status: 0 };
     payload.meals = this.payload.meals.map((day) => {
       return {
         ...day,
@@ -173,17 +194,24 @@ export class MenusComponent implements OnInit {
     });
     payload.status = 1;
     this.loading = true;
-    this.api.setOrder(payload).subscribe((data) => {
-    this.loading = false;
-    this.toastr.successToastr("Saved successfully");
-    },err =>{
-    this.loading = false;
-    this.toastr.errorToastr('Please fill all meals');
-    });
+    this.api.setOrder(payload).subscribe(
+      (data) => {
+        this.loading = false;
+        this.toastr.successToastr("Saved successfully");
+      },
+      (err) => {
+        this.loading = false;
+        this.toastr.errorToastr("Please fill all meals");
+      }
+    );
   }
 
-  logout(){
-    localStorage.setItem("drchefToken",'');
+  customBreakfastModal() {
+    $("#customModal").modal();
+  }
+
+  logout() {
+    localStorage.setItem("drchefToken", "");
     this.router.navigate(["/login"]);
   }
 }

@@ -114,7 +114,11 @@ export class AuthenticationService {
   }
 
   setPackages(payload): any {
-    return this.http.post(`${this.baseUrl}/packages/set`, payload);
+    return this.http.post(`${this.baseUrl}/packages/set`, payload, { headers: this.tokenAsHeader() });
+  }
+
+  renewPackages(payload): any {
+    return this.http.post(`${this.baseUrl}/packages/renew`, payload, { headers: this.tokenAsHeader() });
   }
 
   signup(payload): any {

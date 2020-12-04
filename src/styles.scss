@@ -7,3 +7,19 @@
 // @import "../node_modules/perfect-scrollbar/css/perfect-scrollbar.css";
 // @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 // @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+.theme-green .bs-datepicker-head {
+    background-color: #83489a;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 20px 30px 10px #fff;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #83489a;
+    outline: 1px solid slategrey;
+  }

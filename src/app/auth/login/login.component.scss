@@ -9,9 +9,55 @@ $primary: #83489a;
   position: relative;
   top: 2px;
 }
+.navbar-header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 10px;
+  padding: 0 30px;
+  .img-chef {
+    max-width: 180px;
+    img {
+      width: 100%;
+    }
+  }
+  .sign-chef {
+    margin-top: 12px;
+    margin-right: 5px;
+    button {
+      outline: none;
+      z-index: 1;
+      color: #fff;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 30px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: none;
+      transition: 0.2s ease;
+    }
+    .mrg-left {
+      // margin-left: -30px;
+      background-color: #7b7879;
+    }
+    .index {
+      z-index: 2;
+    }
+    @media only screen and (max-width: 767px) {
+      button {
+        padding: 10px 13px;
+        border-radius: 15px;
+      }
+      .mrg-left {
+        // margin-left: -14px;
+      }
+    }
+  }
+}
 .info-section {
-  padding: 50px 0px;
-
+  padding: 165px 0px;
   background-image: url("assets/img/back.jpg");
   background-position: center;
   background-repeat: no-repeat;

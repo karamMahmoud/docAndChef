@@ -9,11 +9,65 @@ $primary: #83489a;
   position: relative;
   top: 2px;
 }
-.pointer{
+.navbar-header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 10px;
+  padding: 0 30px;
+  .img-chef {
+    max-width: 180px;
+    img {
+      width: 100%;
+    }
+  }
+  .sign-chef {
+    margin-top: 12px;
+    margin-right: 5px;
+    button {
+      outline: none;
+      z-index: 1;
+      color: #fff;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 30px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: none;
+      transition: 0.2s ease;
+    }
+    .mrg-left {
+      // margin-left: -30px;
+      background-color: #7b7879;
+    }
+    .index {
+      z-index: 2;
+    }
+    @media only screen and (max-width: 767px) {
+      button {
+        padding: 10px 13px;
+        border-radius: 15px;
+      }
+      .mrg-left {
+        // margin-left: -14px;
+      }
+    }
+  }
+}
+.form-
+.pointer {
   cursor: pointer;
 }
+.ml-25{
+  margin-left: 22px;
+}
+.w-90{
+  width: 90%;
+}
 .info-section {
-  padding: 50px 0px;
+  padding: 150px 0px;
 
   background-image: url("assets/img/back.jpg");
   background-position: center;
@@ -101,7 +155,7 @@ $primary: #83489a;
 // start sceion-tow
 
 .info-section {
-  padding: 50px 0px;
+  padding: 150px 0px;
 
   background-image: url("assets/img/back.jpg");
   background-position: center;
@@ -196,7 +250,7 @@ $primary: #83489a;
 
 // start sceion-three
 .info-section {
-  padding: 50px 0px;
+  padding: 150px 0px;
 
   background-image: url("assets/img/back.jpg");
   background-position: center;
@@ -252,11 +306,11 @@ $primary: #83489a;
       margin: auto;
     }
 
-    input[type="radio"] {
-      visibility: hidden;
-      height: 0;
-      width: 0;
-    }
+    // input[type="radio"] {
+    //   visibility: hidden;
+    //   height: 0;
+    //   width: 0;
+    // }
 
     .type {
       display: table-cell;
@@ -268,10 +322,10 @@ $primary: #83489a;
       padding: 5px 10px;
       border-radius: 3px;
     }
-    input[type="radio"]:checked + label {
-      background-color: $primary;
-      color: #fff;
-    }
+    // input[type="radio"]:checked + label {
+    //   background-color: $primary;
+    //   color: #fff;
+    // }
 
     .formulas {
       padding: 20px 0px;
@@ -353,7 +407,7 @@ $primary: #83489a;
 // start sceion-four
 
 .choose-section {
-  padding: 50px 0px;
+  padding: 150px 0px;
 
   background-image: url("assets/img/back.jpg");
   background-position: center;
@@ -396,6 +450,19 @@ $primary: #83489a;
         position: absolute;
         left: 0px;
         margin: auto;
+      }
+    }
+    .type {
+      button {
+        background-color: $primary;
+        padding: 10px 30px;
+        box-shadow: none;
+        font-size: 15px;
+        border-radius: 20px;
+        background-color: $primary;
+        border-color: $primary;
+        color: #fff;
+        cursor: auto;
       }
     }
     .title {
@@ -474,7 +541,13 @@ $primary: #83489a;
         li {
           display: flex;
           .timer {
-            margin: auto;
+            // margin: auto;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
             border: 1px solid black;
             border-radius: 30px;
             font-size: 15px;
@@ -518,6 +591,10 @@ $primary: #83489a;
     .add-snack {
       border: none;
       width: 50%;
+      li:not(.snack) {
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     @media only screen and (max-width: 992px) {
@@ -700,10 +777,16 @@ $primary: #83489a;
             .timer {
               border: 1px solid black;
               border-radius: 30px;
+              -webkit-touch-callout: none; /* iOS Safari */
+              -webkit-user-select: none; /* Safari */
+              -khtml-user-select: none; /* Konqueror HTML */
+              -moz-user-select: none; /* Old versions of Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
               max-width: 70px;
               text-align: center;
               width: 100%;
-              margin: auto;
+              // margin: auto;
             }
           }
         }
@@ -728,7 +811,7 @@ $primary: #83489a;
 
 // start sceion-five
 .payment-section {
-  padding: 50px 0px;
+  padding: 150px 0px;
 
   background-image: url("assets/img/back.jpg");
   background-position: center;
@@ -872,7 +955,7 @@ $primary: #83489a;
 
 // start sceion-six
 .Congratulations {
-  padding: 50px 0px;
+  padding: 150px 0px;
 
   background-image: url("assets/img/back.jpg");
   background-position: center;

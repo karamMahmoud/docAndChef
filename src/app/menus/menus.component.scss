@@ -2,6 +2,9 @@ $primary: #83489a;
 .v-m {
   vertical-align: middle !important;
 }
+.text-primary1{
+  color: $primary;
+}
 .border-r-5 {
   border-radius: 15px;
 }
@@ -36,7 +39,7 @@ table {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: -45px;
+  top: 10px;
   padding: 0 30px;
   .img-chef {
     max-width: 180px;
@@ -175,6 +178,135 @@ table {
 
 .table {
   color: wheat;
+}
+
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.bounceInDown {
+  animation-name: bounceInDown;
+}
+
+.announce-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 4px 0;
+  display: flex;
+  min-height: 50px;
+  cursor: pointer;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  z-index: 999;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+
+  animation-duration: 1s;
+  animation-name: bounceInDown;
+  animation-fill-mode: forwards;
+
+  p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4B4B4B;
+    margin: 0 0 0 15px;
+
+    @media screen and (max-width: 1140px) {
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 12px;
+    }
+  }
+
+  .button {
+    color: #000000;
+    background-color: #FED041;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 15px;
+    white-space: nowrap;
+    height: 42px;
+  }
+
+  .shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    .primary-bg {
+     fill: var(--elham-global-theme-primary);
+   }
+   .secondary-bg {
+     fill: #fed041;
+   }
+    @media screen and (max-width: 1140px) {
+      display: none;
+    }
+
+    &.shape-left {
+      right: auto;
+      left: 0;
+    }
+  }
+  &.announce-bar___i18n-ltr {
+     direction: ltr;
+     p {
+           margin: 0 15px 0 0;
+     }
+  }
+  @media screen and (max-width: 860px) {
+    // position: relative;
+    margin-bottom: 25px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 10px;
+  }
+}
+
+.top-nav{
+  top: 80px !important;
+}
+// @media screen and (max-width: 400px) {
+//   .top-nav{
+//     top: 100px !important;
+//   }
+// }
+
+.pd-150{
+  padding: 150px 0;
 }
 
 // end category-sectio

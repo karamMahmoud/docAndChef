@@ -1,4 +1,12 @@
 <!-- start sceion-one -->
+<div class="navbar-header">
+  <div class="img-chef">
+    <img src="assets/img/img.png" alt="" />
+  </div>
+  <div class="btn-group sign-chef">
+    <button class="btn btn-primary mrg-left" routerLink="/home">Home</button>
+  </div>
+</div>
 <div
   [ngClass]="{
     'info-section': currentStep === 1 || currentStep === 2 || currentStep === 3,
@@ -8,8 +16,8 @@
   *ngIf="currentStep !== 6"
 >
   <div class="container">
-    <div class="logo">
-      <img src="assets/img/black.png" alt="" />
+    <div class="logo mb-3">
+      <img src="assets/img/img.png" alt="" />
     </div>
     <div class="personal-info" *ngIf="currentStep === 1">
       <div class="parent-one">
@@ -120,23 +128,7 @@
         #registerForm2="ngForm"
       >
         <div class="formuls text-left">
-          <div class="form-group">
-            <label><span
-              class="has-asterisk"
-              *ngIf="address.errors && (address.touched || requiredMsg2)"
-              >*</span
-            >Address</label>
-            <input
-              name="address"
-              #address="ngModel"
-              [(ngModel)]="payload.address"
-              type="text"
-              class="form-control border-ridus"
-              required
-              placeholder="Address"
-            />
-          </div>
-
+        
           <div class="form-group">
             <label><span
               class="has-asterisk"
@@ -157,6 +149,40 @@
           <div class="form-group">
             <label><span
               class="has-asterisk"
+              *ngIf="plot.errors && (plot.touched || requiredMsg2)"
+              >*</span
+            >Plot</label>
+            <input
+              name="plot"
+              #plot="ngModel"
+              [(ngModel)]="payload.plot"
+              type="text"
+              class="form-control border-ridus"
+              required
+              placeholder="plot"
+            />
+          </div>
+
+
+          <div class="form-group">
+            <label><span
+              class="has-asterisk"
+              *ngIf="district.errors && (district.touched || requiredMsg2)"
+              >*</span
+            >District</label>
+            <input
+              #district="ngModel"
+              type="text"
+              name="district"
+              [(ngModel)]="payload.district"
+              class="form-control border-ridus"
+              placeholder="district"
+            />
+          </div>
+
+          <div class="form-group">
+            <label><span
+              class="has-asterisk"
               *ngIf="street.errors && (street.touched || requiredMsg2)"
               >*</span
             >Street</label>
@@ -166,7 +192,6 @@
               name="street"
               [(ngModel)]="payload.street"
               class="form-control border-ridus"
-              required
               placeholder="Street"
             />
           </div>
@@ -176,15 +201,59 @@
               class="has-asterisk"
               *ngIf="Building.errors && (Building.touched || requiredMsg2)"
               >*</span
-            >Building - Floor</label>
+            >Building no</label>
             <input
               #Building="ngModel"
               type="text"
               name="building_no"
               [(ngModel)]="payload.building_no"
               class="form-control border-ridus"
-              required
               placeholder="Building"
+            />
+          </div>
+          <div class="form-group">
+            <label><span
+              class="has-asterisk"
+              *ngIf="floor.errors && (floor.touched || requiredMsg2)"
+              >*</span
+            >Floor</label>
+            <input
+              #floor="ngModel"
+              type="text"
+              name="floor"
+              [(ngModel)]="payload.floor"
+              class="form-control border-ridus"
+              placeholder="floor"
+            />
+          </div>
+          <div class="form-group">
+            <label><span
+              class="has-asterisk"
+              *ngIf="flat_no.errors && (flat_no.touched || requiredMsg2)"
+              >*</span
+            >Flat no</label>
+            <input
+              #flat_no="ngModel"
+              type="text"
+              name="flat_no"
+              [(ngModel)]="payload.flat_no"
+              class="form-control border-ridus"
+              placeholder="flat no"
+            />
+          </div>
+          <div class="form-group">
+            <label><span
+              class="has-asterisk"
+              *ngIf="address_notes.errors && (address_notes.touched || requiredMsg2)"
+              >*</span
+            >Address Notes</label>
+            <input
+              #address_notes="ngModel"
+              type="text"
+              name="address_notes"
+              [(ngModel)]="payload.address_notes"
+              class="form-control border-ridus"
+              placeholder="address notes"
             />
           </div>
         </div>
@@ -252,9 +321,26 @@
           <div class="form-group">
             <label><span
               class="has-asterisk"
+              *ngIf="age.errors && (age.touched || requiredMsg3)"
+              >*</span
+            >Age?</label>
+            <input
+              #age="ngModel"
+              type="number"
+              name="age"
+              [(ngModel)]="payload.age"
+              class="form-control border-ridus"
+              required
+              placeholder="Age"
+            />
+          </div>
+
+          <div class="form-group">
+            <label><span
+              class="has-asterisk"
               *ngIf="Allergy.errors && (Allergy.touched || requiredMsg3)"
               >*</span
-            >Do you have Allergy?</label>
+            >Do you have Any diseases or allergies?</label>
             <input
               #Allergy="ngModel"
               type="text"
@@ -265,6 +351,32 @@
               placeholder="Allergy"
             />
           </div>
+          <div class="form-group">
+          <label><span
+            class="has-asterisk"
+            *ngIf="gender.errors && (gender.touched || requiredMsg3)"
+            >*</span
+          >Gender</label> 
+          <div class="form-group row check-box ml-3">
+          <div class="form-check">
+              <input #gender="ngModel" required class="form-check-input" type="radio" name="gender" id="Male" value="male" [(ngModel)]="payload.gender" [checked]="payload.gender === 'male'"> 
+               <label class="form-check-label" for="Male">Male</label>
+              </div>
+          </div>
+          <div class="form-group row check-box ml-3">
+          <div class="form-check">
+              <input #gender="ngModel" required class="form-check-input" type="radio" name="gender" id="Female" value="female" [(ngModel)]="payload.gender" [checked]="payload.gender === 'female'"> 
+               <label class="form-check-label" for="Female">Female</label>
+          </div>
+          </div>
+          </div>
+          <!-- <div class="form-group row check-box ml-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="delivery_time" id="exampleRadios3" value="6-10 am" [(ngModel)]="delivery_time" [checked]="delivery_time === '6-10 am'"> 
+               <label class="form-check-label" for="exampleRadios3">6-10 am</label>
+             </div>
+           
+          </div> -->
           <!-- <ul>
             <li class="lightest">185</li>
             <li class="lighter">186</li>
@@ -281,8 +393,13 @@
         <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
       </div>
       <div class="title">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
         <h1>Choose your program</h1>
+      </div>
+      <div class="type">
+        <button class="btn btn-lg" *ngIf="plan === 1">{{packagePayloadNormal.total_price}} KWD</button>
+        <button class="btn btn-lg" *ngIf="plan === 2">{{packagePayloadBodyBuilding.total_price || 0}} KWD</button>
+        <button class="btn btn-lg" *ngIf="plan === 3">{{packagePayloadCustom.total_price}} KWD</button>
       </div>
 
       <!-- wight loss button -->
@@ -291,12 +408,12 @@
           <div class="row">
             <div class="col-lg-6 col-12 color-up">
               <span>01</span>
-              <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
+              <button class="btn btn-lg" (click)="setPlan(1)">Weight loss</button>
             </div>
 
             <div class="col-lg-3 col-12 Bodybuilding normal">
               <h1>02</h1>
-              <button class="btn btn-lg" (click)="plan = 2">
+              <button class="btn btn-lg" (click)="setPlan(2)">
                 Bodybuilding
               </button>
               <p>
@@ -310,7 +427,7 @@
               [class.xyz]="plan === 3"
             >
               <h1>03</h1>
-              <button class="btn btn-lg" (click)="plan = 3">
+              <button class="btn btn-lg" (click)="setPlan(3)">
                 Plan your Program
               </button>
               <p>
@@ -323,9 +440,10 @@
         <div class="order">
           <h1>
             <span
-              >{{ pacakges?.normal.meals.breakfast.quantity }} Breakfast +
-              {{ pacakges?.normal.meals.snacks.quantity }} Snackes +
-              {{ pacakges?.normal.meals.main_course.quantity }} Meals
+              >
+              <!-- {{ pacakges?.normal.meals.breakfast?.quantity }} Breakfast + -->
+              {{ pacakges?.normal.meals.snacks?.quantity }} Snackes +
+              {{ pacakges?.normal.meals.main_course?.quantity }} Meals
             </span>
           </h1>
         </div>
@@ -337,7 +455,7 @@
           <div class="row">
             <div class="col-lg-3 col-12 normal">
               <h1>01</h1>
-              <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
+              <button class="btn btn-lg" (click)="setPlan(1)">Weight loss</button>
               <p>
                 Show Details
                 <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
@@ -346,7 +464,7 @@
 
             <div class="col-lg-6 col-12 Bodybuilding color-up">
               <span>02</span>
-              <button class="btn btn-lg" (click)="plan = 2">
+              <button class="btn btn-lg" (click)="setPlan(2)">
                 Bodybuilding
               </button>
             </div>
@@ -356,7 +474,7 @@
               [class.xyz]="plan === 3"
             >
               <h1>03</h1>
-              <button class="btn btn-lg" (click)="plan = 3">
+              <button class="btn btn-lg" (click)="setPlan(3)">
                 Plan your Program
               </button>
               <p>
@@ -371,9 +489,9 @@
             <i class="fa fa-circle-thin" aria-hidden="true"></i>
             <h1><input type="radio" name="level" (click)="selectPrice(level)">LEVEL <span> {{i+1 | numberToWord}}</span></h1>
             <h2>  <span
-              >{{ pacakges?.normal.meals.breakfast.quantity }} Breakfast +
-              {{ pacakges?.normal.meals.snacks.quantity }} Snackes +
-              {{ pacakges?.normal.meals.main_course.quantity }} Meals
+              >{{ pacakges['body buiding'].meals.breakfast?.quantity }} Breakfast +
+              {{ pacakges['body buiding'].meals.snacks.quantity }} Snackes +
+              {{ pacakges['body buiding'].meals.main_course.quantity }} Meals
             </span></h2>
             <p> {{level.protein}} Gram Protein</p>
             <div class="flex">
@@ -418,7 +536,7 @@
         <div class="row">
           <div class="col-lg-3 col-12 normal">
             <h1>1</h1>
-            <button class="btn btn-lg" (click)="plan = 1">Weight loss</button>
+            <button class="btn btn-lg" (click)="setPlan(1)">Weight loss</button>
             <p>
               Show Details
               <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
@@ -427,7 +545,7 @@
 
           <div class="col-lg-3 col-12 normal">
             <h1>2</h1>
-            <button class="btn btn-lg" (click)="plan = 2">Bodybuilding</button>
+            <button class="btn btn-lg" (click)="setPlan(2)">Bodybuilding</button>
             <p>
               Show Details
               <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
@@ -436,7 +554,7 @@
 
           <div class="col-lg-6 col-12 color-up" [class.xyz]="plan === 3">
             <span>03</span>
-            <button class="btn btn-lg" (click)="plan = 3">
+            <button class="btn btn-lg" (click)="setPlan(3)">
               Plan your Program
             </button>
           </div>
@@ -449,19 +567,30 @@
             <li class="main mb-2">
               <mat-form-field>
                 <mat-label>Main meal</mat-label>
-                <mat-select [(ngModel)]="mainCourseCarb" (ngModelChange)="setCarp()">
-                  <mat-option *ngFor="let price of pacakges?.custom?.meals?.main_course?.prices" [value]="price">
-                   carb {{ price.variants.carb }} - protein {{ price.variants.protein }}
+                <mat-select [(ngModel)]="mainCourseCarb" (ngModelChange)="setProtien()">
+                  <mat-option *ngFor="let price of proteins" [value]="price">
+                  protein {{ price.variants.protein }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </li>
+
+            <li class="main mb-2">
+              <mat-form-field>
+                <mat-label>Carb</mat-label>
+                <mat-select  [disabled]="!packagePayloadCustom.protein" (selectionChange)="setCarp($event.value)">
+                  <mat-option *ngFor="let carb of carbs" [value]="carb">
+                    Carb {{ carb }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
             </li>
             <!-- <li class="lunch mb-2">Lunch + Dinner</li> -->
-            <li class="mb-2" *ngIf="mainCourseCarb">
+            <li class="mb-2">
               <mat-form-field>
                 <mat-label>Persons</mat-label>
-                <mat-select [(ngModel)]="mainCoursePrice" (ngModelChange)="setCustomPrice()">
-                  <mat-option *ngFor="let price of mainCourseCarb['price_per_meals']" [value]="price">
+                <mat-select [(ngModel)]="mainCoursePrice" [disabled]="!(packagePayloadCustom.carb && packagePayloadCustom.protein)" (ngModelChange)="setCustomPrice()">
+                  <mat-option *ngFor="let price of selectedMainCourse?.price_per_meals" [value]="price">
                    price {{ price.price }} - meal {{ price.no_of_meals }}
                   </mat-option>
                 </mat-select>
@@ -482,16 +611,51 @@
           <ul>
             <li class="snack mb-2">Add <span>Snacks</span></li>
             <li class="mb-2">
-              1- Breakfast
+             <div class="form-check">
+             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" (change)="changeBreackFast('breakfast')" [checked]="customBreakfast === 'breakfast'"> 
+              <label class="form-check-label" for="exampleRadios1">Breakfast</label>
+            </div>
               <div class="timer">
-                <span class="pointer" (click)="customQuantity('breakfast','-')">-</span>
+                <span class="pointer" (click)="customBreakfast === 'breakfast' ? customQuantity('breakfast','-'):''">-</span>
                 <span>{{packagePayloadCustom.breakfast}}</span>
-                <span class="pointer" (click)="customQuantity('breakfast','+')">+</span>
+                <span class="pointer" (click)="customBreakfast === 'breakfast'?customQuantity('breakfast','+'):''">+</span>
               </div>
             </li>
+            <li class="mb-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" (change)="changeBreackFast('customBreakfast')"  [checked]="customBreakfast === 'customBreakfast'"> 
+                 <label class="form-check-label" for="exampleRadios2">Specail breakfast</label>
+               </div>
+            </li>
+            <ul *ngIf="customBreakfast === 'customBreakfast'" class="ml-3">
+              <li class="mb-2">
+                Eggs
+                <div class="timer">
+                  <span class="pointer" (click)="customQuantity(1,'-')">-</span>
+                  <span>{{packagePayloadCustom.custom_breakfasts[1]?.qty}}</span>
+                  <span class="pointer" (click)="customQuantity(1,'+')">+</span>
+                </div>
+              </li>
+              <li class="mb-2">
+                white Eggs
+                <div class="timer">
+                  <span class="pointer" (click)="customQuantity(0,'-')">-</span>
+                  <span>{{packagePayloadCustom.custom_breakfasts[0]?.qty}}</span>
+                  <span class="pointer" (click)="customQuantity(0,'+')">+</span>
+                </div>
+              </li>
+              <li class="mb-2">
+                Smocked Turkey
+                <div class="timer">
+                  <span class="pointer" (click)="customQuantity(2,'-')">-</span>
+                  <span>{{packagePayloadCustom.custom_breakfasts[2]?.qty}}</span>
+                  <span class="pointer" (click)="customQuantity(2,'+')">+</span>
+                </div>
+              </li>
+            </ul>
 
             <li class="mb-2">
-              2- Fruit
+              Fruit
               <div class="timer">
                 <span class="pointer" (click)="customQuantity('fruit','-')">-</span>
                 <span>{{packagePayloadCustom.fruit}}</span>
@@ -500,7 +664,16 @@
             </li>
 
             <li class="mb-2">
-              3- Snacks
+              Salad
+              <div class="timer">
+                <span class="pointer" (click)="customQuantity('salad','-')">-</span>
+                <span>{{packagePayloadCustom.salad}}</span>
+                <span class="pointer" (click)="customQuantity('salad','+')">+</span>
+              </div>
+            </li>
+
+            <li class="mb-2">
+              Snacks
               <div class="timer">
                 <span class="pointer" (click)="customQuantity('snacks','-')">-</span>
                 <span>{{packagePayloadCustom.snacks}}</span>
@@ -509,7 +682,7 @@
             </li>
 
             <li class="mb-2">
-              4- Protein snacks
+              Protein snacks
               <div class="timer">
                 <span class="pointer" (click)="customQuantity('protein_snacks','-')">-</span>
                 <span>{{packagePayloadCustom.protein_snacks}}</span>
@@ -520,54 +693,55 @@
         </div>
       </div>
       <div class="add-breakfast" *ngIf="plan === 3">
-        <h1>ADD <span>BREAKFAST</span></h1>
-        <div class="container-fluid">
-          <div class="form-group row check-box">
-            <div class="form-check col-lg-4 col-12 margin-auto">
-              <input
-                class="form-check-input check-input"
-                type="checkbox"
-                id="gridCheck"
-              />
-              <label class="form-check-label check-label" for="gridCheck"
-                >Varied Breakfast</label
-              >
-            </div>
-
-            <div class="col-lg-8 col-12">
-              <input
-                type="text"
-                class="form-control border-ridus"
-                
-                placeholder="Write here.."
-              />
-            </div>
+        <!-- <h1>ADD <span>BREAKFAST</span></h1> -->
+       
+      </div>
+      <hr *ngIf="plan !== 3">
+      <div class="container-fluid text-left">
+        <label>Delivery time</label> 
+        <div class="form-group row check-box ml-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="delivery_time" id="exampleRadios3" value="6-10 am" [(ngModel)]="delivery_time" [checked]="delivery_time === '6-10 am'"> 
+             <label class="form-check-label" for="exampleRadios3">6-10 am</label>
+           </div>
+         
+        </div>
+        <div class="form-group row check-box ml-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="delivery_time" id="exampleRadios4" value="6-10 pm" [(ngModel)]="delivery_time" [checked]="delivery_time === '6-10 pm'"> 
+             <label class="form-check-label" for="exampleRadios4">6-10 pm</label>
+           </div>
+        </div>
+        <div class="form-group row check-box mb-15 d-flex align-items-center">
+          <div class="form-check col-lg-4 col-12 margin-auto">
+            <label class="form-check-label check-label" for="gridCheck"
+              >Start date</label
+            >
           </div>
-          <div class="form-group row check-box mb-15">
-            <div class="form-check col-lg-4 col-12 margin-auto">
-              <input
-                class="form-check-input check-input"
-                type="checkbox"
-                id="gridCheck"
-              />
-              <label class="form-check-label check-label" for="gridCheck"
-                >Specialties Breakfast</label
-              >
-            </div>
-
-            <div class="col-lg-8 col-12">
-              <input
-                type="text"
-                class="form-control border-ridus"
-                
-                placeholder="Write here.."
-              />
-            </div>
+          <div class="col-lg-8 col-12">
+            <input bsDatepicker  [minDate]="startInit" class="form-control" placeholder="Search By date" (bsValueChange)="setStartDayValue($event)" [bsConfig]="{showWeekNumbers:false,dateInputFormat: 'YYYY-MM-DD'}">
+            <div class="text-danger"><small>Note: The start day will be after two days after selected the date</small></div>
+          </div>
+        </div>
+        <div  *ngIf="renew" class="form-group row check-box mb-15 d-flex align-items-center">
+          <div class="form-check col-lg-4 col-12 margin-auto">
+            <label class="form-check-label check-label" for="gridCheck"
+              >Weight</label
+            >
+          </div>
+          <div class="col-lg-8 col-12">
+          <input class="form-control" [(ngModel)]="weight" type="input" placeholder="Weight">
           </div>
         </div>
       </div>
-
-      <button class="btn btn-lg Continue" (click)="setPackages()" [disabled]="setPackagesLoader">Continue</button>
+      <!-- <div *ngIf="renew" class="">
+        <div class="form-group row ml-25 d-flex align-items-center text-left">
+          <label class="col-md-4 m-0 mb-1 m-md-0 p-0">Weight</label>
+          <input class="form-control col-md-6" [(ngModel)]="weight" type="input" placeholder="Weight">
+        </div>
+      </div> -->
+      <button class="btn btn-lg Continue" (click)="renew?renewPackage() : setPackages()" [disabled]="setPackagesLoader"><span *ngIf="renew;else renewtmp">Renew</span>
+        <ng-template #renewtmp>Continue</ng-template></button>
     </div>
     <div class="personal-info" *ngIf="currentStep === 5">
       <div class="parent-three">
@@ -670,7 +844,7 @@
         the registration, you will reach your goal.
       </p>
 
-      <button class="btn btn-lg Continue" routerLink="/login">DONE!</button>
+      <button class="btn btn-lg Continue" routerLink="/menus">DONE!</button>
     </div>
   </div>
 </div>

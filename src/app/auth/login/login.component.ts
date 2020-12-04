@@ -41,10 +41,21 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.authenticationService.login(this.credentials).subscribe(
       (data) => {
+        let response = data;
+        localStorage.setItem("drchefToken", data.data.token);
+        localStorage.setItem('clientId',data.data.client_id);
+        localStorage.setItem('package_remaining_days',data.data.package_remaining_days);
+        localStorage.setItem('package_start_date',data.data.package_start_date);
+        if(response.data.package_status === 'Expired'){
+          this.router.navigate(['/signup'], { queryParams: { package: 'expired' } });
+          return;
+        }
+        if(response.data.package_status === 'NotFound'){
+          this.router.navigate(['/signup'], { queryParams: { package: 'NotFound' } });
+          return;
+        }
         this.loading = false;
         this.toastr.successToastr("Login successfully");
-        let response = data;
-        localStorage.setItem("drchefToken", response.data.token);
         if (this.returnUrl && this.returnUrl !== "/" && this.returnUrl !== "")
           this.router.navigateByUrl(this.returnUrl);
         else this.router.navigate(["/menus"]);
