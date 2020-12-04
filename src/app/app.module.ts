@@ -26,7 +26,7 @@ import { AppRoutingModule } from "./app.routing";
 import { ComponentsModule } from "./components/components.module";
 import {MatSelectModule} from '@angular/material/select';
 import { AppComponent } from "./app.component";
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ChangePasswordComponent } from "./auth/change-password/change-password.component";
 import { ResetPasswordComponent } from "./auth/reset-password/reset-password.component";
 import { ForgetPasswordComponent } from "./auth/forget-password/forget-password.component";
@@ -56,6 +56,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BrowserModule,
     BaseModule,
     ToastrModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    BsDatepickerModule,
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
