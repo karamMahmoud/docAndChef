@@ -81,10 +81,8 @@
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [
-            ],
-            "styles": [
-            ],
+            "scripts": [],
+            "styles": [],
             "assets": [
               "src/assets",
               "src/favicon.ico"
@@ -136,5 +134,8 @@
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": "42d44cf6-b1e4-4734-a24e-f21f48e73d9d"
   }
 }
