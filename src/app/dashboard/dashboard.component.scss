@@ -55,14 +55,14 @@ width: 100%;
     button{
       outline: none;
       z-index: 1;
-      background: transparent;
-      color: #7D4493;
+      background:  transparent;
+      color: #fff;
       border: none;
       padding: 10px 30px;
     border-radius: 30px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); 
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #7D4493;
     box-shadow: none;
     transition: 0.2s ease;
      
@@ -105,7 +105,7 @@ width: 100%;
       list-style: none;
       display: flex;
       flex-direction: column;
-      background-color: #474646;
+      background-color: #757575;
       color: #fff;
       border-radius: 30px;
      
@@ -113,6 +113,9 @@ width: 100%;
       li{
         margin-left: -25px;
         padding: 15px 0px;
+        i{
+          color:#6c2688;
+        }
       }
     }
   }
