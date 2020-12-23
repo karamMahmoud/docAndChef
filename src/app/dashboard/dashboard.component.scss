@@ -142,6 +142,16 @@ font-weight: bold;
   }
 }
 
+@media (max-width:1126px) {
+  .eat-health{
+    margin-bottom: 86px;
+  }
+}
+@media (max-width:465px) {
+  .eat-health{
+    margin-bottom: 44px;
+  }
+}
 // end health
 
 
