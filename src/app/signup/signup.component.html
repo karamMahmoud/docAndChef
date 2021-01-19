@@ -719,8 +719,8 @@
             >
           </div>
           <div class="col-lg-8 col-12">
-            <input bsDatepicker  [minDate]="startInit" class="form-control" placeholder="Search By date" (bsValueChange)="setStartDayValue($event)" [bsConfig]="{showWeekNumbers:false,dateInputFormat: 'YYYY-MM-DD'}">
-            <div class="text-danger"><small>Note: The start day will be after two days after selected the date</small></div>
+            <input bsDatepicker  [minDate]="startInit" [datesDisabled]="disabledDayes" class="form-control" placeholder="Search By date" (bsValueChange)="setStartDayValue($event)" [bsConfig]="{showWeekNumbers:false,dateInputFormat: 'YYYY-MM-DD'}">
+            <!-- <div class="text-danger"><small>Note: The start day will be after two days after selected the date</small></div> -->
           </div>
         </div>
         <div  *ngIf="renew" class="form-group row check-box mb-15 d-flex align-items-center">

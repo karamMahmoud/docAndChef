@@ -37,6 +37,9 @@ import { ToastrManager } from "ng6-toastr-notifications";
 })
 export class SignupComponent implements OnInit {
   start_date: any;
+  tomorrow;
+  today;
+  disabledDayes=[];
   weight;
   carbs = [];
   proteins = [];
@@ -69,7 +72,7 @@ export class SignupComponent implements OnInit {
     height: "",
     weight: "",
     allergies: "",
-    gender: ""
+    gender: "",
   };
   packagePayloadNormal = {
     client_id: "",
@@ -126,8 +129,11 @@ export class SignupComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.today = new Date();
+    this.tomorrow = new Date();
+    this.tomorrow.setDate(new Date().getDate() + 1);
+    this.disabledDayes= [this.tomorrow,this.today];
     this.route.queryParams.subscribe((res) => {
-      console.log(res.package);
       if (res.package) {
         if (res.package === "renew" || res.package === "expired")
           this.renew = true;
@@ -300,7 +306,7 @@ export class SignupComponent implements OnInit {
       },
       (err) => {
         this.setPackagesLoader = false;
-        this.toastr.errorToastr('Please set your program');
+        this.toastr.errorToastr("Please set your program");
         // this.toastr.errorToastr(err.error.messages);
       }
     );

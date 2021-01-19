@@ -159,7 +159,7 @@ export class MenusComponent implements OnInit {
     }, 500);
   }
   save() {
-    let payload = { meals: [], status: 0 };
+    let payload = { meals: []};
     payload.meals = this.payload.meals.map((day) => {
       return {
         ...day,
@@ -192,7 +192,7 @@ export class MenusComponent implements OnInit {
         protein_snacks_ids: day.protein_snacks_ids.filter((id) => id),
       };
     });
-    payload.status = 1;
+    payload.status = 2;
     this.loading = true;
     this.api.setOrder(payload).subscribe(
       (data) => {
