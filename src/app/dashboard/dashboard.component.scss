@@ -111,7 +111,7 @@ width: 100%;
      
      
       li{
-        margin-left: -25px;
+        margin-left: -27px;
         padding: 15px 0px;
         i{
           color:#6c2688;
@@ -142,6 +142,16 @@ font-weight: bold;
   }
 }
 
+@media (max-width:1126px) {
+  .eat-health{
+    margin-bottom: 86px;
+  }
+}
+@media (max-width:465px) {
+  .eat-health{
+    margin-bottom: 44px;
+  }
+}
 // end health
 
 
