@@ -1,41 +1,41 @@
-@import 'swiper/swiper-bundle.css';
-$primary:#83489A;
+@import "swiper/swiper-bundle.css";
+$primary: #83489a;
 .swiper-container {
   // width: 600px;
   height: 300px;
   .oto-slider-box {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      padding: 75px 0;
-      h2 {
-          font-size: 46px;
-      }
-      ul {
-          margin-top: 30px;
-          margin-bottom: 30px;
-          li {
-              margin-bottom: 12px;
-              display: flex;
-              align-items: center;
-              img {
-                  margin-right: 30px;
-              }
-          }
-      }
-      figure {
-          margin-bottom: 30px;
-      }
-      .btn {
-          height: 53.39px;
-          min-width: 177.25px;
-          line-height: 40px;
-          margin-left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 75px 0;
+    h2 {
+      font-size: 46px;
+    }
+    ul {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        img {
           margin-right: 30px;
+        }
       }
+    }
+    figure {
+      margin-bottom: 30px;
+    }
+    .btn {
+      height: 53.39px;
+      min-width: 177.25px;
+      line-height: 40px;
+      margin-left: 0;
+      margin-right: 30px;
+    }
   }
 }
-.header{
+.header {
   position: absolute;
   width: 100%;
   display: flex;
@@ -43,36 +43,34 @@ $primary:#83489A;
   align-items: center;
   top: 10px;
   padding: 0 30px;
-  .img-chef{
+  .img-chef {
     max-width: 180px;
-    img{
-width: 100%;
+    img {
+      width: 100%;
     }
   }
-  .sign-chef{
+  .sign-chef {
     margin-top: 12px;
     margin-right: 5px;
-    button{
+    button {
       outline: none;
       z-index: 1;
-      background:  transparent;
+      background: transparent;
       color: #fff;
       border: none;
       padding: 10px 30px;
-    border-radius: 30px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px); 
-    background-color: #7D4493;
-    box-shadow: none;
-    transition: 0.2s ease;
-     
+      border-radius: 30px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: #7d4493;
+      box-shadow: none;
+      transition: 0.2s ease;
     }
-    .mrg-left{
+    .mrg-left {
       // margin-left: -30px;
       background-color: #7b7879;
-      
     }
-    .index{
+    .index {
       z-index: 2;
     }
     @media only screen and (max-width: 767px) {
@@ -80,18 +78,16 @@ width: 100%;
         padding: 10px 13px;
         border-radius: 15px;
       }
-      .mrg-left{
-      //  margin-left: -14px;
-      } 
+      .mrg-left {
+        //  margin-left: -14px;
+      }
     }
-    
-
   }
 }
 
 // end nav bar
 
-.health{
+.health {
   display: flex;
   justify-content: flex-start;
   background-image: url("assets/img/cover.jpg");
@@ -99,142 +95,136 @@ width: 100%;
   background-size: cover;
   height: 650px;
   align-items: center;
-  .social-media{
+  .social-media {
     margin: 165px 40px;
-    ul{
+    ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       background-color: #fff;
       color: #fff;
       border-radius: 30px;
-     
-     
-      li{
+
+      li {
         margin-left: -27px;
         padding: 15px 0px;
-        i{
-          color:#6c2688;
+        i {
+          color: #6c2688;
         }
       }
     }
   }
-  .eat-health{
+  .eat-health {
     color: #fff;
-   
-    h1{
-font-size: 60px;
-font-weight: bold;
+
+    h1 {
+      font-size: 60px;
+      font-weight: bold;
     }
     @media only screen and (max-width: 767px) {
-      h1{
+      h1 {
         font-size: 29px;
       }
     }
-    .underline{
+    .underline {
       text-decoration: underline;
     }
-    p{
+    p {
       font-size: 15px;
       margin: 0px;
     }
-
   }
 }
 
-@media (max-width:1126px) {
-  .eat-health{
+@media (max-width: 1126px) {
+  .eat-health {
     margin-bottom: 86px;
   }
 }
-@media (max-width:465px) {
-  .eat-health{
+@media (max-width: 465px) {
+  .eat-health {
     margin-bottom: 44px;
   }
 }
 // end health
 
-
-.meals{
-  background-color: #302B2B;
+.meals {
+  background-color: #302b2b;
   padding: 20px 0px;
   color: #fff;
   // height: 550px;
   display: flex;
   align-items: center;
-  .img-chef{
+  .img-chef {
     max-width: 180px;
-    img{
-width: 100%;
+    img {
+      width: 100%;
     }
   }
-  .Lunch{
+  .Lunch {
     max-width: 400px;
-position: relative;
-margin: auto;
-img{
-  width: 100%;
-  border-radius: 30px;
+    position: relative;
+    margin: auto;
+    img {
+      width: 100%;
+      border-radius: 30px;
+    }
+    .choose {
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 0px;
+      }
+      p {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0px;
+      }
+    }
+  }
 
-}
-.choose{
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
-  h1{
-    font-size: 25px;
-    font-weight: bold;
-    margin: 0px;
-  }
-  p{
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0px;
-  }
-}
-  }
-
-  .Breakfast{
+  .Breakfast {
     max-width: 300px;
-position: relative;
-margin: auto;
-margin-top: 30px;
-img{
-  width: 100%;
-  border-radius: 30px;
-}
-.choose{
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
-  h1{
-    font-size: 25px;
-    font-weight: bold;
-    margin: 0px;
-
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    img {
+      width: 100%;
+      border-radius: 30px;
+    }
+    .choose {
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 0px;
+      }
+      p {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0px;
+      }
+    }
   }
-  p{
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0px;
-
-  }
-}
-  }
-  .category{
+  .category {
     margin-top: 20px;
-    h1{
-       margin: 0px;
-       font-size: 30px;
-       font-weight: bold;
-       color: $primary;
-    }
-    h2{
+    h1 {
       margin: 0px;
-       font-size: 30px;
-       font-weight: bold;
+      font-size: 30px;
+      font-weight: bold;
+      color: $primary;
     }
-    p{
+    h2 {
+      margin: 0px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    p {
       margin: 0px;
       font-size: 14px;
     }
@@ -243,40 +233,38 @@ img{
 
 // end meals
 
-.offer-section{
+.offer-section {
   background-image: url("assets/img/dash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
   padding: 50px 0px;
   color: black;
-  h1{
+  h1 {
     font-weight: bold;
     font-size: 40px;
-    span{
+    span {
       color: $primary;
     }
   }
-  @media only  screen and (max-width: 767px) {
-    h1{
+  @media only screen and (max-width: 767px) {
+    h1 {
       font-size: 30px;
-
     }
   }
-  p{
+  p {
     font-size: 13px;
   }
-  @media only  screen and (max-width: 767px) {
-    p{
+  @media only screen and (max-width: 767px) {
+    p {
       font-size: 11px;
-
     }
   }
 
-  .offer-type{
+  .offer-type {
     margin-top: 50px;
 
-    .flex-part{
+    .flex-part {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -287,93 +275,70 @@ img{
       text-align: left;
       margin: 20px;
 
-
-      .offer-no{
+      .offer-no {
         margin-top: -40px;
-        h1{
+        h1 {
           font-weight: bold;
           font-size: 50px;
           margin: 20px;
           margin-top: -50px;
-          
         }
       }
 
-      .offer-name{
-        h1{
-          font-size:20px ;
+      .offer-name {
+        h1 {
+          font-size: 20px;
         }
-        p{
+        p {
           font-size: 14px;
         }
-         
       }
     }
-    .blur{
-     
+    .blur {
       background-color: rgba(192, 185, 185, 0.5);
       color: black;
       padding: 10px 25px;
-      border-radius:30px ;
+      border-radius: 30px;
       border: none;
-    
-
     }
   }
-
 }
-
 
 // end offer section
 
-
-.about-us{
+.about-us {
   background-color: #f5efef;
   padding: 40px 0px;
   color: black;
-  .photo{
+  .photo {
     max-width: 250px;
     margin: auto;
- 
-    img{
+
+    img {
       width: 100%;
     }
   }
   @media only screen and (max-width: 992px) {
-    .photo{
+    .photo {
       margin: 0px;
       max-width: 293px;
     }
   }
-  .healthy-life{
+  .healthy-life {
     text-align: left;
     padding: 20px 0px;
-    h1{
+    h1 {
       font-size: 15px;
       margin: 0px;
     }
-    h2{
+    h2 {
       font-size: 25px;
-      font-weight:bold ;
-      
+      font-weight: bold;
     }
-    p{
+    p {
       font-size: 13px;
-
     }
-
   }
 }
 
 // end about us
-
-
-
-
-
-
-
-
-
-
-

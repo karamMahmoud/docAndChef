@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   // { path: 'category',  component: CategoryComponent},
   { path: "healthyfood", component: HealthyComponent },
-  { path: "menus", component: MenusComponent ,  canActivate: [AuthGuard]},
+  { path: "menus", component: MenusComponent, canActivate: [AuthGuard] },
   // canActivate: [NotAuthGuard]
   { path: "login", component: LoginComponent },
   {
@@ -39,7 +39,7 @@ const routes: Routes = [
     component: ForgetPasswordComponent,
     canActivate: [NotAuthGuard],
   },
-  { path: "**", redirectTo: "home", pathMatch: "full"},
+  { path: "**", redirectTo: "home", pathMatch: "full" },
 ];
 
 //returnurl

@@ -37,7 +37,7 @@ export class AuthenticationService {
   }
   tokenAsHeader() {
     let headers = new HttpHeaders({
-      Authorization: "Bearer " + localStorage.getItem('drchefToken'),
+      Authorization: "Bearer " + localStorage.getItem("drchefToken"),
       "x-app-locale": "ar",
     });
     return headers;
@@ -94,19 +94,27 @@ export class AuthenticationService {
   }
 
   menus(): any {
-    return this.http.get(`${this.baseUrl}/menu`, { headers: this.tokenAsHeader() });
+    return this.http.get(`${this.baseUrl}/menu`, {
+      headers: this.tokenAsHeader(),
+    });
   }
 
   getPackage(): any {
-    return this.http.get(`${this.baseUrl}/clients/package/details`, { headers: this.tokenAsHeader() });
+    return this.http.get(`${this.baseUrl}/clients/package/details`, {
+      headers: this.tokenAsHeader(),
+    });
   }
 
   getOrder(): any {
-    return this.http.get(`${this.baseUrl}/orders/draft`, { headers: this.tokenAsHeader() });
+    return this.http.get(`${this.baseUrl}/orders/draft`, {
+      headers: this.tokenAsHeader(),
+    });
   }
 
   setOrder(payload): any {
-    return this.http.post(`${this.baseUrl}/orders/set`,payload, { headers: this.tokenAsHeader() });
+    return this.http.post(`${this.baseUrl}/orders/set`, payload, {
+      headers: this.tokenAsHeader(),
+    });
   }
 
   packages(): any {
@@ -114,11 +122,15 @@ export class AuthenticationService {
   }
 
   setPackages(payload): any {
-    return this.http.post(`${this.baseUrl}/packages/set`, payload, { headers: this.tokenAsHeader() });
+    return this.http.post(`${this.baseUrl}/packages/set`, payload, {
+      headers: this.tokenAsHeader(),
+    });
   }
 
   renewPackages(payload): any {
-    return this.http.post(`${this.baseUrl}/packages/renew`, payload, { headers: this.tokenAsHeader() });
+    return this.http.post(`${this.baseUrl}/packages/renew`, payload, {
+      headers: this.tokenAsHeader(),
+    });
   }
 
   signup(payload): any {
