@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
 import { AuthenticationService } from "app/helper/services.api";
 import * as moment from "moment";
 import { ToastrManager } from "ng6-toastr-notifications";
@@ -125,6 +126,7 @@ export class SignupComponent implements OnInit {
     public toastr: ToastrManager,
     private route: ActivatedRoute,
     public router: Router,
+    private translate: TranslateService,
     private api: AuthenticationService
   ) {}
 
@@ -178,7 +180,14 @@ export class SignupComponent implements OnInit {
     valid ? (this.currentStep = 2) : "";
     // this.payload.dob = moment(this.payload.dob).format("YYYY-MM-DD");
   }
-
+  change(lang){
+    if(localStorage.getItem('lang') != lang){
+      // this.selectedLang = lang;
+      this.translate.use(lang);
+      localStorage.setItem('lang',lang)
+      location.reload();
+    }
+  };
   secondForm({ value, valid }) {
     this.requiredMsg2 = true;
     valid ? (this.currentStep = 3) : "";

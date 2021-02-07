@@ -7,6 +7,7 @@
     <button class="btn btn-primary mrg-left" routerLink="/home">Home</button>
   </div>
 </div>
+
 <div
   [ngClass]="{
     'info-section': currentStep === 1 || currentStep === 2 || currentStep === 3,
@@ -15,6 +16,9 @@
   }"
   *ngIf="currentStep !== 6"
 >
+<li role="menuitem" (click)="change('en')" ><a class="dropdown-item"> <img src="/assets/img/en.png" width="25"/>  English</a></li>
+<li role="menuitem" (click)="change('ar')" ><a class="dropdown-item"><img src="/assets/img/ar.png" width="25"/>  Arabic</a>
+</li>
   <div class="container">
     <div class="logo mb-3">
       <img src="assets/img/img.png" alt="" />
@@ -25,7 +29,7 @@
       </div>
       <div class="title">
         <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
-        <h1>Personal Info</h1>
+        <h1>{{ 'personal_info' | translate}}</h1>
       </div>
 
       <form
