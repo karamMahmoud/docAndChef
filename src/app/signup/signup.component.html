@@ -16,9 +16,9 @@
   }"
   *ngIf="currentStep !== 6"
 >
-<li role="menuitem" (click)="change('en')" ><a class="dropdown-item"> <img src="/assets/img/en.png" width="25"/>  English</a></li>
+<!-- <li role="menuitem" (click)="change('en')" ><a class="dropdown-item"> <img src="/assets/img/en.png" width="25"/>  English</a></li>
 <li role="menuitem" (click)="change('ar')" ><a class="dropdown-item"><img src="/assets/img/ar.png" width="25"/>  Arabic</a>
-</li>
+</li> -->
   <div class="container">
     <div class="logo mb-3">
       <img src="assets/img/img.png" alt="" />
@@ -510,7 +510,7 @@
         <div class="order">
           <h1>
             <span>
-              <!-- {{ pacakges?.normal.meals.breakfast?.quantity }} Breakfast + -->
+              {{ pacakges?.normal.meals.breakfast?.quantity }} Breakfast +
               {{ pacakges?.normal.meals.snacks?.quantity }} Snackes +
               {{ pacakges?.normal.meals.main_course?.quantity }} Meals
             </span>

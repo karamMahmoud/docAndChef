@@ -234,7 +234,7 @@ export class SignupComponent implements OnInit {
     let payload;
     if (this.plan === 1) {
       this.packagePayloadNormal.package_id = this.pacakges.normal.id;
-      // this.packagePayloadNormal.breakfast = this.pacakges.normal.meals.breakfast.quantity;
+      this.packagePayloadNormal.breakfast = this.pacakges.normal.meals.breakfast.quantity;
       this.packagePayloadNormal.main_course = this.pacakges.normal.meals.main_course.quantity;
       this.packagePayloadNormal.snacks = this.pacakges.normal.meals.snacks.quantity;
       this.packagePayloadNormal.total_price = this.pacakges.normal.price;
