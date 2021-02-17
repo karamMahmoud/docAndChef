@@ -211,8 +211,7 @@ export class SignupComponent implements OnInit {
         },
         (err) => {
           this.signupLoader = false;
-          console.log(err);
-          this.toastr.errorToastr(err.error.messages);
+          this.toastr.errorToastr(err.error.messages.email ?? err.error.messages.phone ?? err.error.messages);
         }
       );
     }
