@@ -4,7 +4,7 @@
     <img src="assets/img/img.png" alt="" />
   </div>
   <div class="btn-group sign-chef">
-    <button class="btn btn-primary mrg-left" routerLink="/home">Home</button>
+    <button class="btn btn-primary mrg-left" routerLink="/home">{{"Home" | translate}}</button>
   </div>
 </div>
 
@@ -16,9 +16,9 @@
   }"
   *ngIf="currentStep !== 6"
 >
-<!-- <li role="menuitem" (click)="change('en')" ><a class="dropdown-item"> <img src="/assets/img/en.png" width="25"/>  English</a></li>
+<li role="menuitem" (click)="change('en')" ><a class="dropdown-item"> <img src="/assets/img/en.png" width="25"/>  English</a></li>
 <li role="menuitem" (click)="change('ar')" ><a class="dropdown-item"><img src="/assets/img/ar.png" width="25"/>  Arabic</a>
-</li> -->
+</li>
   <div class="container">
     <div class="logo mb-3">
       <img src="assets/img/img.png" alt="" />
@@ -29,7 +29,7 @@
       </div>
       <div class="title">
         <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
-        <h1>{{ 'personal_info' | translate}}</h1>
+        <h1>{{ 'personal info' | translate}}</h1>
       </div>
 
       <form
@@ -49,7 +49,7 @@
                   (firstName.touched || requiredMsg1)
                 "
                 >*</span
-              >Name</label
+              >{{ 'name' | translate}}</label
             >
             <div class="col-lg-9 col-12">
               <input
@@ -59,7 +59,7 @@
                 [(ngModel)]="payload.name"
                 class="form-control border-ridus"
                 required
-                placeholder="My name is…"
+                [placeholder]="'your name' | translate"
               />
             </div>
           </div>
@@ -70,7 +70,7 @@
                 class="has-asterisk"
                 *ngIf="phone.errors && (phone.touched || requiredMsg1)"
                 >*</span
-              >Mobile Number</label
+              >{{ 'Mobile number' | translate}}</label
             >
             <div class="col-lg-9 col-12">
               <input
@@ -94,7 +94,7 @@
                 class="has-asterisk"
                 *ngIf="email.errors && (email.touched || requiredMsg1)"
                 >*</span
-              >Email</label
+              >{{ 'Email' | translate}}</label
             >
             <div class="col-lg-9 col-12">
               <input
@@ -105,12 +105,12 @@
                 class="form-control border-ridus"
                 required
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                placeholder="Enter your email"
+                [placeholder]="'Enter your email' | translate"
               />
             </div>
           </div>
         </div>
-        <button class="btn btn-lg Continue" type="submit">Continue</button>
+        <button class="btn btn-lg Continue" type="submit">{{ 'Continue' | translate}}</button>
       </form>
     </div>
     <div class="personal-info" *ngIf="currentStep === 2">
@@ -123,7 +123,7 @@
           (click)="currentStep = 1"
           aria-hidden="true"
         ></i>
-        <h1>Personal Info</h1>
+        <h1>{{ "personal info" | translate}}</h1>
       </div>
       <form
         class="needs-validation"
@@ -139,7 +139,7 @@
                 class="has-asterisk"
                 *ngIf="area.errors && (area.touched || requiredMsg2)"
                 >*</span
-              >Area</label
+              >{{"Area" | translate}}</label
             >
             <input
               #area="ngModel"
@@ -148,7 +148,7 @@
               type="text"
               class="form-control border-ridus"
               required
-              placeholder="Area"
+              [placeholder]="'Area' | translate"
             />
           </div>
 
@@ -158,7 +158,7 @@
                 class="has-asterisk"
                 *ngIf="plot.errors && (plot.touched || requiredMsg2)"
                 >*</span
-              >Plot</label
+              >{{"Plot" | translate}}</label
             >
             <input
               name="plot"
@@ -167,7 +167,7 @@
               type="text"
               class="form-control border-ridus"
               required
-              placeholder="plot"
+              [placeholder]="'Plot' | translate"
             />
           </div>
 
@@ -177,7 +177,7 @@
                 class="has-asterisk"
                 *ngIf="district.errors && (district.touched || requiredMsg2)"
                 >*</span
-              >District</label
+              >{{"District" | translate}}</label
             >
             <input
               #district="ngModel"
@@ -185,7 +185,7 @@
               name="district"
               [(ngModel)]="payload.district"
               class="form-control border-ridus"
-              placeholder="district"
+              [placeholder]="'District' | translate"
             />
           </div>
 
@@ -195,7 +195,7 @@
                 class="has-asterisk"
                 *ngIf="street.errors && (street.touched || requiredMsg2)"
                 >*</span
-              >Street</label
+              >{{"Street" | translate}}</label
             >
             <input
               #street="ngModel"
@@ -203,7 +203,7 @@
               name="street"
               [(ngModel)]="payload.street"
               class="form-control border-ridus"
-              placeholder="Street"
+              [placeholder]="'Street' | translate"
             />
           </div>
 
@@ -213,7 +213,7 @@
                 class="has-asterisk"
                 *ngIf="Building.errors && (Building.touched || requiredMsg2)"
                 >*</span
-              >Building no</label
+              >{{"Building no" | translate}}</label
             >
             <input
               #Building="ngModel"
@@ -221,7 +221,7 @@
               name="building_no"
               [(ngModel)]="payload.building_no"
               class="form-control border-ridus"
-              placeholder="Building"
+              [placeholder]="'Building no' | translate"
             />
           </div>
           <div class="form-group">
@@ -230,7 +230,7 @@
                 class="has-asterisk"
                 *ngIf="floor.errors && (floor.touched || requiredMsg2)"
                 >*</span
-              >Floor</label
+              >{{"Floor" | translate}}</label
             >
             <input
               #floor="ngModel"
@@ -238,7 +238,7 @@
               name="floor"
               [(ngModel)]="payload.floor"
               class="form-control border-ridus"
-              placeholder="floor"
+              [placeholder]="'Floor' | translate"
             />
           </div>
           <div class="form-group">
@@ -247,7 +247,7 @@
                 class="has-asterisk"
                 *ngIf="flat_no.errors && (flat_no.touched || requiredMsg2)"
                 >*</span
-              >Flat no</label
+              >{{"Flat no" | translate}}</label
             >
             <input
               #flat_no="ngModel"
@@ -255,7 +255,7 @@
               name="flat_no"
               [(ngModel)]="payload.flat_no"
               class="form-control border-ridus"
-              placeholder="flat no"
+              [placeholder]="'Flat no' | translate"
             />
           </div>
           <div class="form-group">
@@ -267,7 +267,7 @@
                   (address_notes.touched || requiredMsg2)
                 "
                 >*</span
-              >Address Notes</label
+              >{{"Address Notes" | translate}}</label
             >
             <input
               #address_notes="ngModel"
@@ -275,11 +275,11 @@
               name="address_notes"
               [(ngModel)]="payload.address_notes"
               class="form-control border-ridus"
-              placeholder="address notes"
+              [placeholder]="'Address Notes' | translate"
             />
           </div>
         </div>
-        <button class="btn btn-lg Continue" type="submit">Continue</button>
+        <button class="btn btn-lg Continue" type="submit">{{"Continue" | translate}}</button>
       </form>
     </div>
     <div class="personal-info" *ngIf="currentStep === 3">
@@ -292,7 +292,7 @@
           (click)="currentStep = 2"
           aria-hidden="true"
         ></i>
-        <h1>Personal Info</h1>
+        <h1>{{ "personal info" | translate}}</h1>
       </div>
 
       <form
@@ -316,7 +316,7 @@
                 class="has-asterisk"
                 *ngIf="height.errors && (height.touched || requiredMsg3)"
                 >*</span
-              >How tall are you?</label
+              >{{ "How tall are you" | translate}}</label
             >
             <input
               #height="ngModel"
@@ -325,7 +325,7 @@
               [(ngModel)]="payload.height"
               class="form-control border-ridus"
               required
-              placeholder="Height"
+              [placeholder]="'Height' | translate"
             />
           </div>
 
@@ -335,7 +335,7 @@
                 class="has-asterisk"
                 *ngIf="weight.errors && (weight.touched || requiredMsg3)"
                 >*</span
-              >How much do you weight?</label
+              >{{ "How much do you weight" | translate }}</label
             >
             <input
               #weight="ngModel"
@@ -344,7 +344,7 @@
               [(ngModel)]="payload.weight"
               class="form-control border-ridus"
               required
-              placeholder="Weight"
+              [placeholder]="'Weight' | translate"
             />
           </div>
 
@@ -354,7 +354,7 @@
                 class="has-asterisk"
                 *ngIf="age.errors && (age.touched || requiredMsg3)"
                 >*</span
-              >Age?</label
+              >{{ "Age" | translate}}</label
             >
             <input
               #age="ngModel"
@@ -363,7 +363,7 @@
               [(ngModel)]="payload.age"
               class="form-control border-ridus"
               required
-              placeholder="Age"
+              [placeholder]="'Age' | translate"
             />
           </div>
 
@@ -373,7 +373,7 @@
                 class="has-asterisk"
                 *ngIf="Allergy.errors && (Allergy.touched || requiredMsg3)"
                 >*</span
-              >Do you have Any diseases or allergies?</label
+              >{{ "Do you have Any diseases or allergies" | translate}}</label
             >
             <input
               #Allergy="ngModel"
@@ -382,7 +382,7 @@
               [(ngModel)]="payload.allergies"
               class="form-control border-ridus"
               required
-              placeholder="Allergy"
+              [placeholder]="'Your answer' | translate"
             />
           </div>
           <div class="form-group">
@@ -391,7 +391,7 @@
                 class="has-asterisk"
                 *ngIf="gender.errors && (gender.touched || requiredMsg3)"
                 >*</span
-              >Gender</label
+              >{{ "Gender" | translate}}</label
             >
             <div class="form-group row check-box ml-3">
               <div class="form-check">
@@ -406,7 +406,7 @@
                   [(ngModel)]="payload.gender"
                   [checked]="payload.gender === 'male'"
                 />
-                <label class="form-check-label" for="Male">Male</label>
+                <label class="form-check-label" for="Male">{{ "Male" | translate}}</label>
               </div>
             </div>
             <div class="form-group row check-box ml-3">
@@ -422,7 +422,7 @@
                   [(ngModel)]="payload.gender"
                   [checked]="payload.gender === 'female'"
                 />
-                <label class="form-check-label" for="Female">Female</label>
+                <label class="form-check-label" for="Female">{{ "Female" | translate}}</label>
               </div>
             </div>
           </div>
@@ -446,7 +446,7 @@
           type="submit"
           [disabled]="signupLoader"
         >
-          Continue
+          {{ "Continue" | translate}}
         </button>
       </form>
     </div>
@@ -456,7 +456,7 @@
       </div>
       <div class="title">
         <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
-        <h1>Choose your program</h1>
+        <h1>{{ "Choose your program" | translate}}</h1>
       </div>
       <div class="type">
         <button class="btn btn-lg" *ngIf="plan === 1">
@@ -477,17 +477,17 @@
             <div class="col-lg-6 col-12 color-up">
               <span>01</span>
               <button class="btn btn-lg" (click)="setPlan(1)">
-                Weight loss
+                {{ "Weight loss" | translate}}
               </button>
             </div>
 
             <div class="col-lg-3 col-12 Bodybuilding normal">
               <h1>02</h1>
               <button class="btn btn-lg" (click)="setPlan(2)">
-                Bodybuilding
+                {{ "Bodybuilding" | translate}}
               </button>
               <p>
-                Show Details
+                {{ "Show Details" | translate}}
                 <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
               </p>
             </div>
@@ -498,10 +498,10 @@
             >
               <h1>03</h1>
               <button class="btn btn-lg" (click)="setPlan(3)">
-                Plan your Program
+                {{ "Plan your Program" | translate}}
               </button>
               <p>
-                Show Details
+                {{ "Show Details" | translate}}
                 <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
               </p>
             </div>
@@ -523,20 +523,20 @@
         <div class="bodybilding-plan">
           <div class="row">
             <div class="col-lg-3 col-12 normal">
-              <h1>01</h1>
+              <h1>{{"01" | translate}}</h1>
               <button class="btn btn-lg" (click)="setPlan(1)">
-                Weight loss
+                {{"Weight loss" | translate}}
               </button>
               <p>
-                Show Details
+                {{ "Show Details" | translate}}
                 <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
               </p>
             </div>
 
             <div class="col-lg-6 col-12 Bodybuilding color-up">
-              <span>02</span>
+              <span>{{"02" | translate}}</span>
               <button class="btn btn-lg" (click)="setPlan(2)">
-                Bodybuilding
+                {{ "Bodybuilding" | translate}}
               </button>
             </div>
 
@@ -544,12 +544,12 @@
               class="col-lg-3 col-12 normal plan-program"
               [class.xyz]="plan === 3"
             >
-              <h1>03</h1>
+              <h1>{{"03" | translate}}</h1>
               <button class="btn btn-lg" (click)="setPlan(3)">
-                Plan your Program
+                 {{"Plan your Program" | translate}}
               </button>
               <p>
-                Show Details
+                {{ "Show Details" | translate}}
                 <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
               </p>
             </div>
@@ -570,7 +570,7 @@
                 type="radio"
                 name="level"
                 (click)="selectPrice(level)"
-              />LEVEL <span> {{ i + 1 | numberToWord }}</span>
+              />{{"LEVEL" | translate}} <span> {{ i + 1 | numberToWord }}</span>
             </h1>
             <h2>
               <span
@@ -582,9 +582,9 @@
                 {{ pacakges["body buiding"].meals.main_course.quantity }} Meals
               </span>
             </h2>
-            <p>{{ level.protein }} Gram Protein</p>
+            <p>{{ level.protein }} {{"Gram Protein" | translate}</p>
             <div class="flex">
-              <span>Carbohydrate</span>
+              <span>{{"Carbohydrate" | translate}}</span>
               <!-- <div class="timer"> -->
               &nbsp;{{ level.carb }}
               <!-- </div> -->
@@ -624,29 +624,29 @@
       <div class="plan" *ngIf="plan === 3" [@enterAnimation]>
         <div class="row">
           <div class="col-lg-3 col-12 normal">
-            <h1>1</h1>
-            <button class="btn btn-lg" (click)="setPlan(1)">Weight loss</button>
+            <h1>{{"01" | translate}</h1>
+            <button class="btn btn-lg" (click)="setPlan(1)">{{"Weight loss" | translate}}</button>
             <p>
-              Show Details
+              {{"Show Details" | translate}}
               <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
             </p>
           </div>
 
           <div class="col-lg-3 col-12 normal">
-            <h1>2</h1>
+            <h1>{{"02" | translate}</h1>
             <button class="btn btn-lg" (click)="setPlan(2)">
-              Bodybuilding
+              {{"Bodybuilding" | translate}}
             </button>
             <p>
-              Show Details
+              {{"Show Details" | translate}}
               <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
             </p>
           </div>
 
           <div class="col-lg-6 col-12 color-up" [class.xyz]="plan === 3">
-            <span>03</span>
+            <span>{{"03" | translate}}</span>
             <button class="btn btn-lg" (click)="setPlan(3)">
-              Plan your Program
+              {{"Plan your Program" | translate}}
             </button>
           </div>
         </div>
@@ -657,7 +657,7 @@
           <ul>
             <li class="main mb-2">
               <mat-form-field>
-                <mat-label>Main meal</mat-label>
+                <mat-label>{{"Main meal" | translate}}</mat-label>
                 <mat-select
                   [(ngModel)]="mainCourseCarb"
                   (ngModelChange)="setProtien()"
@@ -715,7 +715,7 @@
         </div>
         <div class="add-snack main-meals">
           <ul>
-            <li class="snack mb-2">Add <span>Snacks</span></li>
+            <li class="snack mb-2">{{"Add" | translate}} <span>{{"Snacks" | translate}}</span></li>
             <li class="mb-2">
               <div class="form-check">
                 <input
@@ -728,7 +728,7 @@
                   [checked]="customBreakfast === 'breakfast'"
                 />
                 <label class="form-check-label" for="exampleRadios1"
-                  >Breakfast</label
+                  >{{"Breakfast" | translate}}</label
                 >
               </div>
               <div class="timer">
@@ -765,13 +765,13 @@
                   [checked]="customBreakfast === 'customBreakfast'"
                 />
                 <label class="form-check-label" for="exampleRadios2"
-                  >Specail breakfast</label
+                  >{{"Special breakfast" | translate}}</label
                 >
               </div>
             </li>
             <ul *ngIf="customBreakfast === 'customBreakfast'" class="ml-3">
               <li class="mb-2">
-                Eggs
+                {{"Eggs" | translate}
                 <div class="timer">
                   <span class="pointer" (click)="customQuantity(1, '-')"
                     >-</span
@@ -785,7 +785,7 @@
                 </div>
               </li>
               <li class="mb-2">
-                white Eggs
+                {{"White Eggs" | translate}}
                 <div class="timer">
                   <span class="pointer" (click)="customQuantity(0, '-')"
                     >-</span
@@ -799,7 +799,7 @@
                 </div>
               </li>
               <li class="mb-2">
-                Smocked Turkey
+                {{"Smoked Turkey" | translate}}
                 <div class="timer">
                   <span class="pointer" (click)="customQuantity(2, '-')"
                     >-</span
@@ -815,7 +815,7 @@
             </ul>
 
             <li class="mb-2">
-              Fruit
+              {{"Fruits" | translate}}
               <div class="timer">
                 <span class="pointer" (click)="customQuantity('fruit', '-')"
                   >-</span
@@ -828,7 +828,7 @@
             </li>
 
             <li class="mb-2">
-              Salad
+              {{"Salad" | translate}}
               <div class="timer">
                 <span class="pointer" (click)="customQuantity('salad', '-')"
                   >-</span
@@ -841,7 +841,7 @@
             </li>
 
             <li class="mb-2">
-              Snacks
+              {{"Snacks" | translate}}
               <div class="timer">
                 <span class="pointer" (click)="customQuantity('snacks', '-')"
                   >-</span
@@ -854,7 +854,7 @@
             </li>
 
             <li class="mb-2">
-              Protein snacks
+              {{"Protein snacks" | translate}}
               <div class="timer">
                 <span
                   class="pointer"
@@ -877,7 +877,7 @@
       </div>
       <hr *ngIf="plan !== 3" />
       <div class="container-fluid text-left">
-        <label>Delivery time</label>
+        <label>{{"Delivery time" | translate}}</label>
         <div class="form-group row check-box ml-3">
           <div class="form-check">
             <input
@@ -909,7 +909,7 @@
         <div class="form-group row check-box mb-15 d-flex align-items-center">
           <div class="form-check col-lg-4 col-12 margin-auto">
             <label class="form-check-label check-label" for="gridCheck"
-              >Start date</label
+              >{{"Start date" | translate}}</label
             >
           </div>
           <div class="col-lg-8 col-12">
@@ -934,7 +934,7 @@
         >
           <div class="form-check col-lg-4 col-12 margin-auto">
             <label class="form-check-label check-label" for="gridCheck"
-              >Weight</label
+              >{{"Weight" | translate}}</label
             >
           </div>
           <div class="col-lg-8 col-12">
@@ -958,8 +958,8 @@
         (click)="renew ? renewPackage() : setPackages()"
         [disabled]="setPackagesLoader"
       >
-        <span *ngIf="renew; else renewtmp">Renew</span>
-        <ng-template #renewtmp>Continue</ng-template>
+        <span *ngIf="renew; else renewtmp">{{"Renew" | translate}}</span>
+        <ng-template #renewtmp>{{"Continue" | translate}}</ng-template>
       </button>
     </div>
     <div class="personal-info" *ngIf="currentStep === 5">
@@ -968,7 +968,7 @@
       </div>
       <div class="title">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        <h1>Payment</h1>
+        <h1>{{"Payment" | translate}}</h1>
       </div>
       <div class="type">
         <button class="btn btn-lg">99 KWD</button>
@@ -976,7 +976,7 @@
 
       <div class="formula-section">
         <div class="form-group row">
-          <label class="col-lg-7 col-12 col-form-label">Card Number</label>
+          <label class="col-lg-7 col-12 col-form-label">{{"Card Number" | translate}}</label>
           <div class="col-lg-8 col-12 margin-auto">
             <input
               type="text"
@@ -987,7 +987,7 @@
         </div>
 
         <div class="form-group row">
-          <label class="col-lg-7 col-12 col-form-label">Card Holder</label>
+          <label class="col-lg-7 col-12 col-form-label">{{"Card Holder" | translate}}</label>
           <div class="col-lg-8 col-12 margin-auto">
             <input
               type="text"
@@ -999,7 +999,7 @@
 
         <div class="form-group row">
           <div class="col-lg-8 col-12 text-left">
-            <label class="col-form-label">Expiry Date</label>
+            <label class="col-form-label">{{"Expiry Date" | translate}}</label>
             <input
               type="text"
               class="form-control border-ridus"
@@ -1020,7 +1020,7 @@
               id="gridCheck"
             />
             <label class="form-check-label check-label" for="gridCheck"
-              >I want to add Friday to my Package.</label
+              >{{"I want to add Friday to my Package." | translate}}</label
             >
           </div>
 
@@ -1028,7 +1028,7 @@
             <p>15%</p>
           </div>
         </div>
-        <button class="btn btn-lg Continue">Continue</button>
+        <button class="btn btn-lg Continue">{{"Continue" | translate}}</button>
       </div>
     </div>
   </div>
@@ -1045,17 +1045,17 @@
       <div class="parent-three">
         <hr class="w-100" />
       </div>
-      <h1>Congratulations!</h1>
+      <h1>{{"Congratulations!" | translate}}</h1>
       <h2>
-        You have successfully <br />
-        completed your registration!
+        {{"You have successfully" | translate}} <br />
+        {{"completed your registration!" | translate}}
       </h2>
       <p>
-        By believing in yourself and committing to <br />
-        the registration, you will reach your goal.
+        {{"By believing in yourself and committing to" | translate}} <br />
+        {{"the registration, you will reach your goal." | translate}}
       </p>
 
-      <button class="btn btn-lg Continue" routerLink="/menus">DONE!</button>
+      <button class="btn btn-lg Continue" routerLink="/menus">{{"DONE!" | translate}}</button>
     </div>
   </div>
 </div>

@@ -5,16 +5,16 @@
     </div>
     <div class="btn-group sign-chef" *ngIf="!login">
         <button class="btn btn-primary index mr-1" routerLink="/signup">
-      Sign Up
+      {{ "Sign Up" | translate}}
     </button>
-        <button class="btn btn-primary mrg-left" routerLink="/login">Log In</button>
+        <button class="btn btn-primary mrg-left" routerLink="/login">{{ "Log In" | translate}}</button>
     </div>
     <div class="btn-group sign-chef" *ngIf="login">
         <button class="btn btn-primary index mr-1 mrg-left" (click)="logout()">
-      Log out
+      {{ "Log out" | translate}}
     </button>
         <button class="btn btn-primary index mr-1" routerLink="/menus">
-      Menus
+      {{ "Menus" | translate}}
     </button>
     </div>
 </div>
@@ -36,10 +36,10 @@
         </ul>
     </div>
     <div class="eat-health">
-        <h1><span style="color: #83489A;">Eat Healthy,</span></h1>
-        <h1>Feel Healty.</h1>
-        <p>Don’t Start A Diet That Has An Expiration Date.</p>
-        <p class="underline">Develop A Healthy Lifestyle That Will Last Forever.</p>
+        <h1><span style="color: #83489A;">{{ "Eat Healthy," | translate}}</span></h1>
+        <h1>{{ "Feel Healty." | translate}}</h1>
+        <p>{{ "Don’t Start A Diet That Has An Expiration Date." | translate}}</p>
+        <p class="underline">{{ "Develop A Healthy Lifestyle That Will Last Forever." | translate}}</p>
     </div>
 </div>
 <!-- end health -->
@@ -47,19 +47,19 @@
 <!-- start offer -->
 <div class="offer-section">
     <div class="container">
-        <h1>What Do We <span> Offer </span> ?</h1>
-        <p>Here's our main programs,you can choose which of that suits you.</p>
+        <h1>{{ "What Do We" | translate}} <span> {{ "Offer" | translate}} </span> {{ "?" | translate}}</h1>
+        <p>{{ "Here's our main programs,you can choose which of that suits you." | translate}}</p>
         <div class="offer-type">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <div class="flex-part">
                         <div class="offer-no">
-                            <h1>01</h1>
+                            <h1>{{ "01" | translate}}</h1>
                         </div>
                         <div class="offer-name">
-                            <h1>Weight Loss Program</h1>
+                            <h1>{{ "Weight Loss Program" | translate}}</h1>
                             <p>
-                                This program is specialized for weight loss or stabilization as desired by the client under the supervision of the nutritionists, with a 100% healthy and natural program to give safe and impressive results.
+                                {{ "This program is specialized for weight loss or stabilization as desired by the client under the supervision of the nutritionists, with a 100% healthy and natural program to give safe and impressive results." | translate}}
                             </p>
                         </div>
                     </div>
@@ -68,12 +68,12 @@
                 <div class="col-lg-6 col-12">
                     <div class="flex-part">
                         <div class="offer-no">
-                            <h1>02</h1>
+                            <h1>{{ "02" | translate}}</h1>
                         </div>
                         <div class="offer-name">
-                            <h1>Bodybuilding Program</h1>
+                            <h1>{{ "Bodybuilding Program" | translate}}</h1>
                             <p>
-                                This program designed for athletes who seek to build athletic and healthy bodies with different levels to fit with all sporting activities.
+                                {{ "This program designed for athletes who seek to build athletic and healthy bodies with different levels to fit with all sporting activities." | translate}}
                             </p>
                         </div>
                     </div>
@@ -82,18 +82,18 @@
                 <div class="col-lg-6 col-12">
                     <div class="flex-part">
                         <div class="offer-no">
-                            <h1>03</h1>
+                            <h1>{{ "03" | translate}}</h1>
                         </div>
                         <div class="offer-name">
-                            <h1>Plan Your Meals</h1>
+                            <h1>{{ "Plan Your Meals" | translate}}</h1>
                             <p>
-                                You can design your program to fit with your own lifestyle and also you can control the percentage of protein and carbs.
+                                {{ "You can design your program to fit with your own lifestyle and also you can control the percentage of protein and carbs." | translate}}"
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary blur" routerLink="/signup" *ngIf="!login">Join us</button>
+            <button class="btn btn-primary blur" routerLink="/signup" *ngIf="!login">{{ "Join us" | translate}}</button>
         </div>
     </div>
 </div>
@@ -117,8 +117,8 @@
                                 <div class="Lunch">
                                     <img src="assets/img/lunche.jpg" alt="" />
                                     <div class="choose">
-                                        <h1>lunch</h1>
-                                        <p>Choose Your Meal</p>
+                                        <h1>{{ "lunch" | translate}}</h1>
+                                        <p>{{ "Choose Your Meal" | translate}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -128,8 +128,8 @@
                                 <div class="Breakfast">
                                     <img src="assets/img/breakfast.jpg" alt="" />
                                     <div class="choose">
-                                        <h1>Breakfast</h1>
-                                        <p>Choose Your Meal</p>
+                                        <h1>{{ "Breakfast" | translate}}</h1>
+                                        <p>{{ "Choose Your Meal" | translate}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -140,10 +140,10 @@
 
             <div class="col-12 col-sm-4">
                 <div class="category">
-                    <h1>MEALS</h1>
-                    <h2>CATEGORIES</h2>
+                    <h1>{{ "MEALS" | translate}}</h1>
+                    <h2>{{ "CATEGORIES" | translate}}</h2>
                     <p>
-                        WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN DIET IS CORRECT, MEDICINE IS OF NO NEED.
+                        {{ "WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN DIET IS CORRECT, MEDICINE IS OF NO NEED." | translate }}
                     </p>
                 </div>
             </div>
@@ -165,17 +165,17 @@
             </div>
             <div class="col-lg-6 col-12">
                 <div class="healthy-life">
-                    <h2>About Us</h2>
-                    <h4>Our story starts with you</h4>
+                    <h2>{{ "About Us" | translate}}</h2>
+                    <h4>{{ "Our story starts with you" | translate}}</h4>
                     <p>
-                        The foodies, the health experts and the wellness seekers who believe in health life. The flavor fanatics and the protein obsessed. The culinary visionaries who maddening and create. The farmers and the bakers. The salad lovers and the burger aficionados.
+                        {{ "The foodies, the health experts and the wellness seekers who believe in health life. The flavor fanatics and the protein obsessed. The culinary visionaries who maddening and create. The farmers and the bakers. The salad lovers and the burger aficionados." | translate}}
                     </p>
 
-                    <h4>Better lifestyle</h4>
+                    <h4>{{ "Better lifestyle" | translate}}</h4>
                     <p>
-                        A better definition of the diet lifestyle We started with humble beginnings that lead us to a better future that give us the drive to produce better quality of food for our customer What we make for future we work with hard believe that healthy food is
+                        {{ "A better definition of the diet lifestyle We started with humble beginnings that lead us to a better future that give us the drive to produce better quality of food for our customer What we make for future we work with hard believe that healthy food is
                         a lifestyle. That’s change your life for a better future. A lot of people when they start a diet after a period of time they fell poring with the food, but with us is a different story. our team they make their best to let you
-                        fell that you eat every kind of food but it’s a healthy. Also for the people who like the home food more trust me you will not know the different because our chefs are cooking with love and whole passion.
+                        fell that you eat every kind of food but it’s a healthy. Also for the people who like the home food more trust me you will not know the different because our chefs are cooking with love and whole passion." | translate}}
                     </p>
                 </div>
             </div>
