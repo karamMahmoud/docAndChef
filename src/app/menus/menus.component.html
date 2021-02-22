@@ -10,9 +10,9 @@
   </div>
   <div class="btn-group sign-chef">
     <button class="btn btn-primary index mr-1 mrg-left" (click)="logout()">
-      Log out
+      {{"Log out" | translate}}
     </button>
-    <button class="btn btn-primary mrg-left" routerLink="/home">Home</button>
+    <button class="btn btn-primary mrg-left" routerLink="/home">{{"Home" | translate}}</button>
   </div>
 </div>
 
@@ -43,20 +43,20 @@
             *ngIf="package.breakfast"
             (click)="setMeal({ count: package.breakfast, name: 'breakfast' })"
           >
-            Breakfast
+            {{"Breakfast" | translate}}
           </li>
           <li
             *ngIf="package.main_course"
             (click)="setMeal({ count: package.main_course, name: 'main_course' })"
           >
-            Lunch
+            {{"lunch" | translate}}
           </li>
           <li
             *ngIf="package.custom_breakfasts"
             (click)="customBreakfastModal()
             "
           >
-            custom breakfasts
+            {{"custom breakfasts" | translate}}
           </li>
           <li
             *ngIf="package.protein_snacks"
@@ -64,19 +64,19 @@
               setMeal({ count: package.protein_snacks, name: 'protein_snacks' })
             "
           >
-            Protein snacks
+            {{"Protein snacks" | translate}}
           </li>
           <li
             *ngIf="package.snacks"
             (click)="setMeal({ count: package.snacks, name: 'snacks' })"
           >
-            Snacks
+            {{"Snacks" | translate}}
           </li>
           <li
             *ngIf="package.salad"
             (click)="setMeal({ count: package.breakfast, name: 'salad' })"
           >
-            Salad
+            {{"Salad" | translate}}
           </li>
         </ul>
       </div>
@@ -120,7 +120,7 @@
     <table class="table bg-white text-black-50 border-r-5" *ngIf="mealsLength.name" [@enterAnimation]>
       <thead class="">
         <tr>
-          <th scope="col" class="border-0">Day</th>
+          <th scope="col" class="border-0">{{"Day" | translate}}</th>
           <th
             scope="col"
             [attr.colspan]="mealsLength.count"
@@ -187,7 +187,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-primary1" id="exampleModalLabel">Custom Breakfast</h5>
+        <h5 class="modal-title text-primary1" id="exampleModalLabel">{{"custom breakfast" | translate}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
