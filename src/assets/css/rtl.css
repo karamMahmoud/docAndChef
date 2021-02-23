@@ -123,3 +123,14 @@ td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:
 .mat-option-text {
     direction: rtl;
 }
+
+.health .social-media ul li{
+    margin-left: 0 !important;
+    margin-right: -35px;
+    padding: 15px 0px;
+    transform: translate(13px, 2px);
+}
+
+.form-check-label{
+    margin-right: 18px;
+}
