@@ -33,10 +33,10 @@
                 <h1>Let’s stay in touch
                 </h1>
                 <div class="input-group mb-3 subscribe-input">
-                    <input type="text" class="form-control input-text " placeholder="Enter your email address"
+                    <input [(ngModel)]="email" name="email" type="text" class="form-control input-text " placeholder="Enter your email address"
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append subscribe-button">
-                        <button class="btn btn-secondary" type="button">Subscribe</button>
+                        <button class="btn btn-secondary" type="button" (click)="subscribeMail()">Subscribe</button>
                     </div>
                 </div>
                 <p>Keep up to date with our latest

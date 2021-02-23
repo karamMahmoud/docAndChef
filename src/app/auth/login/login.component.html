@@ -58,14 +58,14 @@
                   password.errors && (password.touched || requiredMsg)
                 "
                 >*</span
-              >Client number</label
+              >Password</label
             >
             <div class="col-12">
               <input
                 type="password"
                 name="password"
                 #password="ngModel"
-                [(ngModel)]="credentials.client_number"
+                [(ngModel)]="credentials.password"
                 class="form-control border-ridus"
                 required
                 id="inputnumber"
@@ -73,6 +73,7 @@
               />
             </div>
           </div>
+          <a routerLink="/forget-password">Forget password</a>
         </div>
         <button class="btn btn-lg Continue" type="submit" [disabled]="loading">Login</button>
       </form>

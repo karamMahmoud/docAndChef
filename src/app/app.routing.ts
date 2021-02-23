@@ -10,6 +10,7 @@ import { ForgetPasswordComponent } from "./auth/forget-password/forget-password.
 import { AuthGuard } from "app/helper/guard";
 import { NotAuthGuard } from "app/helper/auth-guard";
 import { MenusComponent } from "./menus/menus.component";
+import { VerifyComponent } from "./auth/verify/verify.component";
 import { SignupComponent } from "./signup/signup.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 // import { CategoryComponent } from './category/category.component';
@@ -24,10 +25,11 @@ const routes: Routes = [
   { path: "menus", component: MenusComponent, canActivate: [AuthGuard] },
   // canActivate: [NotAuthGuard]
   { path: "login", component: LoginComponent },
+  { path: "verify", component: VerifyComponent },
   {
-    path: "change-password",
+    path: "restore",
     component: ChangePasswordComponent,
-    canActivate: [AuthGuard],
+    canActivate: [NotAuthGuard],
   },
   {
     path: "auth/reset-password",

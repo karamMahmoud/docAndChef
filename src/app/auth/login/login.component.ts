@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   credentials = {
     email: "",
-    client_number: "",
+    password: "",
   };
   errorMsgs: any;
   errorData: any;

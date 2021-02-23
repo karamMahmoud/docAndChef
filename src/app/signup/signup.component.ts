@@ -59,6 +59,7 @@ export class SignupComponent implements OnInit {
   payload = {
     name: "",
     email: "",
+    password: "",
     phone: "",
     address: "",
     area: "",

@@ -193,8 +193,22 @@ export class AuthenticationService {
   //forget password
   forgetPassword(email: string): Observable<any> {
     return this.http
-      .post(`${this.baseUrl}/api/auth/forgot-password`, { email: email })
-      .pipe(map((res: Response) => res));
+      .post(`${this.baseUrl}/lost?email=${email}`, {})
+  }
+  //subscribe password
+  subscribeMail(email: string): Observable<any> {
+    return this.http
+      .post(`${this.baseUrl}/subscribe?email=${email}`, {})
+  }
+  //restore password
+  restore(password: string,token): Observable<any> {
+    return this.http
+      .post(`${this.baseUrl}/restore?password=${password}&token=${token}`, {})
+  }
+  //restore password
+  verify(token): Observable<any> {
+    return this.http
+      .post(`${this.baseUrl}/verify?token=${token}`, {})
   }
   resetPassword(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/api/auth/reset-password`, data).pipe(

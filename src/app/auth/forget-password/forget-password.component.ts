@@ -1,38 +1,43 @@
 import { Component, OnInit  ,ViewContainerRef} from '@angular/core';
 import { AuthenticationService } from '../../helper/services.api';
 import { Router } from '@angular/router';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 
 @Component({
   selector: 'app-reset-password',
   templateUrl: './forget-password.component.html',
-  styleUrls: ['./forget-password.component.css']
+  styleUrls: ['./forget-password.component.scss']
 })
 export class ForgetPasswordComponent implements OnInit {
-
-  payload={
+  loading = false
+  credentials={
     email:''
   }
+  requiredMsg: boolean;
   errorMsgs:any;
 
   constructor(private router:Router,private vRef: ViewContainerRef,
+    public toastr: ToastrManager,
     private authenticationService:AuthenticationService) {
       
      }
 
-     submit(){
-      this.errorMsgs=null;
-      this.authenticationService.forgetPassword(this.payload.email).subscribe(
+     submit({ value, valid }){
+      this.requiredMsg = false;
+      if (!valid) {
+        this.requiredMsg = true;
+        return;
+      }
+      this.loading = true;
+      this.authenticationService.forgetPassword(this.credentials.email).subscribe(
         res => {
-        let data = res.json();
-          // this.toastr.success("Email Sent Successfuly");
+      this.loading = false;
+      this.toastr.successToastr(res.messages);
           this.router.navigate(['/login']);
       }, err => {
-        // this.toastr.error("Error While Sending an Email...");
-        if (err.json().errors) {
-          this.errorMsgs = err.json().errors;
-              return;
-          }
+      this.loading = false;
+      this.toastr.errorToastr("Some thing wrong");
       }
   )
     }

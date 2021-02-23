@@ -1,0 +1,12 @@
+<div id="wrapper" style="    height: 600px;
+display: flex;
+align-items: center;">
+  <div id="dialog" >
+    <h3>Email Verification</h3>
+    <div>
+      <span class="text-success" *ngIf="verified">Your Email Is Verified Now</span>
+      <span class="text-danger" *ngIf="!verified">Your Email Is Not Verified Yet</span><br />
+      <a routerLink="/home">Home</a><br />
+    </div>
+  </div>
+</div>

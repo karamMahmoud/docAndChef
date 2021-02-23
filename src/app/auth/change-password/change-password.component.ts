@@ -1,53 +1,59 @@
-  import { Component, OnInit ,ViewContainerRef} from '@angular/core';
-  import { AuthenticationService } from '../../helper/services.api';
-  import { Router } from '@angular/router';
+import { Component, OnInit  ,ViewContainerRef} from '@angular/core';
+import { AuthenticationService } from '../../helper/services.api';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrManager } from 'ng6-toastr-notifications';
+
 
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
-  styleUrls: ['./change-password.component.css']
+  styleUrls: ['./change-password.component.scss']
 })
 export class ChangePasswordComponent implements OnInit {
-
-  
-  payload={
-    new_password:'',
-    old_password:'',
-    new_password_confirmation:''
+  loading = false
+  confirmpassword='';
+  token='';
+  credentials={
+    password:''
   }
+  requiredMsg: boolean;
   errorMsgs:any;
 
-  constructor(public toastr: ToastrManager,private router:Router,private vRef: ViewContainerRef,
+  constructor(private router:Router,private vRef: ViewContainerRef,
+    private route: ActivatedRoute,
+    public toastr: ToastrManager,
     private authenticationService:AuthenticationService) {
+      
      }
 
-
-  submit(){
-    this.errorMsgs = null
-    this.authenticationService.changepassword(this.payload).subscribe(
-     res => {
-      // this.toastr.success("Password Changed Successfully");
-      let data = res.json();
-	  this.payload.new_password = '';
-	  this.payload.old_password = '';
-	  this.payload.new_password_confirmation = '';
+     submit({ value, valid }){
+      this.requiredMsg = false;
+      if (!valid) {
+        this.requiredMsg = true;
+        return;
+      }
+      this.loading = true;
+      this.authenticationService.restore(this.credentials.password,this.token).subscribe(
+        res => {
+      this.loading = false;
+      this.toastr.successToastr(res.messages);
+          this.router.navigate(['/login']);
       }, err => {
-        // this.toastr.error("Error While Changing your password...");
-        if (err.json().errors) {
-          this.errorMsgs = err.json().errors;
-              return;
-          }
+      this.loading = false;
+      this.toastr.errorToastr(err.error.messages);
       }
   )
-  }
+    }
 
   ngOnInit() {
+    this.route.queryParams.subscribe((res) => {
+      if (res.token) {
+       this.token = res.token;
+      }
+    });
   }
 
 }
 interface payload{
-  new_password:any,
-  old_password:any,
-  new_password_confirmation:any
+  email:string
 }
