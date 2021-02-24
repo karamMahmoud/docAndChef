@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import Swiper from "swiper";
 
 @Component({
@@ -10,7 +11,10 @@ import Swiper from "swiper";
 export class DashboardComponent implements OnInit {
   swiperConfig;
   login;
-  constructor(public router: Router) {
+      selectedLang = '';
+  constructor(public router: Router,
+    private translate: TranslateService,
+    ) {
     setTimeout(() => {
       this.swiperConfig = {
         spaceBetween: 0,
@@ -39,8 +43,18 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.selectedLang = localStorage.getItem('lang');
     this.login = localStorage.getItem('drchefToken') ? true : false;
   }
+
+  change(lang){
+    if(localStorage.getItem('lang') != lang){
+      // this.selectedLang = lang;
+      this.translate.use(lang);
+      localStorage.setItem('lang',lang)
+      location.reload();
+    }
+  };
 
   logout(){
     localStorage.setItem("drchefToken",'');

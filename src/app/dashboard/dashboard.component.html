@@ -1,186 +1,265 @@
 <!-- start navbar -->
 <div class="header">
-    <div class="img-chef">
-        <img src="assets/img/img.png" alt="" />
-    </div>
-    <div class="btn-group sign-chef" *ngIf="!login">
-        <button class="btn btn-primary index mr-1" routerLink="/signup">
-      {{ "Sign Up" | translate}}
+  <div class="img-chef">
+    <img src="assets/img/img.png" alt="" />
+  </div>
+  <div class="btn-group sign-chef" *ngIf="!login">
+    <button class="btn btn-primary index mr-1" routerLink="/signup">
+      {{ "Sign Up" | translate }}
     </button>
-        <button class="btn btn-primary mrg-left" routerLink="/login">{{ "Log In" | translate}}</button>
-    </div>
-    <div class="btn-group sign-chef" *ngIf="login">
-        <button class="btn btn-primary index mr-1 mrg-left" (click)="logout()">
-      {{ "Log out" | translate}}
+    <button class="btn btn-primary mrg-left" routerLink="/login">
+      {{ "Log In" | translate }}
     </button>
-        <button class="btn btn-primary index mr-1" routerLink="/menus">
-      {{ "Menus" | translate}}
+    <div class="dd">
+        <button class="btn btn-secondary">
+          {{ selectedLang }}
+        </button>
+        <div class="dropdown-content">
+          <a class="dropdown-item" (click)="change('en')">EN</a>
+          <a class="dropdown-item" (click)="change('ar')">AR</a>
+        </div>
+      </div>
+  </div>
+  <div class="btn-group sign-chef" *ngIf="login">
+    <button class="btn btn-primary index mr-1 mrg-left" (click)="logout()">
+      {{ "Log out" | translate }}
     </button>
+    <button class="btn btn-primary index mr-1" routerLink="/menus">
+      {{ "Menus" | translate }}
+    </button>
+    <div class="dd">
+      <button class="btn btn-secondary">
+        {{ selectedLang }}
+      </button>
+      <div class="dropdown-content">
+        <a class="dropdown-item" (click)="change('en')">EN</a>
+        <a class="dropdown-item" (click)="change('ar')">AR</a>
+      </div>
     </div>
+</div>
+  <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{selectedLang}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="change('en')" >EN</a>
+          <a class="dropdown-item"  (click)="change('ar')">AR</a>
+        </div>
+      </div> -->
+
+  <!-- <li role="menuitem" (click)="change('en')" ><a class="dropdown-item"> <img src="/assets/img/en.png" width="25"/>  English</a></li>
+<li role="menuitem" (click)="change('ar')" ><a class="dropdown-item"><img src="/assets/img/ar.png" width="25"/>  Arabic</a>
+</li> -->
 </div>
 <!-- end navbar -->
 
 <!-- start health -->
-<div class="health">
-    <div class="social-media">
-        <ul>
-            <!-- <li><i class="fab fa-twitter"></i></li> -->
-            <li><a href="https://www.facebook.com/pages/category/Health-Food-Store/drandchefkw-103571554885412/" target="blank"><i
-        class="fab fa-facebook"></i></a></li>
-            <li><a href="https://www.linkedin.com/company/drandchef" target="blank"><i
-        class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://www.snapchat.com/add/drandchef.kw" target="blank"><i
-        class="fab fa-snapchat-ghost"></i></a></li>
-            <li><a href="https://instagram.com/drandchef.kw?igshid=17zn3livrr30f" target="blank"><i
-            class="fab fa-instagram"></i></a></li>
-        </ul>
-    </div>
-    <div class="eat-health">
-        <h1><span style="color: #83489A;">{{ "Eat Healthy," | translate}}</span></h1>
-        <h1>{{ "Feel Healty." | translate}}</h1>
-        <p>{{ "Don’t Start A Diet That Has An Expiration Date." | translate}}</p>
-        <p class="underline">{{ "Develop A Healthy Lifestyle That Will Last Forever." | translate}}</p>
-    </div>
+<div class="health" [class.healthAr]="selectedLang === 'ar'">
+  <div class="social-media">
+    <ul>
+      <!-- <li><i class="fab fa-twitter"></i></li> -->
+      <li>
+        <a
+          href="https://www.facebook.com/pages/category/Health-Food-Store/drandchefkw-103571554885412/"
+          target="blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/drandchef" target="blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </li>
+      <li>
+        <a href="https://www.snapchat.com/add/drandchef.kw" target="blank"
+          ><i class="fab fa-snapchat-ghost"></i
+        ></a>
+      </li>
+      <li>
+        <a
+          href="https://instagram.com/drandchef.kw?igshid=17zn3livrr30f"
+          target="blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </li>
+    </ul>
+  </div>
+  <div class="eat-health text-left">
+    <h1>
+      <span style="color: #83489a">{{ "Eat Healthy," | translate }}</span>
+    </h1>
+    <h1>{{ "Feel Healty." | translate }}</h1>
+    <p>{{ "Don’t Start A Diet That Has An Expiration Date." | translate }}</p>
+    <p class="underline">
+      {{ "Develop A Healthy Lifestyle That Will Last Forever." | translate }}
+    </p>
+  </div>
 </div>
 <!-- end health -->
 
 <!-- start offer -->
 <div class="offer-section">
-    <div class="container">
-        <h1>{{ "What Do We" | translate}} <span> {{ "Offer" | translate}} </span> {{ "?" | translate}}</h1>
-        <p>{{ "Here's our main programs,you can choose which of that suits you." | translate}}</p>
-        <div class="offer-type">
-            <div class="row">
-                <div class="col-lg-6 col-12">
-                    <div class="flex-part text-left">
-                        <div class="offer-no">
-                            <h1>{{ "01" | translate}}</h1>
-                        </div>
-                        <div class="offer-name">
-                            <h1>{{ "Weight Loss Program" | translate}}</h1>
-                            <p>
-                                {{ "This program is specialized for weight loss or stabilization as desired by the client under the supervision of the nutritionists, with a 100% healthy and natural program to give safe and impressive results." | translate}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-12">
-                    <div class="flex-part text-left">
-                        <div class="offer-no">
-                            <h1>{{ "02" | translate}}</h1>
-                        </div>
-                        <div class="offer-name">
-                            <h1>{{ "Bodybuilding Program" | translate}}</h1>
-                            <p>
-                                {{ "This program designed for athletes who seek to build athletic and healthy bodies with different levels to fit with all sporting activities." | translate}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-12">
-                    <div class="flex-part text-left">
-                        <div class="offer-no">
-                            <h1>{{ "03" | translate}}</h1>
-                        </div>
-                        <div class="offer-name">
-                            <h1>{{ "Plan Your Meals" | translate}}</h1>
-                            <p>
-                                {{ "You can design your program to fit with your own lifestyle and also you can control the percentage of protein and carbs." | translate}}"
-                            </p>
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <h1>
+      {{ "What Do We" | translate }} <span> {{ "Offer" | translate }} </span>
+      {{ "?" | translate }}
+    </h1>
+    <p>
+      {{
+        "Here's our main programs,you can choose which of that suits you."
+          | translate
+      }}
+    </p>
+    <div class="offer-type">
+      <div class="row">
+        <div class="col-lg-6 col-12">
+          <div class="flex-part text-left">
+            <div class="offer-no">
+              <h1>{{ "01" | translate }}</h1>
             </div>
-            <button class="btn btn-primary blur" routerLink="/signup" *ngIf="!login">{{ "Join us" | translate}}</button>
+            <div class="offer-name">
+              <h1>{{ "Weight Loss Program" | translate }}</h1>
+              <p>
+                {{
+                  "This program is specialized for weight loss or stabilization as desired by the client under the supervision of the nutritionists, with a 100% healthy and natural program to give safe and impressive results."
+                    | translate
+                }}
+              </p>
+            </div>
+          </div>
         </div>
+
+        <div class="col-lg-6 col-12">
+          <div class="flex-part text-left">
+            <div class="offer-no">
+              <h1>{{ "02" | translate }}</h1>
+            </div>
+            <div class="offer-name">
+              <h1>{{ "Bodybuilding Program" | translate }}</h1>
+              <p>
+                {{
+                  "This program designed for athletes who seek to build athletic and healthy bodies with different levels to fit with all sporting activities."
+                    | translate
+                }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+          <div class="flex-part text-left">
+            <div class="offer-no">
+              <h1>{{ "03" | translate }}</h1>
+            </div>
+            <div class="offer-name">
+              <h1>{{ "Plan Your Meals" | translate }}</h1>
+              <p>
+                {{
+                  "You can design your program to fit with your own lifestyle and also you can control the percentage of protein and carbs."
+                    | translate
+                }}"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary blur" routerLink="/signup" *ngIf="!login">
+        {{ "Join us" | translate }}
+      </button>
     </div>
+  </div>
 </div>
 
 <!-- end offer -->
 
-
 <!-- start meals -->
 
 <div class="meals">
-    <div class="container">
-        <div class="img-chef">
-            <img src="assets/img/chef.png" alt="" />
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-8">
-                <div class="swiper-container" [swiper]="swiperConfig">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="col-lg-12">
-                                <div class="Lunch">
-                                    <img src="assets/img/lunche.jpg" alt="" />
-                                    <div class="choose">
-                                        <h1>{{ "lunch" | translate}}</h1>
-                                        <p>{{ "Choose Your Meal" | translate}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="col-12">
-                                <div class="Breakfast">
-                                    <img src="assets/img/breakfast.jpg" alt="" />
-                                    <div class="choose">
-                                        <h1>{{ "Breakfast" | translate}}</h1>
-                                        <p>{{ "Choose Your Meal" | translate}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-4">
-                <div class="category text-left">
-                    <h1>{{ "MEALS" | translate}}</h1>
-                    <h2>{{ "CATEGORIES" | translate}}</h2>
-                    <p>
-                        {{ "WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN DIET IS CORRECT, MEDICINE IS OF NO NEED." | translate }}
-                    </p>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="img-chef">
+      <img src="assets/img/chef.png" alt="" />
     </div>
+    <div class="row">
+      <div class="col-12 col-sm-8">
+        <div class="swiper-container" [swiper]="swiperConfig">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="col-lg-12">
+                <div class="Lunch">
+                  <img src="assets/img/lunche.jpg" alt="" />
+                  <div class="choose">
+                    <h1>{{ "lunch" | translate }}</h1>
+                    <p>{{ "Choose Your Meal" | translate }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-12">
+                <div class="Breakfast">
+                  <img src="assets/img/breakfast.jpg" alt="" />
+                  <div class="choose">
+                    <h1>{{ "Breakfast" | translate }}</h1>
+                    <p>{{ "Choose Your Meal" | translate }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4">
+        <div class="category text-left">
+          <h1>{{ "MEALS" | translate }}</h1>
+          <h2>{{ "CATEGORIES" | translate }}</h2>
+          <p>
+            {{
+              "WHEN DIET IS WRONG, MEDICINE IS OF NO USE. WHEN DIET IS CORRECT, MEDICINE IS OF NO NEED."
+                | translate
+            }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- end meals -->
 
-
 <!-- start about-us -->
 <div class="about-us">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-12">
-                <div class="photo">
-                    <img src="assets/img/milk.jpg" alt="" />
-                </div>
-            </div>
-            <div class="col-lg-6 col-12 text-left">
-                <div class="healthy-life text-left">
-                    <h2>{{ "About Us" | translate}}</h2>
-                    <h4>{{ "Our story starts with you" | translate}}</h4>
-                    <p>
-                        {{ "The foodies, the health experts and the wellness seekers who believe in health life. The flavor fanatics and the protein obsessed. The culinary visionaries who maddening and create. The farmers and the bakers. The salad lovers and the burger aficionados." | translate}}
-                    </p>
-
-                    <h4>{{ "Better lifestyle" | translate}}</h4>
-                    <p>
-                        {{ "A better definition of the diet lifestyle We started with humble beginnings that lead us to a better future that give us the drive to produce better quality of food for our customer What we make for future we work with hard believe that healthy food is
-                        a lifestyle. That’s change your life for a better future. A lot of people when they start a diet after a period of time they fell poring with the food, but with us is a different story. our team they make their best to let you
-                        fell that you eat every kind of food but it’s a healthy. Also for the people who like the home food more trust me you will not know the different because our chefs are cooking with love and whole passion." | translate}}
-                    </p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <div class="photo">
+          <img src="assets/img/milk.jpg" alt="" />
         </div>
+      </div>
+      <div class="col-lg-6 col-12 text-left">
+        <div class="healthy-life text-left">
+          <h2>{{ "About Us" | translate }}</h2>
+          <h4>{{ "Our story starts with you" | translate }}</h4>
+          <p>
+            {{
+              "The foodies, the health experts and the wellness seekers who believe in health life. The flavor fanatics and the protein obsessed. The culinary visionaries who maddening and create. The farmers and the bakers. The salad lovers and the burger aficionados."
+                | translate
+            }}
+          </p>
+
+          <h4>{{ "Better lifestyle" | translate }}</h4>
+          <p>
+            {{
+              "A better definition of the diet lifestyle We started with humble beginnings that lead us to a better future that give us the drive to produce better quality of food for our customer What we make for future we work with hard believe that healthy food is
+                        a lifestyle. That’s change your life for a better future. A lot of people when they start a diet after a period of time they fell poring with the food, but with us is a different story. our team they make their best to let you
+                        fell that you eat every kind of food but it’s a healthy. Also for the people who like the home food more trust me you will not know the different because our chefs are cooking with love and whole passion."
+                | translate
+            }}
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <!-- end about-us -->
 

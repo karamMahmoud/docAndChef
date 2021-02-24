@@ -36,7 +36,7 @@
                     <input [(ngModel)]="email" name="email" type="text" class="form-control input-text " [placeholder]="'Enter your email address' | translate"
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append subscribe-button">
-                        <button class="btn btn-secondary" type="button">{{"Subscribe" | translate}}</button>
+                        <button class="btn btn-secondary" type="button" (click)="subscribeMail()">{{"Subscribe" | translate}}</button>
                     </div>
                 </div>
                 <p>{{"Keep up to date with our latest news and special offers." | translate}}</p>
