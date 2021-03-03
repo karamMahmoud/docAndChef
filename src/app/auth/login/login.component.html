@@ -1,41 +1,32 @@
 <!-- start sceion-one -->
 <div class="navbar-header">
-  <div class="img-chef">
-    <img src="assets/img/img.png" alt="" />
-  </div>
-  <div class="btn-group sign-chef">
-    <button class="btn btn-primary mrg-left" routerLink="/home">Home</button>
-  </div>
-</div>
-<div
-  class="info-section"
->
-  <div class="container">
-    <div class="logo mb-3">
-      <img routerLink="/dashboard" src="assets/img/img.png" alt="" />
+    <div class="img-chef">
+        <img src="assets/img/img.png" alt="" />
     </div>
-    <div class="personal-info">
-      <div class="title">
-        <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
-        <h1>Login</h1>
-      </div>
+    <div class="btn-group sign-chef">
+        <button class="btn btn-primary mrg-left" routerLink="/home">{{"Home" |translate}}</button>
+    </div>
+</div>
+<div class="info-section">
+    <div class="container">
+        <div class="logo mb-3">
+            <img routerLink="/dashboard" src="assets/img/img.png" alt="" />
+        </div>
+        <div class="personal-info">
+            <div class="title">
+                <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
+                <h1>{{"Login" | translate}}</h1>
+            </div>
 
-      <form
-        class="needs-validation"
-        novalidate
-        #f="ngForm"
-        (ngSubmit)="login(f)"
-        #registerForm="ngForm"
-      >
-        <div class="formula text-left">
+            <form class="needs-validation" novalidate #f="ngForm" (ngSubmit)="login(f)" #registerForm="ngForm">
+                <div class="formula text-left">
 
-          <div class="form-group row">
-            <label for="inputPassword4" class="col-12 col-form-label"
-              ><span
+                    <div class="form-group row">
+                        <label for="inputPassword4" class="col-12 col-form-label"><span
                 class="has-asterisk"
                 *ngIf="email.errors && (email.touched || requiredMsg)"
                 >*</span
-              >Email</label
+              >{{"Email" | translate}}</label
             >
             <div class="col-12">
               <input
@@ -46,7 +37,7 @@
                 class="form-control border-ridus"
                 required
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                placeholder="Email"
+                [placeholder]="'Email' | translate"
               />
             </div>
           </div>
@@ -58,7 +49,7 @@
                   password.errors && (password.touched || requiredMsg)
                 "
                 >*</span
-              >Password</label
+              >{{"Password" | translate}}</label
             >
             <div class="col-12">
               <input
@@ -69,13 +60,13 @@
                 class="form-control border-ridus"
                 required
                 id="inputnumber"
-                placeholder="Client number"
+                [placeholder]="'Password' | translate"
               />
             </div>
           </div>
-          <a routerLink="/forget-password">Forget password</a>
+          <a routerLink="/forget-password">{{"Forget password" | translate}}</a>
         </div>
-        <button class="btn btn-lg Continue" type="submit" [disabled]="loading">Login</button>
+        <button class="btn btn-lg Continue" type="submit" [disabled]="loading">{{"Login" | translate}}</button>
       </form>
     </div>
   </div>

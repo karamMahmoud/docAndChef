@@ -1,6 +1,6 @@
 {
     "personal info": "معلومات شخصية",
-    "Home":"الصفحة الرئيسية",
+    "Home": "الصفحة الرئيسية",
     "name": "الاسم",
     "Mobile number": "رقم الهاتف",
     "your name": "اسمك",
@@ -60,7 +60,7 @@
     "DONE!": "!تم",
     "Day": "يوم",
     "Enter your password": "ادخل الرقم السري",
-    
+
 
     "custom breakfasts": "فطور مخصص",
     "Sign Up": "انشاء حساب",
@@ -98,10 +98,10 @@
     "A better definition of the diet lifestyle We started with humble beginnings that lead us to a better future that give us the drive to produce better quality of food for our customer What we make for future we work with hard believe that healthy food is a lifestyle. That’s change your life for a better future. A lot of people when they start a diet after a period of time they fell poring with the food, but with us is a different story. our team they make their best to let you fell that you eat every kind of food but it’s a healthy. Also for the people who like the home food more trust me you will not know the different because our chefs are cooking with love and whole passion.": "تعريف أفضل لنمط حياة النظام الغذائي بدأنا ببدايات متواضعة تقودنا إلى مستقبل أفضل يمنحنا الدافع لإنتاج طعام بجودة أفضل لعملائنا. هذا يغير حياتك من أجل مستقبل أفضل. كثير من الناس عندما يبدأون نظامًا غذائيًا بعد فترة من الوقت كانوا يملون الطعام ، لكن معنا قصة مختلفة. يبذل فريقنا قصارى جهدهم للسماح لك بأن تأكل كل نوع من الطعام ولكنه صحي. أيضًا بالنسبة للأشخاص الذين يحبون الطعام المنزلي ، يثقون بي أكثر ، لن تعرفوا الاختلاف لأن طهاتنا يطبخون بحب وشغف كامل.",
 
 
-    
-    "Contact Info":"معلومات الاتصال",
+
+    "Contact Info": "معلومات الاتصال",
     "Phone": "هاتف",
-    "+9 (509) 120 6705": "٥٠٧٦ ٠٢١ ٩٠٥ ٩+",
+    "+9 (656) 555 5340": "0435 555 (656) 9+",
     "Address:": "العنوان",
     "Kuwait City.": "دولة الكويت",
     "Get Help": "احصل على مساعدة",
@@ -115,8 +115,42 @@
     "Enter your email address": "أدخل عنوان بريدك الالكتروني",
     "Keep up to date with our latest news and special offers.": "ابق على اطلاع بأحدث الأخبار والعروض الخاصة.",
     "We accept:": "نحن نقبل",
-    "All Rights Reserved.": "جميع الحقوق محفوظة."
-    
+    "All Rights Reserved.": "جميع الحقوق محفوظة.",
+
+    "Edit Profile": "تعديل الملف الشخصي",
+    "Complete your profile": "أكمل ملفك الشخصي",
+    "Full Name": "الاسم الكامل",
+    "Email address": "عنوان بريد الكتروني",
+    "Error Messages:": "رسائل خاطئة:",
+    "Update Profile": "تحديث الملف",
+
+    "Forget Password": "هل نسيت كلمة السر",
+    "Confirm Password": "تأكيد كلمة المرور",
+    "Not Identical": "لم تكن متطابقة",
+    "Login": "تسجيل الدخول",
+    "Send": "إرسال",
+
+    "Reset Password": "إعادة تعيين كلمة المرور",
+    "New Password": "كلمة السر الجديدة",
+    "Confirm New Password": "تأكيد كلمة المرور الجديدة",
+    "Do you have an account ?": "هل لديك حساب ؟",
+
+    "Email Verification": "تأكيد البريد الالكتروني",
+    "Your Email Is Verified Now": "تم التحقق من بريدك الإلكتروني الآن",
+    "Your Email Is Not Verified Yet": "لم يتم التحقق من بريدك الإلكتروني بعد",
+    "Close": "اغلاق",
+
+    "EN": "الإنجليزية",
+    "AR": "عربي",
+
+    "Save as Draft": "حفظ مؤقت",
+    "Send To Restaurant": "ارسال للمطعم",
+    "Meals": "وجبات",
+    "Your plan will start on": "ستبدأ خطتك في",
+
+    "6-10 am": " ٦ صباحا ",
+    "6-10 pm": "٦ مساءا "
+
 
 
 }

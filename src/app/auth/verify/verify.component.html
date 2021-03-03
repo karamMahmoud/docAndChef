@@ -1,12 +1,12 @@
 <div id="wrapper" style="    height: 600px;
 display: flex;
 align-items: center;">
-  <div id="dialog" >
-    <h3>Email Verification</h3>
-    <div>
-      <span class="text-success" *ngIf="verified">Your Email Is Verified Now</span>
-      <span class="text-danger" *ngIf="!verified">Your Email Is Not Verified Yet</span><br />
-      <a routerLink="/home">Home</a><br />
+    <div id="dialog">
+        <h3>{{"Email Verification" | translate}}</h3>
+        <div>
+            <span class="text-success" *ngIf="verified">{{"Your Email Is Verified Now" | translate}}</span>
+            <span class="text-danger" *ngIf="!verified">{{"Your Email Is Not Verified Yet" | translate}}</span><br />
+            <a routerLink="/home">{{"Home" | translate}}</a><br />
+        </div>
     </div>
-  </div>
 </div>
