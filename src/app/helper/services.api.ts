@@ -94,7 +94,7 @@ export class AuthenticationService {
   }
 
   menus(): any {
-    return this.http.get(`${this.baseUrl}/menu`, {
+    return this.http.get(`${this.baseUrl}/menu?lang=en`, {
       headers: this.tokenAsHeader(),
     });
   }
