@@ -1,44 +1,35 @@
 <!-- start sceion-one -->
 <div class="navbar-header">
-  <div class="img-chef">
-    <img src="assets/img/img.png" alt="" />
-  </div>
-  <div class="btn-group sign-chef">
-    <button class="btn btn-primary mrg-left" routerLink="/home">{{"Home" | translate}}</button>
-  </div>
+    <div class="img-chef">
+        <img src="assets/img/img.png" alt="" />
+    </div>
+    <div class="btn-group sign-chef">
+        <button class="btn btn-primary mrg-left" routerLink="/home">{{"Home" | translate}}</button>
+    </div>
 </div>
 
-<div
-  [ngClass]="{
+<div [ngClass]="{
     'info-section': currentStep === 1 || currentStep === 2 || currentStep === 3,
     'choose-section': currentStep === 4,
     'payment-section': currentStep === 5
-  }"
-  *ngIf="currentStep !== 6"
->
-  <div class="container">
-    <div class="logo mb-3">
-      <img src="assets/img/img.png" alt="" />
-    </div>
-    <div class="personal-info" *ngIf="currentStep === 1">
-      <div class="parent-one">
-        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
-      </div>
-      <div class="title">
-        <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
-        <h1>{{ 'personal info' | translate}}</h1>
-      </div>
+  }" *ngIf="currentStep !== 6">
+    <div class="container">
+        <div class="logo mb-3">
+            <img src="assets/img/img.png" alt="" />
+        </div>
+        <div class="personal-info" *ngIf="currentStep === 1">
+            <div class="parent-one">
+                <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
+            </div>
+            <div class="title">
+                <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
+                <h1>{{ 'personal info' | translate}}</h1>
+            </div>
 
-      <form
-        class="needs-validation"
-        novalidate
-        #f="ngForm"
-        (ngSubmit)="firstForm(f)"
-        #registerForm="ngForm"
-      >
-        <div class="formula text-left">
-          <div class="form-group row">
-            <label class="col-lg-3 col-12 col-form-label">
+            <form class="needs-validation" novalidate #f="ngForm" (ngSubmit)="firstForm(f)" #registerForm="ngForm">
+                <div class="formula text-left">
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-12 col-form-label">
               <span
                 class="has-asterisk"
                 *ngIf="
@@ -112,7 +103,7 @@
                 class="has-asterisk"
                 *ngIf="password.errors && (password.touched || requiredMsg1)"
                 >*</span
-              >Password</label
+              >{{"Password" | translate}}</label
             >
             <div class="col-lg-9 col-12">
               <input
@@ -122,7 +113,7 @@
                 [(ngModel)]="payload.password"
                 class="form-control border-ridus"
                 required
-                placeholder="Enter your password"
+                [placeholder]="'Enter your password' | translate"
               />
             </div>
           </div>
@@ -324,12 +315,11 @@
             <input type="radio" name="size" id="size_1" value="small" checked />
             <label for="size_1" class="type text-center">Male</label>
 
-            <input type="radio" name="size" id="size_2" value="small" />
-            <label for="size_2" class="type text-center">Female</label>
-          </div> -->
-          <div class="form-group">
-            <label
-              ><span
+                        <input type="radio" name="size" id="size_2" value="small" />
+                        <label for="size_2" class="type text-center">Female</label>
+                    </div> -->
+                    <div class="form-group">
+                        <label><span
                 class="has-asterisk"
                 *ngIf="height.errors && (height.touched || requiredMsg3)"
                 >*</span
@@ -424,58 +414,44 @@
                   [checked]="payload.gender === 'male'"
                 />
                 <label class="form-check-label" for="Male">{{ "Male" | translate}}</label>
-              </div>
-            </div>
-            <div class="form-group row check-box ml-3">
-              <div class="form-check">
-                <input
-                  #gender="ngModel"
-                  required
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="Female"
-                  value="female"
-                  [(ngModel)]="payload.gender"
-                  [checked]="payload.gender === 'female'"
-                />
-                <label class="form-check-label" for="Female">{{ "Female" | translate}}</label>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="form-group row check-box ml-3">
+                    </div>
+                </div>
+                <div class="form-group row check-box ml-3">
+                    <div class="form-check">
+                        <input #gender="ngModel" required class="form-check-input" type="radio" name="gender" id="Female" value="female" [(ngModel)]="payload.gender" [checked]="payload.gender === 'female'" />
+                        <label class="form-check-label" for="Female">{{ "Female" | translate}}</label>
+                    </div>
+                </div>
+        </div>
+        <!-- <div class="form-group row check-box ml-3">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="delivery_time" id="exampleRadios3" value="6-10 am" [(ngModel)]="delivery_time" [checked]="delivery_time === '6-10 am'"> 
                <label class="form-check-label" for="exampleRadios3">6-10 am</label>
              </div>
            
           </div> -->
-          <!-- <ul>
+        <!-- <ul>
             <li class="lightest">185</li>
             <li class="lighter">186</li>
             <li class="normal">187 <span> cm </span></li>
             <li class="lighter">188</li>
             <li class="lightest">189</li>
           </ul> -->
-        </div>
-        <button
-          class="btn btn-lg Continue"
-          type="submit"
-          [disabled]="signupLoader"
-        >
+    </div>
+    <button class="btn btn-lg Continue" type="submit" [disabled]="signupLoader">
           {{ "Continue" | translate}}
         </button>
-      </form>
-    </div>
-    <div class="personal-info" *ngIf="currentStep === 4">
-      <div class="parent-tow">
+    </form>
+</div>
+<div class="personal-info" *ngIf="currentStep === 4">
+    <div class="parent-tow">
         <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
-      </div>
-      <div class="title">
+    </div>
+    <div class="title">
         <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
         <h1>{{ "Choose your program" | translate}}</h1>
-      </div>
-      <div class="type">
+    </div>
+    <div class="type">
         <button class="btn btn-lg" *ngIf="plan === 1">
           {{ packagePayloadNormal.total_price }} KWD
         </button>
@@ -485,129 +461,114 @@
         <button class="btn btn-lg" *ngIf="plan === 3">
           {{ packagePayloadCustom.total_price }} KWD
         </button>
-      </div>
+    </div>
 
-      <!-- wight loss button -->
-      <div class="weightloss-section" *ngIf="plan === 1" [@enterAnimation]>
+    <!-- wight loss button -->
+    <div class="weightloss-section" *ngIf="plan === 1" [@enterAnimation]>
         <div class="loss-plan">
-          <div class="row">
-            <div class="col-lg-6 col-12 color-up">
-              <span>01</span>
-              <button class="btn btn-lg" (click)="setPlan(1)">
+            <div class="row">
+                <div class="col-lg-6 col-12 color-up">
+                    <span>01</span>
+                    <button class="btn btn-lg" (click)="setPlan(1)">
                 {{ "Weight loss" | translate}}
               </button>
-            </div>
+                </div>
 
-            <div class="col-lg-3 col-12 Bodybuilding normal">
-              <h1>02</h1>
-              <button class="btn btn-lg" (click)="setPlan(2)">
+                <div class="col-lg-3 col-12 Bodybuilding normal">
+                    <h1>02</h1>
+                    <button class="btn btn-lg" (click)="setPlan(2)">
                 {{ "Bodybuilding" | translate}}
               </button>
-              <p>
-                {{ "Show Details" | translate}}
-                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-              </p>
-            </div>
+                    <p>
+                        {{ "Show Details" | translate}}
+                        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                    </p>
+                </div>
 
-            <div
-              class="col-lg-3 col-12 normal plan-program"
-              [class.xyz]="plan === 3"
-            >
-              <h1>03</h1>
-              <button class="btn btn-lg" (click)="setPlan(3)">
+                <div class="col-lg-3 col-12 normal plan-program" [class.xyz]="plan === 3">
+                    <h1>03</h1>
+                    <button class="btn btn-lg" (click)="setPlan(3)">
                 {{ "Plan your Program" | translate}}
               </button>
-              <p>
-                {{ "Show Details" | translate}}
-                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-              </p>
+                    <p>
+                        {{ "Show Details" | translate}}
+                        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
         <div class="order">
-          <h1>
-            <span>
+            <h1>
+                <span>
               {{ pacakges?.normal.meals.breakfast?.quantity }} Breakfast +
               {{ pacakges?.normal.meals.snacks?.quantity }} Snackes +
               {{ pacakges?.normal.meals.main_course?.quantity }} Meals
             </span>
-          </h1>
+            </h1>
         </div>
-      </div>
+    </div>
 
-      <!-- bodybulding button -->
-      <div class="bodybilding-section" *ngIf="plan === 2" [@enterAnimation]>
+    <!-- bodybulding button -->
+    <div class="bodybilding-section" *ngIf="plan === 2" [@enterAnimation]>
         <div class="bodybilding-plan">
-          <div class="row">
-            <div class="col-lg-3 col-12 normal">
-              <h1>{{"01" | translate}}</h1>
-              <button class="btn btn-lg" (click)="setPlan(1)">
+            <div class="row">
+                <div class="col-lg-3 col-12 normal">
+                    <h1>{{"01" | translate}}</h1>
+                    <button class="btn btn-lg" (click)="setPlan(1)">
                 {{"Weight loss" | translate}}
               </button>
-              <p>
-                {{ "Show Details" | translate}}
-                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-              </p>
-            </div>
+                    <p>
+                        {{ "Show Details" | translate}}
+                        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                    </p>
+                </div>
 
-            <div class="col-lg-6 col-12 Bodybuilding color-up">
-              <span>{{"02" | translate}}</span>
-              <button class="btn btn-lg" (click)="setPlan(2)">
+                <div class="col-lg-6 col-12 Bodybuilding color-up">
+                    <span>{{"02" | translate}}</span>
+                    <button class="btn btn-lg" (click)="setPlan(2)">
                 {{ "Bodybuilding" | translate}}
               </button>
-            </div>
+                </div>
 
-            <div
-              class="col-lg-3 col-12 normal plan-program"
-              [class.xyz]="plan === 3"
-            >
-              <h1>{{"03" | translate}}</h1>
-              <button class="btn btn-lg" (click)="setPlan(3)">
+                <div class="col-lg-3 col-12 normal plan-program" [class.xyz]="plan === 3">
+                    <h1>{{"03" | translate}}</h1>
+                    <button class="btn btn-lg" (click)="setPlan(3)">
                  {{"Plan your Program" | translate}}
               </button>
-              <p>
-                {{ "Show Details" | translate}}
-                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-              </p>
+                    <p>
+                        {{ "Show Details" | translate}}
+                        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
         <div class="level">
-          <div
-            class="level-one option-level"
-            [class.level-three]="i === 2"
-            *ngFor="
+            <div class="level-one option-level" [class.level-three]="i === 2" *ngFor="
               let level of pacakges['body buiding']?.meals.main_course.prices;
               index as i
-            "
-          >
-            <i class="fa fa-circle-thin" aria-hidden="true"></i>
-            <h1>
-              <input
-                type="radio"
-                name="level"
-                (click)="selectPrice(level)"
-              />{{"LEVEL" | translate}} <span> {{ i + 1 | numberToWord }}</span>
-            </h1>
-            <h2>
-              <span
-                >{{
+            ">
+                <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                <h1>
+                    <input type="radio" name="level" (click)="selectPrice(level)" />{{"LEVEL" | translate}} <span> {{ i + 1 | numberToWord }}</span>
+                </h1>
+                <h2>
+                    <span>{{
                   pacakges["body buiding"].meals.breakfast?.quantity
                 }}
                 Breakfast +
                 {{ pacakges["body buiding"].meals.snacks.quantity }} Snackes +
                 {{ pacakges["body buiding"].meals.main_course.quantity }} Meals
               </span>
-            </h2>
-            <p>{{ level.protein }} {{"Gram Protein" | translate}}</p>
-            <div class="flex">
-              <span>{{"Carbohydrate" | translate}}</span>
-              <!-- <div class="timer"> -->
-              &nbsp;{{ level.carb }}
-              <!-- </div> -->
+                </h2>
+                <p>{{ level.protein }} {{"Gram Protein" | translate}}</p>
+                <div class="flex">
+                    <span>{{"Carbohydrate" | translate}}</span>
+                    <!-- <div class="timer"> -->
+                    &nbsp;{{ level.carb }}
+                    <!-- </div> -->
+                </div>
             </div>
-          </div>
-          <!-- <div class="level-tow option-level">
+            <!-- <div class="level-tow option-level">
             <i class="fa fa-circle-o" aria-hidden="true"></i>
             <h1>LEVEL <span> two</span></h1>
             <h2>4 Meals + 2 Snackes</h2>
@@ -636,91 +597,78 @@
             </div>
           </div> -->
         </div>
-      </div>
+    </div>
 
-      <div class="plan" *ngIf="plan === 3" [@enterAnimation]>
+    <div class="plan" *ngIf="plan === 3" [@enterAnimation]>
         <div class="row">
-          <div class="col-lg-3 col-12 normal">
-            <h1>{{"01" | translate}}</h1>
-            <button class="btn btn-lg" (click)="setPlan(1)">{{"Weight loss" | translate}}</button>
-            <p>
-              {{"Show Details" | translate}}
-              <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-            </p>
-          </div>
+            <div class="col-lg-3 col-12 normal">
+                <h1>{{"01" | translate}}</h1>
+                <button class="btn btn-lg" (click)="setPlan(1)">{{"Weight loss" | translate}}</button>
+                <p>
+                    {{"Show Details" | translate}}
+                    <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                </p>
+            </div>
 
-          <div class="col-lg-3 col-12 normal">
-            <h1>{{"02" | translate}}</h1>
-            <button class="btn btn-lg" (click)="setPlan(2)">
+            <div class="col-lg-3 col-12 normal">
+                <h1>{{"02" | translate}}</h1>
+                <button class="btn btn-lg" (click)="setPlan(2)">
               {{"Bodybuilding" | translate}}
             </button>
-            <p>
-              {{"Show Details" | translate}}
-              <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-            </p>
-          </div>
+                <p>
+                    {{"Show Details" | translate}}
+                    <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                </p>
+            </div>
 
-          <div class="col-lg-6 col-12 color-up" [class.xyz]="plan === 3">
-            <span>{{"03" | translate}}</span>
-            <button class="btn btn-lg" (click)="setPlan(3)">
+            <div class="col-lg-6 col-12 color-up" [class.xyz]="plan === 3">
+                <span>{{"03" | translate}}</span>
+                <button class="btn btn-lg" (click)="setPlan(3)">
               {{"Plan your Program" | translate}}
             </button>
-          </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="meals" *ngIf="plan === 3">
+    <div class="meals" *ngIf="plan === 3">
         <div class="main-meals">
-          <ul>
-            <li class="main mb-2">
-              <mat-form-field>
-                <mat-label>{{"Main meal" | translate}}</mat-label>
-                <mat-select
-                  [(ngModel)]="mainCourseCarb"
-                  (ngModelChange)="setProtien()"
-                >
-                  <mat-option *ngFor="let price of proteins" [value]="price">
-                    protein {{ price.variants.protein }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </li>
+            <ul>
+                <li class="main mb-2">
+                    <mat-form-field>
+                        <mat-label>{{"Main meal" | translate}}</mat-label>
+                        <mat-select [(ngModel)]="mainCourseCarb" (ngModelChange)="setProtien()">
+                            <mat-option *ngFor="let price of proteins" [value]="price">
+                                protein {{ price.variants.protein }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </li>
 
-            <li class="main mb-2">
-              <mat-form-field>
-                <mat-label>Carb</mat-label>
-                <mat-select
-                  [disabled]="!packagePayloadCustom.protein"
-                  (selectionChange)="setCarp($event.value)"
-                >
-                  <mat-option *ngFor="let carb of carbs" [value]="carb">
-                    Carb {{ carb }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </li>
-            <!-- <li class="lunch mb-2">Lunch + Dinner</li> -->
-            <li class="mb-2">
-              <mat-form-field>
-                <mat-label>Persons</mat-label>
-                <mat-select
-                  [(ngModel)]="mainCoursePrice"
-                  [disabled]="
+                <li class="main mb-2">
+                    <mat-form-field>
+                        <mat-label>Carb</mat-label>
+                        <mat-select [disabled]="!packagePayloadCustom.protein" (selectionChange)="setCarp($event.value)">
+                            <mat-option *ngFor="let carb of carbs" [value]="carb">
+                                Carb {{ carb }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </li>
+                <!-- <li class="lunch mb-2">Lunch + Dinner</li> -->
+                <li class="mb-2">
+                    <mat-form-field>
+                        <mat-label>Persons</mat-label>
+                        <mat-select [(ngModel)]="mainCoursePrice" [disabled]="
                     !(packagePayloadCustom.carb && packagePayloadCustom.protein)
-                  "
-                  (ngModelChange)="setCustomPrice()"
-                >
-                  <mat-option
-                    *ngFor="let price of selectedMainCourse?.price_per_meals"
-                    [value]="price"
-                  >
-                    price {{ price.price }} - meal {{ price.no_of_meals }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </li>
+                  " (ngModelChange)="setCustomPrice()">
+                            <mat-option *ngFor="let price of selectedMainCourse?.price_per_meals" [value]="price">
+                                price {{ price.price }} - meal {{ price.no_of_meals }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </li>
 
-            <!-- <li class="mb-2">
+                <!-- <li class="mb-2">
               Carb
               <div class="timer carb">
                 <span>-</span>
@@ -728,24 +676,15 @@
                 <span>+</span>
               </div>
             </li> -->
-          </ul>
+            </ul>
         </div>
         <div class="add-snack main-meals">
-          <ul>
-            <li class="snack mb-2">{{"Add" | translate}} <span>{{"Snacks" | translate}}</span></li>
-            <li class="mb-2">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios1"
-                  value="option1"
-                  (change)="changeBreackFast('breakfast')"
-                  [checked]="customBreakfast === 'breakfast'"
-                />
-                <label class="form-check-label" for="exampleRadios1"
-                  >{{"Breakfast" | translate}}</label
+            <ul>
+                <li class="snack mb-2">{{"Add" | translate}} <span>{{"Snacks" | translate}}</span></li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" (change)="changeBreackFast('breakfast')" [checked]="customBreakfast === 'breakfast'" />
+                        <label class="form-check-label" for="exampleRadios1">{{"Breakfast" | translate}}</label
                 >
               </div>
               <div class="timer">
@@ -788,7 +727,7 @@
             </li>
             <ul *ngIf="customBreakfast === 'customBreakfast'" class="ml-3">
               <li class="mb-2">
-                {{"Eggs" | translate}
+                {{"Eggs" | translate}}
                 <div class="timer">
                   <span class="pointer" (click)="customQuantity(1, '-')"
                     >-</span
@@ -895,38 +834,21 @@
       <hr *ngIf="plan !== 3" />
       <div class="container-fluid text-left">
         <label>{{"Delivery time" | translate}}</label>
-        <div class="form-group row check-box ml-3">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="delivery_time"
-              id="exampleRadios3"
-              value="6-10 am"
-              [(ngModel)]="delivery_time"
-              [checked]="delivery_time === '6-10 am'"
-            />
-            <label class="form-check-label" for="exampleRadios3">6-10 am</label>
-          </div>
-        </div>
-        <div class="form-group row check-box ml-3">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="delivery_time"
-              id="exampleRadios4"
-              value="6-10 pm"
-              [(ngModel)]="delivery_time"
-              [checked]="delivery_time === '6-10 pm'"
-            />
-            <label class="form-check-label" for="exampleRadios4">6-10 pm</label>
-          </div>
-        </div>
-        <div class="form-group row check-box mb-15 d-flex align-items-center">
-          <div class="form-check col-lg-4 col-12 margin-auto">
-            <label class="form-check-label check-label" for="gridCheck"
-              >{{"Start date" | translate}}</label
+                        <div class="form-group row check-box ml-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="delivery_time" id="exampleRadios3" value="6-10 am" [(ngModel)]="delivery_time" [checked]="delivery_time === '6-10 am'" />
+                                <label class="form-check-label" for="exampleRadios3">{{"6-10 am" | translate}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group row check-box ml-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="delivery_time" id="exampleRadios4" value="6-10 pm" [(ngModel)]="delivery_time" [checked]="delivery_time === '6-10 pm'" />
+                                <label class="form-check-label" for="exampleRadios4">{{"6-10 pm" | translate}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group row check-box mb-15 d-flex align-items-center">
+                            <div class="form-check col-lg-4 col-12 margin-auto">
+                                <label class="form-check-label check-label" for="gridCheck">{{"Start date" | translate}}</label
             >
           </div>
           <div class="col-lg-8 col-12">
@@ -967,77 +889,56 @@
       <!-- <div *ngIf="renew" class="">
         <div class="form-group row ml-25 d-flex align-items-center text-left">
           <label class="col-md-4 m-0 mb-1 m-md-0 p-0">Weight</label>
-          <input class="form-control col-md-6" [(ngModel)]="weight" type="input" placeholder="Weight">
-        </div>
-      </div> -->
-      <button
-        class="btn btn-lg Continue"
-        (click)="renew ? renewPackage() : setPackages()"
-        [disabled]="setPackagesLoader"
-      >
+                                <input class="form-control col-md-6" [(ngModel)]="weight" type="input" placeholder="Weight">
+                            </div>
+                        </div> -->
+                        <button class="btn btn-lg Continue" (click)="renew ? renewPackage() : setPackages()" [disabled]="setPackagesLoader">
         <span *ngIf="renew; else renewtmp">{{"Renew" | translate}}</span>
         <ng-template #renewtmp>{{"Continue" | translate}}</ng-template>
       </button>
-    </div>
-    <div class="personal-info" *ngIf="currentStep === 5">
-      <div class="parent-three">
-        <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
-      </div>
-      <div class="title">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        <h1>{{"Payment" | translate}}</h1>
-      </div>
-      <div class="type">
-        <button class="btn btn-lg">99 KWD</button>
-      </div>
+                    </div>
+                    <div class="personal-info" *ngIf="currentStep === 5">
+                        <div class="parent-three">
+                            <hr [ngStyle]="{ width: (currentStep * 100) / 5 + '%' }" />
+                        </div>
+                        <div class="title">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            <h1>{{"Payment" | translate}}</h1>
+                        </div>
+                        <div class="type">
+                            <button class="btn btn-lg">99 KWD</button>
+                        </div>
 
-      <div class="formula-section">
-        <div class="form-group row">
-          <label class="col-lg-7 col-12 col-form-label">{{"Card Number" | translate}}</label>
-          <div class="col-lg-8 col-12 margin-auto">
-            <input
-              type="text"
-              class="form-control border-ridus"
-              placeholder="4567 7876 8776 7899"
-            />
-          </div>
-        </div>
+                        <div class="formula-section">
+                            <div class="form-group row">
+                                <label class="col-lg-7 col-12 col-form-label">{{"Card Number" | translate}}</label>
+                                <div class="col-lg-8 col-12 margin-auto">
+                                    <input type="text" class="form-control border-ridus" placeholder="4567 7876 8776 7899" />
+                                </div>
+                            </div>
 
-        <div class="form-group row">
-          <label class="col-lg-7 col-12 col-form-label">{{"Card Holder" | translate}}</label>
-          <div class="col-lg-8 col-12 margin-auto">
-            <input
-              type="text"
-              class="form-control border-ridus"
-              placeholder="Lucas Pacheco"
-            />
-          </div>
-        </div>
+                            <div class="form-group row">
+                                <label class="col-lg-7 col-12 col-form-label">{{"Card Holder" | translate}}</label>
+                                <div class="col-lg-8 col-12 margin-auto">
+                                    <input type="text" class="form-control border-ridus" placeholder="Lucas Pacheco" />
+                                </div>
+                            </div>
 
-        <div class="form-group row">
-          <div class="col-lg-8 col-12 text-left">
-            <label class="col-form-label">{{"Expiry Date" | translate}}</label>
-            <input
-              type="text"
-              class="form-control border-ridus"
-              placeholder="09.24"
-            />
-          </div>
-          <div class="col-lg-4 col-12 text-left">
-            <label class="col-form-label">CVV</label>
-            <input type="text" class="form-control font" placeholder="1" />
-          </div>
-        </div>
+                            <div class="form-group row">
+                                <div class="col-lg-8 col-12 text-left">
+                                    <label class="col-form-label">{{"Expiry Date" | translate}}</label>
+                                    <input type="text" class="form-control border-ridus" placeholder="09.24" />
+                                </div>
+                                <div class="col-lg-4 col-12 text-left">
+                                    <label class="col-form-label">CVV</label>
+                                    <input type="text" class="form-control font" placeholder="1" />
+                                </div>
+                            </div>
 
-        <div class="form-group row check">
-          <div class="form-check col-lg-7 col-12 margin-auto">
-            <input
-              class="form-check-input check-input"
-              type="checkbox"
-              id="gridCheck"
-            />
-            <label class="form-check-label check-label" for="gridCheck"
-              >{{"I want to add Friday to my Package." | translate}}</label
+                            <div class="form-group row check">
+                                <div class="form-check col-lg-7 col-12 margin-auto">
+                                    <input class="form-check-input check-input" type="checkbox" id="gridCheck" />
+                                    <label class="form-check-label check-label" for="gridCheck">{{"I want to add Friday to my Package." | translate}}</label
             >
           </div>
 

@@ -4,14 +4,14 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" data-background-color="green">
-                        <h4 class="title">Edit Profile</h4>
-                        <p class="category">Complete your profile</p>
+                        <h4 class="title">{{"Edit Profile" | translate}}</h4>
+                        <p class="category">{{"Complete your profile" | translate}}</p>
                     </div>
                     <div class="card-content">
                         <form (ngSubmit)="submit()">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label class="control-label default-font">Full Name</label>
+                                    <label class="control-label default-font">{{"Full Name" | translate}}</label>
                                     <div class="form-group form-black label-floating is-empty mr-0">
                                         <input type="text" [(ngModel)]="payload.name" name="name" class="form-control">
                                     </div>
@@ -19,7 +19,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label class="control-label default-font">Email address</label>
+                                    <label class="control-label default-font">{{"Email address" | translate}}</label>
                                     <div class="form-group form-black label-floating is-empty mr-0">
                                         <input type="email" [(ngModel)]="payload.email" name="email" class="form-control">
                                     </div>
@@ -27,13 +27,13 @@
                             </div>
                             <div class="" *ngIf="errorMsgs">
                                 <label for="example_input_full_name" class="text-danger">
-                                    Error Messages:
+                                    {{"Error Messages:" | translate}}
                                 </label>
                                 <span class="m-form__help text-danger d-block" *ngFor="let err of errorMsgs | objectArray">
                                     <br>{{err}}:&nbsp;{{errorMsgs[err][0]}} 
                                 </span>
                             </div>
-                            <button type="submit" class="btn btn-success pull-right">Update Profile</button>
+                            <button type="submit" class="btn btn-success pull-right">{{"Update Profile" | translate}}</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
