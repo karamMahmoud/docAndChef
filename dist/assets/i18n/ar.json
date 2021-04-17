@@ -4,7 +4,8 @@
     "name": "الاسم",
     "Mobile number": "رقم الهاتف",
     "your name": "اسمك",
-    "Email": "الايميل",
+    "Password": "كلمة السر",
+    "Email": "البريد الالكتروني",
     "Enter your email": "ادخل بريدك الالكتروني",
     "Continue": "متابعة",
     "Area": "المنطقة",
@@ -42,6 +43,7 @@
     "Smoked Turkey": "تركي مدخن",
     "Fruits": "فواكه",
     "Salad": "سلطة",
+    "Fruit": "فاكهة",
     "Protein snacks": "وجبات البروتين",
     "Delivery time": "ميعاد التوصيل",
     "Start date": "تاريخ البداية",
@@ -68,6 +70,7 @@
     "Friday": "جمعة",
     "breakfast": "فطور",
     "main_course": "غداء",
+    "Enter your password": "ادخل الرقم السري",
     "snacks": "وجبات خفيفة",
     "custom breakfasts": "فطور مخصص",
     "Sign Up": "انشاء حساب",
@@ -123,7 +126,41 @@
     "Keep up to date with our latest news and special offers.": "ابق على اطلاع بأحدث الأخبار والعروض الخاصة.",
     "We accept:": "نحن نقبل",
     "All Rights Reserved.": "جميع الحقوق محفوظة.",
-    "© Copyrights 2020 / Dr & Chef  Website. powered by": "© حقوق النشر 2020 / موقع دكتور وشيف. مشغل بواسطة"
+
+    "Edit Profile": "تعديل الملف الشخصي",
+    "Complete your profile": "أكمل ملفك الشخصي",
+    "Full Name": "الاسم الكامل",
+    "Email address": "عنوان بريد الكتروني",
+    "Error Messages:": "رسائل خاطئة:",
+    "Update Profile": "تحديث الملف",
+
+    "Forget Password": "هل نسيت كلمة السر",
+    "Confirm Password": "تأكيد كلمة المرور",
+    "Not Identical": "لم تكن متطابقة",
+    "Login": "تسجيل الدخول",
+    "Send": "إرسال",
+
+    "Reset Password": "إعادة تعيين كلمة المرور",
+    "New Password": "كلمة السر الجديدة",
+    "Confirm New Password": "تأكيد كلمة المرور الجديدة",
+    "Do you have an account ?": "هل لديك حساب ؟",
+
+    "Email Verification": "تأكيد البريد الالكتروني",
+    "Your Email Is Verified Now": "تم التحقق من بريدك الإلكتروني الآن",
+    "Your Email Is Not Verified Yet": "لم يتم التحقق من بريدك الإلكتروني بعد",
+    "Close": "اغلاق",
+
+    "EN": "الإنجليزية",
+    "AR": "عربي",
+
+    "Save as Draft": "حفظ مؤقت",
+    "Send To Restaurant": "ارسال للمطعم",
+    "Meals": "وجبات",
+    "Your plan will start on": "ستبدأ خطتك في",
+
+    "6-10 am": " ٦ صباحا ",
+    "6-10 pm": "٦ مساءا "
+
 
 
 }
