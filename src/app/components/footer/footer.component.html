@@ -1,62 +1,61 @@
 <div class="footer ">
     <div class="container">
-  
-    <div class="row text-left">
-      <div class="col-xl-3 col-lg-3 col-sm-6">
-        <div class="img-logo">
-          <img src="assets/img/img.png" alt="">
-        </div>
-      </div>
-  
-        <div class="col-xl-3 col-lg-3 col-sm-6">
-            <div class="footer-contact font">
-                <h1>{{"Contact Info" | translate}}</h1>
-                <p> <span> {{"Phone" | translate}}:</span> {{"+9 (509) 120 6705" | translate}}</p>
-                <p><span> {{"Address:" | translate}}:</span> {{"Kuwait City." | translate}}</p>
-            </div>
-        </div>
-  
-        <div class="col-xl-3 col-lg-3 col-sm-6">
-            <div class="footer-help font">
-                <h1>{{"Get Help" | translate}}</h1>
-                <p>{{ "Delivery Information" | translate}}</p>
-                <p>{{"Sale Terms & Conditions" | translate}}</p>
-                <p>{{"Returns & Refunds" | translate}}</p>
-                <p>{{"Privacy Notice" | translate}}</p>
-                <p>{{"Shopping FAQs" | translate}}</p>
-  
-            </div>
-        </div>
-  
-        <div class="col-xl-3 col-lg-3 col-sm-6">
-            <div class="email-adress font">
-                <h1>{{"Let’s stay in touch" | translate}}
-                </h1>
-                <div class="input-group mb-3 subscribe-input">
-                    <input [(ngModel)]="email" name="email" type="text" class="form-control input-text " [placeholder]="'Enter your email address' | translate"
-                        aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append subscribe-button">
-                        <button class="btn btn-secondary" type="button" (click)="subscribeMail()">{{"Subscribe" | translate}}</button>
-                    </div>
+
+        <div class="row text-left">
+            <div class="col-xl-3 col-lg-3 col-sm-6">
+                <div class="img-logo">
+                    <img src="assets/img/img.png" alt="">
                 </div>
-                <p>{{"Keep up to date with our latest news and special offers." | translate}}</p>
-  
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-sm-6">
+                <div class="footer-contact font">
+                    <h1>{{"Contact Info" | translate}}</h1>
+                    <p> <span> {{"Phone" | translate}}:</span> {{"+9 (656) 555 5340" | translate}}</p>
+                    <p><span> {{"Address:" | translate}}:</span> {{"Kuwait City." | translate}}</p>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-sm-6">
+                <div class="footer-help font">
+                    <h1>{{"Get Help" | translate}}</h1>
+                    <p>{{ "Delivery Information" | translate}}</p>
+                    <p>{{"Sale Terms & Conditions" | translate}}</p>
+                    <p>{{"Returns & Refunds" | translate}}</p>
+                    <p>{{"Privacy Notice" | translate}}</p>
+                    <p>{{"Shopping FAQs" | translate}}</p>
+
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-sm-6">
+                <div class="email-adress font">
+                    <h1>{{"Let’s stay in touch" | translate}}
+                    </h1>
+                    <div class="input-group mb-3 subscribe-input">
+                        <input [(ngModel)]="email" name="email" type="text" class="form-control input-text " [placeholder]="'Enter your email address' | translate" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append subscribe-button">
+                            <button class="btn btn-secondary" type="button" (click)="subscribeMail()">{{"Subscribe" | translate}}</button>
+                        </div>
+                    </div>
+                    <p>{{"Keep up to date with our latest news and special offers." | translate}}</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="accept text-left">
+            <h1>{{"We accept:" | translate}}</h1> <br>
+
+        </div>
+        <hr>
+        <div class="row copy-right text-left">
+
+            <div class="col-9 ">
+                <p class="text">{{"© Copyrights 2020 / Dr & Chef Website. powered by" | translate}} <a href="https://modecollection.store" target="blank">modecollection.store</a> </p>
+            </div>
+            <div class="col-3">
+                <p class="text"> {{"All Rights Reserved." | translate}} </p>
             </div>
         </div>
     </div>
-    <div class="accept text-left">
-        <h1>{{"We accept:" | translate}}</h1> <br>
-  
-    </div>
-    <hr>
-    <div class="row copy-right text-left">
-  
-        <div class="col-9 ">
-            <p class="text">{{"© Copyrights 2020 / Dr & Chef  Website. powered by" | translate}} <a href="https://modecollection.store" target="blank">modecollection.store</a>  </p>
-        </div>
-        <div class="col-3">
-            <p class="text"> {{"All Rights Reserved." | translate}} </p>
-        </div>
-    </div>
-  </div>
-  </div>
+</div>

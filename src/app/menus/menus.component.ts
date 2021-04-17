@@ -45,6 +45,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: [],
         snacks_ids: [],
         protein_snacks_ids: [],
+        salad_ids: [],
+        fruit_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -54,6 +56,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: [],
         snacks_ids: [],
         protein_snacks_ids: [],
+        salad_ids: [],
+        fruit_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -63,6 +67,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: [],
         snacks_ids: [],
         protein_snacks_ids: [],
+        salad_ids: [],
+        fruit_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -72,6 +78,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: [],
         snacks_ids: [],
         protein_snacks_ids: [],
+        salad_ids: [],
+        fruit_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -81,6 +89,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: [],
         snacks_ids: [],
         protein_snacks_ids: [],
+        salad_ids: [],
+        fruit_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -90,6 +100,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: [],
         snacks_ids: [],
         protein_snacks_ids: [],
+        salad_ids: [],
+        fruit_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -99,6 +111,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: [],
         snacks_ids: [],
         protein_snacks_ids: [],
+        salad_ids: [],
+        fruit_ids: [],
         carb: 0, //total carbs of chosen main_course meals
         protein: 0, //total protein of chosen main_course meals
       },
@@ -139,6 +153,7 @@ export class MenusComponent implements OnInit {
     });
   }
   setMeal(meal) {
+    console.log(this.payload.meals[0]);
     this.mealsLength.name = "";
     setTimeout(() => {
       this.mealsLength = {
@@ -167,6 +182,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: day.main_course_ids.filter((id) => id),
         snacks_ids: day.snacks_ids.filter((id) => id),
         protein_snacks_ids: day.protein_snacks_ids.filter((id) => id),
+        salad_ids: day.salad_ids?.filter((id) => id),
+        fruit_ids: day.fruit_ids?.filter((id) => id),
       };
     });
     this.loading = true;
@@ -190,6 +207,8 @@ export class MenusComponent implements OnInit {
         main_course_ids: day.main_course_ids.filter((id) => id),
         snacks_ids: day.snacks_ids.filter((id) => id),
         protein_snacks_ids: day.protein_snacks_ids.filter((id) => id),
+        salad_ids: day.salad_ids?.filter((id) => id),
+        fruit_ids: day.fruit_ids?.filter((id) => id),
       };
     });
     payload.status = 2;
