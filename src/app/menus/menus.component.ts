@@ -128,6 +128,8 @@ export class MenusComponent implements OnInit {
     "Thursday",
     "Friday",
   ];
+  weekNumber = 1;
+  package_remaining_days = 0;
   constructor(
     public router: Router,
     public toastr: ToastrManager,
@@ -135,19 +137,25 @@ export class MenusComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.package_remaining_days = parseInt(localStorage.getItem("package_remaining_days"),10)
+   this.start(1);
+  }
+
+  start(week){
+    this.weekNumber = week;
     this.end = localStorage.getItem("package_start_date");
     var duration = moment.duration(moment(this.end).diff(new Date()));
     this.days = duration.asDays();
     this.notStarted = this.days > 0;
     this.showNavBar = parseInt(localStorage.getItem("package_remaining_days")) < 10;
     // notStarted = true;
-    this.api.menus().subscribe((data) => {
+    this.api.menus(this.weekNumber).subscribe((data) => {
       this.menus = data.data;
     });
     this.api.getPackage().subscribe((data) => {
       this.package = data.data;
     });
-    this.api.getOrder().subscribe((data) => {
+    this.api.getOrder(this.weekNumber).subscribe((data) => {
       // this.package = data.data;
       if (data.data.length > 0) this.payload.meals = data.data;
     });
@@ -187,7 +195,7 @@ export class MenusComponent implements OnInit {
       };
     });
     this.loading = true;
-    this.api.setOrder(payload).subscribe(
+    this.api.setOrder(payload,this.weekNumber).subscribe(
       (data) => {
         this.loading = false;
         this.toastr.successToastr("Saved successfully");
@@ -213,7 +221,7 @@ export class MenusComponent implements OnInit {
     });
     payload.status = 2;
     this.loading = true;
-    this.api.setOrder(payload).subscribe(
+    this.api.setOrder(payload,this.weekNumber).subscribe(
       (data) => {
         this.loading = false;
         this.toastr.successToastr("Saved successfully");

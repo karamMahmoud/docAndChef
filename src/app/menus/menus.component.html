@@ -35,6 +35,11 @@
                 </div>
             </div>
         </div>
+        <!--  -->
+        <div class="week" *ngIf="package_remaining_days > 7 && !notStarted">
+            <div (click)="start(1)" [class.active]="weekNumber === 1">{{"First week" | translate}}</div>
+            <div (click)="start(2)" [class.active]="weekNumber === 2">{{"Second week" | translate}}</div>
+        </div>
         <div class="center-section mb-5">
             <div class="heading">
                 <ul>

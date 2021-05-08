@@ -93,8 +93,8 @@ export class AuthenticationService {
       );
   }
 
-  menus(): any {
-    return this.http.get(`${this.baseUrl}/menu?lang=${localStorage.getItem('lang')}&week=1`, {
+  menus(week): any {
+    return this.http.get(`${this.baseUrl}/menu?lang=${localStorage.getItem('lang')}&week=${week}`, {
       headers: this.tokenAsHeader(),
     });
   }
@@ -105,14 +105,14 @@ export class AuthenticationService {
     });
   }
 
-  getOrder(): any {
-    return this.http.get(`${this.baseUrl}/orders/draft?week=1`, {
+  getOrder(week): any {
+    return this.http.get(`${this.baseUrl}/orders/draft?week=${week}`, {
       headers: this.tokenAsHeader(),
     });
   }
 
-  setOrder(payload): any {
-    return this.http.post(`${this.baseUrl}/orders/set?week=1`, payload, {
+  setOrder(payload,week): any {
+    return this.http.post(`${this.baseUrl}/orders/set?week=${week}`, payload, {
       headers: this.tokenAsHeader(),
     });
   }

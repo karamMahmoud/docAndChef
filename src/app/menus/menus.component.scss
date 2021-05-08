@@ -299,7 +299,28 @@ table {
 //   }
 // }
 .pd-70 {
-    padding-bottom: 70px;
+    padding-bottom: 50px;
+}
+
+.week {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    margin: 0 auto 50px auto;
+    div {
+        color: #83489a;
+        font-weight: 700;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .active {
+        background-color: #83489a;
+        color: #fff;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
 }
 
 // end category-sectio
